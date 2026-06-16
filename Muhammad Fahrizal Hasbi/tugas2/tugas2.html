@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Formulir Keuangan</title>
+</head>
+<body class="bg-gray-100 p-8">
+    <form id="financeForm" class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow">
+        
+        <!-- Step 1: Data Demografi -->
+        <div id="step1" class="form-step">
+            <h2 class="text-xl font-bold mb-4 border-b pb-2">Data Demografi (1/3)</h2>
+            <div class="grid grid-cols-1 gap-4 mb-6">
+                <input type="text" name="nama" placeholder="Nama Lengkap" class="border p-2 rounded" required>
+                <input type="date" name="tgl_lahir" class="border p-2 rounded" required>
+                <textarea name="alamat" placeholder="Alamat Lengkap" class="border p-2 rounded"></textarea>
+                <input type="tel" name="telepon" placeholder="No. Telepon" class="border p-2 rounded">
+                <input type="email" name="email" placeholder="Email" class="border p-2 rounded">
+                <select name="pendidikan" class="border p-2 rounded">
+                    <option value="">Pilih Pendidikan</option>
+                    <option value="SMA">SMA/Sederajat</option>
+                    <option value="D3">Diploma (D3)</option>
+                    <option value="S1">Sarjana (S1)</option>
+                </select>
+            </div>
+            <button type="button" onclick="nextStep(2)" class="w-full bg-blue-600 text-white py-2 rounded">Selanjutnya</button>
+        </div>
+
+        <!-- Step 2: Data Perbankan -->
+        <div id="step2" class="form-step hidden">
+            <h2 class="text-xl font-bold mb-4 border-b pb-2">Data Perbankan (2/3)</h2>
+            <div class="grid grid-cols-1 gap-4 mb-6">
+                <select name="bank" class="border p-2 rounded">
+                    <option value="">Pilih Bank</option>
+                    <option value="BCA">BCA</option>
+                    <option value="Mandiri">Mandiri</option>
+                </select>
+                <input type="number" name="rekening" placeholder="Nomor Rekening" class="border p-2 rounded">
+            </div>
+            <div class="flex gap-2">
+                <button type="button" onclick="nextStep(1)" class="w-1/2 bg-gray-400 text-white py-2 rounded">Kembali</button>
+                <button type="button" onclick="nextStep(3)" class="w-1/2 bg-blue-600 text-white py-2 rounded">Selanjutnya</button>
+            </div>
+        </div>
+
+        <!-- Step 3: Data Transaksi -->
+        <div id="step3" class="form-step hidden">
+            <h2 class="text-xl font-bold mb-4 border-b pb-2">Data Transaksi (3/3)</h2>
+            <div class="grid grid-cols-1 gap-4 mb-6">
+                <input type="date" name="tgl_transaksi" class="border p-2 rounded">
+                <input type="text" name="uraian" placeholder="Uraian Transaksi" class="border p-2 rounded">
+                <div class="flex gap-4">
+                    <label><input type="radio" name="jenis_transaksi" value="Pemasukan"> Pemasukan</label>
+                    <label><input type="radio" name="jenis_transaksi" value="Pengeluaran"> Pengeluaran</label>
+                </div>
+                <input type="number" name="debet" placeholder="Debet (Rp)" class="border p-2 rounded">
+                <input type="number" name="kredit" placeholder="Kredit (Rp)" class="border p-2 rounded">
+            </div>
+            <div class="flex gap-2">
+                <button type="button" onclick="nextStep(2)" class="w-1/2 bg-gray-400 text-white py-2 rounded">Kembali</button>
+                <button type="submit" class="w-1/2 bg-green-600 text-white py-2 rounded">Kirim Data</button>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        function nextStep(step) {
+            document.querySelectorAll('.form-step').forEach(s => s.classList.add('hidden'));
+            document.getElementById('step' + step).classList.remove('hidden');
+        }
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwmDa1aI09Fa2cYQr1QpNDsJwjObX03f-mq3QLxv2OeKK7o3GGJhx6py5jNw4TCIqvz/exec';
+        const form = document.getElementById('financeForm');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert('Data berhasil terkirim!'))
+                .catch(error => console.error('Error!', error.message));
+        });
+    </script>
+</body>
+</html>
