@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kumpulan Tugas Kelompok 2 Pokdakan</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f4f7fb;
+    --surface: #ffffff;
+    --card: #ffffff;
+    --border: #e5e7eb;
+    --border-hover: rgba(44, 170, 182, 0.4);
+    --gold: #2caabe;
+    --gold-light: #3282b8;
+    --text: #1f2937;
+    --muted: #9ca3af;
+    --muted2: #6b7280;
+    --cream: #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* BACKGROUND TEXTURE */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 10% 20%, rgba(44, 170, 182, 0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 90% 80%, rgba(44, 170, 182, 0.04) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* HEADER */
+  header {
+    position: relative;
+    z-index: 10;
+    padding: 3.5rem 3rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .header-left {}
+
+  .site-eyebrow {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .site-eyebrow::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .site-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    color: var(--cream);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  .site-title span {
+    color: var(--gold);
+  }
+
+  .header-meta {
+    text-align: right;
+    padding-top: 0.5rem;
+  }
+
+  .header-meta .name {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: 0.02em;
+  }
+
+  .header-meta .year {
+    font-size: 0.75rem;
+    color: var(--muted2);
+    margin-top: 0.2rem;
+  }
+
+  /* DIVIDER */
+  .divider {
+    max-width: 1200px;
+    margin: 2.5rem auto 0;
+    padding: 0 3rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  .divider hr {
+    border: none;
+    border-top: 1px solid var(--border);
+  }
+
+  /* GRID SECTION */
+  .grid-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 3rem 5rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  .grid-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .grid-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* FOLDER GRID */
+  .folder-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  /* FOLDER CARD */
+  .folder-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 2rem 2rem 1.75rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s, background 0.3s;
+    cursor: pointer;
+  }
+
+  .folder-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(44, 170, 182, 0.07) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none;
+  }
+
+  .folder-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-4px);
+    background: #232019;
+  }
+
+  .folder-card:hover::before { opacity: 1; }
+
+  /* CARD NUMBER */
+  .card-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card-num-badge {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(44, 170, 182, 0.12);
+    color: var(--gold);
+    border: 1px solid rgba(44, 170, 182, 0.2);
+  }
+
+  /* ICON AREA */
+  .card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+
+  .card-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .icon-1 { background: rgba(44, 170, 182, 0.12); }
+  .icon-1 svg { color: var(--gold); }
+
+  .icon-2 { background: rgba(50, 130, 184, 0.12); }
+  .icon-2 svg { color: #3282b8; }
+
+  .icon-3 { background: rgba(44, 170, 182, 0.12); }
+  .icon-3 svg { color: #2caabe; }
+
+  .icon-4 { background: rgba(50, 130, 184, 0.12); }
+  .icon-4 svg { color: #3282b8; }
+
+  /* CARD CONTENT */
+  .card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.2;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.01em;
+  }
+
+  .card-desc {
+    font-size: 0.85rem;
+    color: var(--muted2);
+    line-height: 1.7;
+    margin-bottom: 1.75rem;
+    flex: 1;
+  }
+
+  /* CARD FOOTER */
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .card-meta {
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  .card-arrow {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  }
+
+  .folder-card:hover .card-arrow {
+    background: var(--gold);
+    border-color: var(--gold);
+    transform: translate(2px, -2px);
+  }
+
+  .card-arrow svg {
+    width: 14px;
+    height: 14px;
+    color: var(--muted2);
+    transition: color 0.2s;
+  }
+
+  .folder-card:hover .card-arrow svg { color: var(--bg); }
+
+  /* BOTTOM BAR */
+  footer {
+    position: relative;
+    z-index: 10;
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-text {
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  .footer-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0.5;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 680px) {
+    header { padding: 2rem 1.5rem 0; flex-direction: column; gap: 1rem; }
+    .header-meta { text-align: left; }
+    .divider { padding: 0 1.5rem; }
+    .grid-section { padding: 2rem 1.5rem 4rem; }
+    .folder-grid { grid-template-columns: 1fr; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <div class="site-eyebrow">Kumpulan Tugas Kelompok 2 Pokdakan</div>
+    <h1 class="site-title">Folder<br><span>Tugas</span><br><span>Kelompok 2 Pokdakan</span></h1>
+  </div>
+  <div class="header-meta">
+    <div class="name">Kelompok 2 Pokdakan</div>
+    <div class="year">2026</div>
+  </div>
+</header>
+
+<div class="divider"><hr></div>
+
+<div class="grid-section">
+  <div class="grid-label">Pilih Folder Dari 01 Sampai 12</div>
+
+  <div class="folder-grid">
+
+    <!-- TUGAS 1 -->
+    <a href="Ira/index.html" class="folder-card">
+      <div class="card-num">
+        Folder Ira
+        <span class="card-num-badge">Aktif</span>
+      </div>
+      <div class="card-icon icon-1">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 7a2 2 0 012-2h3.17a2 2 0 011.41.59l1.83 1.83A2 2 0 0012.83 8H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/>
+        </svg>
+      </div>
+      <div class="card-title">Tugas Ira</div>
+      <div class="card-desc">Didalam Folder Tugas Ira Yang Berisikan Tugas Individu Ira.</div>
+      <div class="card-footer">
+        <span class="card-meta">Kumpulan Tugas Ira</span>
+        <div class="card-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </div>
+      </div>
+    </a>
+
+    <!-- TUGAS 2 -->
+    <a href="Hana/index.html" class="folder-card">
+      <div class="card-num">
+        Folder Hana Fakhriah
+        <span class="card-num-badge">Aktif</span>
+      </div>
+      <div class="card-icon icon-2">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 7a2 2 0 012-2h3.17a2 2 0 011.41.59l1.83 1.83A2 2 0 0012.83 8H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/>
+        </svg>
+      </div>
+      <div class="card-title">Tugas Hana Fakhriah</div>
+      <div class="card-desc">Didalam Folder Tugas Hana Yang Berisikan Tugas Individu Hana Fakhriah.</div>
+      <div class="card-footer">
+        <span class="card-meta">Kumpulan Tugas Hana Fakhriah</span>
+        <div class="card-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </div>
+      </div>
+    </a>
+
+    <!-- TUGAS 3 -->
+    <a href="Ilham/index.html" class="folder-card">
+      <div class="card-num">
+        Folder Ilhamsyah
+        <span class="card-num-badge">Aktif</span>
+      </div>
+      <div class="card-icon icon-3">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 7a2 2 0 012-2h3.17a2 2 0 011.41.59l1.83 1.83A2 2 0 0012.83 8H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/>
+        </svg>
+      </div>
+      <div class="card-title">Tugas Ilhamsyah</div>
+      <div class="card-desc">Didalam Folder Tugas Ilhamsyah Yang Berisikan Tugas Individu Ilhamsyah.</div>
+      <div class="card-footer">
+        <span class="card-meta">Kumpulan Tugas Ilhamsyah</span>
+        <div class="card-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </div>
+      </div>
+    </a>
+
+    <!-- TUGAS 4 -->
+    <a href="Parni/index.html" class="folder-card">
+      <div class="card-num">
+        Folder Parni Pratama
+        <span class="card-num-badge">Aktif</span>
+      </div>
+      <div class="card-icon icon-4">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 7a2 2 0 012-2h3.17a2 2 0 011.41.59l1.83 1.83A2 2 0 0012.83 8H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/>
+        </svg>
+      </div>
+      <div class="card-title">Tugas Parni Pratama</div>
+      <div class="card-desc">Didalam Folder Tugas Parni Pratama Yang Berisikan Tugas Individu Parni Pratama.</div>
+      <div class="card-footer">
+        <span class="card-meta">Kumpulan Tugas Parni Pratama</span>
+        <div class="card-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </div>
+      </div>
+       <!-- TUGAS 5 -->
+    </a>
+       <a href="Taufik/index.html" class="folder-card">
+      <div class="card-num">
+        Folder Taufik Rahman
+        <span class="card-num-badge">Aktif</span>
+      </div>
+      <div class="card-icon icon-4">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 7a2 2 0 012-2h3.17a2 2 0 011.41.59l1.83 1.83A2 2 0 0012.83 8H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/>
+        </svg>
+      </div>
+      <div class="card-title">Tugas Taufik Rahman</div>
+      <div class="card-desc">Didalam Folder Tugas Taufik Rahman Yang Berisikan Tugas Individu Taufik Rahman.</div>
+      <div class="card-footer">
+        <span class="card-meta">Kumpulan Tugas Taufik Rahman</span>
+        <div class="card-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </div>
+      </div>
+    </a>
+     <!-- TUGAS 6 -->
+    <a href="Firza/index.html" class="folder-card">
+      <div class="card-num">
+        Folder Muhammad Firza Arif Rahman
+        <span class="card-num-badge">Aktif</span>
+      </div>
+      <div class="card-icon icon-4">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 7a2 2 0 012-2h3.17a2 2 0 011.41.59l1.83 1.83A2 2 0 0012.83 8H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/>
+        </svg>
+      </div>
+      <div class="card-title">Tugas Muhammad Firza Arif Rahman</div>
+      <div class="card-desc">Didalam Folder Tugas Firza Yang Berisikan Tugas Individu Muhammad Firza Arif Rahman.</div>
+      <div class="card-footer">
+        <span class="card-meta">Kumpulan Tugas Muhammad Firza Arif Rahman</span>
+        <div class="card-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </div>
+      </div>
+      <!-- TUGAS 7 -->
+    <a href="Dani/index.html" class="folder-card">
+      <div class="card-num">
+        Folder Muhammad Rahiel Almadani
+        <span class="card-num-badge">Aktif</span>
+      </div>
+      <div class="card-icon icon-4">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 7a2 2 0 012-2h3.17a2 2 0 011.41.59l1.83 1.83A2 2 0 0012.83 8H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/>
+        </svg>
+      </div>
+      <div class="card-title">Tugas Muhammad Rahiel Almadani</div>
+      <div class="card-desc">Didalam Folder Tugas Muhammad Rahiel Almadani Yang Berisikan Kumpulan Tugas Individu Muhammad Rahiel Almadani.</div>
+      <div class="card-footer">
+        <span class="card-meta">Kumpulan Tugas Muhammad Rahiel Almadani</span>
+        <div class="card-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </div>
+      </div>
+       <!-- TUGAS 8 -->
+    </a>
+    <a href="Muhammad Fahrizal Hasbi/index.html" class="folder-card">
+      <div class="card-num">
+        Folder Muhammad Fahrizal Hasbi
+        <span class="card-num-badge">Aktif</span>
+      </div>
+      <div class="card-icon icon-4">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 7a2 2 0 012-2h3.17a2 2 0 011.41.59l1.83 1.83A2 2 0 0012.83 8H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/>
+        </svg>
+      </div>
+      <div class="card-title">Tugas Muhammad Fahrizal Hasbi</div>
+      <div class="card-desc">Didalam Folder Tugas Muhammad Fahrizal Hasbi Yang Berisikan Kumpulan Tugas Individu Muhammad Fahrizal Hasbi.</div>
+      <div class="card-footer">
+        <span class="card-meta">tugas4/profil.html</span>
+        <div class="card-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </div>
+      </div>
+       <!-- TUGAS 9 -->
+    </a>
+       <a href="Nur Zahwa/index.html" class="folder-card">
+      <div class="card-num">
+        Folder Nur Zahwa
+        <span class="card-num-badge">Aktif</span>
+      </div>
+      <div class="card-icon icon-4">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 7a2 2 0 012-2h3.17a2 2 0 011.41.59l1.83 1.83A2 2 0 0012.83 8H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/>
+        </svg>
+      </div>
+      <div class="card-title">Tugas Nur Zahwa</div>
+      <div class="card-desc">Didalam Folder Tugas Nur Zahwa Yang Berisikan  Kumpulan Tugas Individu Nur Zahwa.</div>
+      <div class="card-footer">
+        <span class="card-meta">Kumpulan Tugas Nur Zahwa</span>
+        <div class="card-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </div>
+      </div>
+          <!-- TUGAS 10 -->
+    </a>
+       <a href="Putri/index.html" class="folder-card">
+      <div class="card-num">
+        Folder Apriliana Putri
+        <span class="card-num-badge">Aktif</span>
+      </div>
+      <div class="card-icon icon-4">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 7a2 2 0 012-2h3.17a2 2 0 011.41.59l1.83 1.83A2 2 0 0012.83 8H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/>
+        </svg>
+      </div>
+      <div class="card-title">Tugas Apriliana Putri</div>
+      <div class="card-desc">Didalam Folder Tugas Apriliana Purti Yang Berisikan Kumpulan Tugas Individu Apriliana Putri.</div>
+      <div class="card-footer">
+        <span class="card-meta">Kumpulan Tugas Apriliana Putri</span>
+        <div class="card-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </div>
+      </div>
+        <!-- TUGAS 11 -->  
+    </a>
+       <a href="Siti Nabila/index.html" class="folder-card">
+      <div class="card-num">
+        Folder Siti Nabila
+        <span class="card-num-badge">Aktif</span>
+      </div>
+      <div class="card-icon icon-4">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 7a2 2 0 012-2h3.17a2 2 0 011.41.59l1.83 1.83A2 2 0 0012.83 8H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/>
+        </svg>
+      </div>
+      <div class="card-title">Tugas Siti Nabila</div>
+      <div class="card-desc">Didalam Folder Tugas Siti Nabila Yang Berisikan  Kumpulan Tugas Individu Siti Nabila.</div>
+      <div class="card-footer">
+        <span class="card-meta">Kumpulan Tugas Siti Nabila</span>
+        <div class="card-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </div>
+      </div>
+    </a>
+     </a>
+       <a href="Seluruh Kelompok/index.html" class="folder-card">
+      <div class="card-num">
+        Folder Seluruh Kelompok
+        <span class="card-num-badge">Aktif</span>
+      </div>
+      <div class="card-icon icon-4">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 7a2 2 0 012-2h3.17a2 2 0 011.41.59l1.83 1.83A2 2 0 0012.83 8H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/>
+        </svg>
+      </div>
+      <div class="card-title">Tugas Seluruh Kelompok</div>
+      <div class="card-desc">Didalam Folder Tugas Seluruh Kelompok 2 Pokdakan Yang Berisikan Tugas Seluruh Kelompok 2 Pokdakan.</div>
+      <div class="card-footer">
+        <span class="card-meta">Kumpulan Tugas Seluruh Kelompok 2 Pokdakan</span>
+        <div class="card-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </div>
+      </div>
+    </a>
+   
+  </div>
+</div>
+
+<footer>
+  <span class="footer-text">Kelompok 2 Pokdakan &copy; 2026</span>
+  <div class="footer-dot"></div>
+  <span class="footer-text">Banjarbaru, Kalimantan Selatan</span>
+</footer>
+
+</body>
+</html>
