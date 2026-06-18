@@ -19,6 +19,34 @@
       justify-content: center;
       align-items: center;
       color: white;
+      position: relative; /* Ditambahkan agar posisi absolute tombol kembali berfungsi dengan baik */
+    }
+
+    /* Gaya CSS Baru untuk Tombol Kembali */
+    .back-btn {
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: white;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 500;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      z-index: 100;
+    }
+
+    .back-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateX(-3px);
     }
 
     .container {
@@ -68,6 +96,15 @@
 
 <body>
 
+<!-- TOMBOL KEMBALI DI ATAS SEBELAH KIRI -->
+<a href="index kelompok.html" class="back-btn">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="19" y1="12" x2="5" y2="12"></line>
+    <polyline points="12 19 5 12 12 5"></polyline>
+  </svg>
+  Kembali
+</a>
+
 <div class="container">
   <h1>Website Tugas</h1>
 
@@ -110,6 +147,11 @@
    <a href="https://docs.google.com/spreadsheets/d/1pMebAO7vtqd2O7SHj2wIy2MI2KsQ4rmeVaGDaPKdHc4/edit?usp=sharing" class="card">
       <h2>Persentase Tingkat Kepuasan</h2>
       <p>Spredshet</p>
+    </a>
+   <!-- TUGAS 2 -->
+    <a href="tugas akhir.html" class="card">
+      <h2>Tugas Akhir</h2>
+      <p>tugas akhir</p>
     </a>
 
   </div>
