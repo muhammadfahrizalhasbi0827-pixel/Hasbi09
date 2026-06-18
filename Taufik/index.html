@@ -1,3 +1,12 @@
+Berikut adalah kode HTML untuk halaman individu Taufik Rahman (index (1).html)
+yang telah ditambahkan tombol Kembali di pojok kiri atas.
+
+Tombol ini menggunakan desain glassmorphism berwarna biru neon senada dengan
+tema halaman, diposisikan secara absolut di kiri atas agar tidak merusak tata
+letak tengah dari kartu utama, serta memiliki tautan relatif ../index
+kelompok.html (berasumsi halaman kelompok berada satu tingkat di luar folder
+Taufik).
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -30,6 +39,40 @@
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
+        }
+
+        /* --- TOMBOL KEMBALI (KIRI ATAS) --- */
+        .btn-back {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+            background: rgba(10, 15, 30, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid rgba(0, 242, 255, 0.4);
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .btn-back:hover {
+            background: #00f2ff;
+            color: #080b12;
+            box-shadow: 0 0 25px #00f2ff;
+            transform: scale(1.05);
+        }
+        .btn-back svg {
+            margin-right: 8px;
+            transition: transform 0.3s;
+        }
+        .btn-back:hover svg {
+            transform: translateX(-3px);
         }
 
         /* --- 1. HUJAN BADAI --- */
@@ -161,9 +204,28 @@
             animation: pulseText 0.8s infinite alternate;
         }
         @keyframes pulseText { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(1.1); opacity: 1; } }
+
+        /* Responsif untuk tombol kembali pada layar kecil */
+        @media (max-width: 480px) {
+            .btn-back {
+                top: 15px;
+                left: 15px;
+                padding: 8px 14px;
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <!-- TOMBOL KEMBALI -->
+    <a href="../index.html" class="btn-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Kembali
+    </a>
 
     <div class="fog"></div>
     <div class="flash"></div>
@@ -181,7 +243,7 @@
             <a href="tugas2/index.html" class="btn">Tugas 2</a>
             <a href="tugas3.html" class="btn">Tugas 3</a>
             <a href="tugas4/index.html" class="btn">Tugas 4</a>
-            <a href="tugas5/index.html" class="btn">Tugas 5</a>
+            <a href="tugas5/index.html" class="btn">Tugas Akhir</a>
         </div>
 
         <div class="mantap-menn">SOSIAL EKONOMI PERIKANAN</div>
