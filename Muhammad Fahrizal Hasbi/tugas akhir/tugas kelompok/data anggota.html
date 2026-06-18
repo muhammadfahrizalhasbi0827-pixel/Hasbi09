@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Anggota Kelompok - POKDAKAN</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #72d7e7, #2caabe);
+      color: white;
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.3rem;
+    }
+    header h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    .content-container {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.6rem;
+      color: #3a6b9d;
+    }
+    .anggota-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .anggota-card h2 {
+      color: #2caabe;
+      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+      border-bottom: 2px solid #e0f7ff;
+      padding-bottom: 0.5rem;
+    }
+    .anggota-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .anggota-item {
+      background-color: #f8fbfd;
+      border-radius: 10px;
+      padding: 1.5rem;
+      border-left: 5px solid #2caabe;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .anggota-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+    .anggota-item h3 {
+      color: #3a6b9d;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+    .anggota-item .jabatan {
+      display: inline-block;
+      background-color: #2caabe;
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    .anggota-item p {
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+    .anggota-item strong {
+      color: #3a6b9d;
+    }
+    .tabel-wrapper {
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1rem;
+    }
+    th {
+      background-color: #2caabe;
+      color: white;
+      padding: 0.8rem;
+      text-align: left;
+      font-weight: 500;
+    }
+    td {
+      padding: 0.8rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    tr:hover {
+      background-color: #f5fcff;
+    }
+    .back-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #2caabe;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: background 0.2s ease;
+    }
+    .back-button:hover {
+      background-color: #3d5887;
+    }
+    footer {
+      text-align: center;
+      padding: 1.2rem 1rem;
+      background-color: #2caabe;
+      color: #eaf3fb;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SISTEM INFORMASI MANAJEMEN PERIKANAN</h1>
+    <h3>POKDAKAN</h3>
+    <p>Halaman Data Anggota Kelompok</p>
+  </header>
+
+  <div class="content-container">
+    <h2 class="section-title">DATA ANGGOTA POKDAKAN</h2>
+<div class="data-card">
+      <h2>Pengurus dan Anggota Kelompok</h2>
+      <h3>POKDAKAN SAHABAT BANYIUR</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Jenis Kelamin</th>
+            <th>Umur</th>
+            <th>Pendidikan Terakhir</th>
+            <th>Alamat</th>
+            <th>Jabatan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Muh Yasin</td>
+            <td>L</td>
+            <td>38</td>
+            <td>SLTA</td>
+            <td>Banyiur Rt.03</td>
+            <td>Ketua Kelompok</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Ahmad Gajali</td>
+            <td>L</td>
+            <td>39</td>
+            <td>SLTP</td>
+            <td>Banyiur Rt.03</td>
+            <td>Sekretaris</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Ahmadi</td>
+            <td>L</td>
+            <td>27</td>
+            <td>SLTP</td>
+            <td>Banyiur Rt.03</td>
+            <td>Bendahara</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Ahmad Zaini</td>
+            <td>L</td>
+            <td>41</td>
+            <td>SLTA</td>
+            <td>Banyiur Rt.03</td>
+            <td>Seksi Pemasaran</td>
+          </tr>
+          <tr>
+            <td>5</td>
+             <td>Agus Triadi</td>
+             <td>L</td>
+            <td>51</td>
+            <td>SLTP</td>
+            <td>Banyiur Rt.03</td>
+            <td>Seksi Pengolahan</td>
+          </tr>
+           <tr>
+            <td>6</td>
+             <td>Taberi</td>
+             <td>L</td>
+            <td>40</td>
+            <td>SLTP</td>
+            <td>Banyiur Rt.03</td>
+            <td>Seksi Produksi</td>
+          </tr>
+           <tr>
+            <td>7</td>
+             <td>Arifin</td>
+             <td>L</td>
+            <td>47</td>
+            <td>SLTA</td>
+            <td>Banyiur Rt.03</td>
+            <td>Anggota</td>
+          </tr>
+          <tr>
+            <td>8</td>
+             <td>Zainal Ilmi</td>
+             <td>L</td>
+            <td>39</td>
+            <td>SLTP</td>
+            <td>Banyiur Rt.03</td>
+            <td>Anggota</td>
+          </tr>
+          <tr>
+            <td>9</td>
+             <td>M.Fadilah</td>
+             <td>L</td>
+            <td>38</td>
+            <td>SLTP</td>
+            <td>Banyiur Rt.03</td>
+            <td>Anggota</td>
+          </tr>
+          <tr>
+            <td>10</td>
+             <td>Zainnudin</td>
+             <td>L</td>
+            <td>35</td>
+            <td>SLTA</td>
+            <td>Banyiur Rt.03</td>
+            <td>Anggota</td>
+          </tr>
+          <tr>
+            <td>11</td>
+             <td>Abdurahim</td>
+             <td>L</td>
+            <td>36</td>
+            <td>SLTP</td>
+            <td>Banyiur Rt.03</td>
+            <td>Anggota</td>
+          </tr>
+          <tr>
+            <td>12</td>
+             <td>Sam'Ani</td>
+             <td>L</td>
+            <td>40</td>
+            <td>SLTP</td>
+            <td>Banyiur Rt.03</td>
+            <td>Anggota</td>
+          </tr>
+          <tr>
+            <td>13</td>
+             <td>Dewi Arlina</td>
+             <td>P</td>
+            <td>47</td>
+            <td>SLTP</td>
+            <td>Banyiur Rt.03</td>
+            <td>Anggota</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="data-card">
+      <h2>Pengurus dan Anggota Kelompok</h2>
+      <h3>PoKDAKAN GURAMI JAYA</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Jenis Kelamin</th>
+            <th>Umur</th>
+            <th>Pendidikan Terakhir</th>
+            <th>Alamat</th>
+            <th>Jabatan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Soetoyo Rachmad</td>
+            <td>L</td>
+            <td>-</td>
+            <td>S1</td>
+            <td>Jl. Komet Raya GG.V No.10 Rt.003 Rw.004 Kel.Mentaos, Kec. Banjarbaru Utara</td>
+            <td>Ketua Kelompok</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Andi</td>
+            <td>L</td>
+            <td>-</td>
+            <td>SMA</td>
+            <td>Jl. Komet Raya GG.V No.10 Rt.003 Rw.004 Kel.Mentaos, Kec. Banjarbaru Utara</td>
+            <td>Sekretaris</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Sugiri Yatmono</td>
+           <td>L</td>
+            <td>-</td>
+            <td>S1</td>
+            <td>Jl. Komet Raya GG.V No.10 Rt.003 Rw.004 Kel.Mentaos, Kec. Banjarbaru Utara</td>
+            <td>Bendahara</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Mukidi Karso</td>
+             <td>L</td>
+            <td>-</td>
+            <td>SMA</td>
+            <td>Jl. Komet Raya GG.V No.10 Rt.003 Rw.004 Kel.Mentaos, Kec. Banjarbaru Utara</td>
+            <td>Pengawas</td>
+          </tr>
+          <tr>
+            <td>5</td>
+             <td>Deni Kurniawan</td>
+             <td>L</td>
+            <td>-</td>
+            <td>S1</td>
+            <td>Jl. Komet Raya GG.V No.10 Rt.003 Rw.004 Kel.Mentaos, Kec. Banjarbaru Utara</td>
+            <td>Anggota</td>
+          </tr>
+           <tr>
+            <td>6</td>
+             <td>Paidi Sumoharjo</td>
+             <td>L</td>
+            <td>-</td>
+            <td>SMA</td>
+            <td>Jl. Komet Raya GG.V No.10 Rt.003 Rw.004 Kel.Mentaos, Kec. Banjarbaru Utara</td>
+            <td>Anggota</td>
+          </tr>
+           <tr>
+            <td>7</td>
+             <td>Supardi</td>
+             <td>L</td>
+            <td>-</td>
+            <td>SMA</td>
+            <td>Jl. Komet Raya GG.V No.10 Rt.003 Rw.004 Kel.Mentaos, Kec. Banjarbaru Utara</td>
+            <td>Anggota</td>
+          </tr>
+          <tr>
+            <td>8</td>
+             <td>Pangi Pardi</td>
+            <td>L</td>
+            <td>-</td>
+           <td>SMA</td>
+            <td>Jl. Komet Raya GG.V No.10 Rt.003 Rw.004 Kel.Mentaos, Kec. Banjarbaru Utara</td>
+            <td>Anggota</td>
+          </tr>
+          <tr>
+            <td>9</td>
+             <td>Sutrisno</td>
+             <td>L</td>
+            <td>-</td>
+            <td>SMA</td>
+            <td>Jl. Komet Raya GG.V No.10 Rt.003 Rw.004 Kel.Mentaos, Kec. Banjarbaru Utara</td>
+            <td>Anggota</td>
+          </tr>
+          <tr>
+            <td>10</td>
+             <td>Antani Kasim</td>
+             <td>L</td>
+            <td>-</td>
+            <td>SMA</td>
+            <td>Jl. Komet Raya GG.V No.10 Rt.003 Rw.004 Kel.Mentaos, Kec. Banjarbaru Utara</td>
+            <td>Anggota</td>
+          </tr>
+           </tbody>
+      </table>
+    </div>
+
+    <div class="data-card">
+      <h2>Pengurus dan Anggota Kelompok</h2>
+      <h3>POKDAKAN GURITA</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Jenis Kelamin</th>
+            <th>Umur</th>
+            <th>Pendidikan Terakhir</th>
+            <th>Alamat</th>
+            <th>Jabatan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Ibrahim</td>
+            <td>L</td>
+            <td>42</td>
+            <td>Tamat SD</td>
+            <td>Desa Putik</td>
+            <td>Ketua Kelompok</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Burhan</td>
+            <td>L</td>
+            <td>38</td>
+            <td>Tamat SD</td>
+            <td>Desa Putik</td>
+            <td>Sekretaris</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Mohd.Adi</td>
+            <td>L</td>
+            <td>31</td>
+            <td>Tamat SD</td>
+            <td>Desa Putik</td>
+            <td>Bendahara</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Wawan</td>
+            <td>L</td>
+            <td>31</td>
+            <td>Tamat SD</td>
+            <td>Desa Putik</td>
+            <td>Anggota</td>
+          </tr>
+          <tr>
+            <td>5</td>
+             <td>Jalimin</td>
+             <td>L</td>
+            <td>42</td>
+            <td>Tamat SD</td>
+            <td>Desa Putik</td>
+            <td>Anggota</td>
+          </tr>
+           <tr>
+            <td>6</td>
+             <td>Taslim</td>
+             <td>L</td>
+            <td>30</td>
+            <td>Tidak Tamat SD</td>
+            <td>Desa Putik</td>
+            <td>Anggota</td>
+          </tr>
+           <tr>
+            <td>7</td>
+             <td>Hayat</td>
+             <td>L</td>
+            <td>32</td>
+            <td>Tidak Tamat SD</td>
+            <td>Desa Putik</td>
+            <td>Anggota</td>
+          </tr>
+          <tr>
+            <td>8</td>
+             <td>Junaidi</td>
+             <td>L</td>
+            <td>35</td>
+            <td>Tidak Tamat SD</td>
+            <td>Desa Putik</td>
+            <td>Anggota</td>
+          </tr>
+          <tr>
+            <td>9</td>
+             <td>Adi</td>
+             <td>L</td>
+            <td>41</td>
+            <td>Tidak Tamat SD</td>
+            <td>Desa Putik</td>
+            <td>Anggota</td>
+          </tr>
+          <tr>
+            <td>10</td>
+             <td>Fazarani</td>
+             <td>L</td>
+            <td>35</td>
+            <td>Tidak Tamat SD</td>
+            <td>Desa Putik</td>
+            <td>Anggota</td>
+          </tr>
+          <tr>
+            <td>11</td>
+             <td>Asmadi</td>
+             <td>L</td>
+            <td>38</td>
+            <td>Tidak Tamat SD</td>
+            <td>Desa Putik</td>
+            <td>Anggota</td>
+          </tr>
+          <tr>
+            <td>12</td>
+             <td>Ibrahim Lakani</td>
+             <td>L</td>
+            <td>39</td>
+            <td>Tidak Tamat SD</td>
+            <td>Desa Putik</td>
+            <td>Anggota</td>
+          </tr>
+           </tbody>
+      </table>
+    </div>
+
+     <div class="data-card">
+      <h2>Pengurus dan Anggota Kelompok</h2>
+      <h3>POKDAKAN MINA SEJAHTERA</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Jenis Kelamin</th>
+            <th>Umur</th>
+            <th>Pendidikan Terakhir</th>
+            <th>Alamat</th>
+            <th>Jabatan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>K.A.Falhan Farian</td>
+            <td>L</td>
+            <td>41</td>
+            <td>S1</td>
+            <td>L.Sembawa</td>
+            <td>Ketua Kelompok</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Habi Tommy</td>
+            <td>L</td>
+            <td>53</td>
+            <td>SMA</td>
+            <td>L.Sembawa</td>
+            <td>Sekretaris</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Ponimin</td>
+            <td>L</td>
+            <td>61</td>
+            <td>SD</td>
+            <td>L.Sembawa</td>
+            <td>Bendahara</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Mira</td>
+            <td>P</td>
+            <td>38</td>
+            <td>D3</td>
+            <td>L.Sembawa</td>
+            <td>Anggota</td>
+          </tr>
+          <tr>
+            <td>5</td>
+             <td>Taher</td>
+             <td>L</td>
+            <td>34</td>
+            <td>SMP</td>
+            <td>L.Sembawa</td>
+            <td>Anggota</td>
+          </tr>
+           <tr>
+            <td>6</td>
+             <td>Zulfitri</td>
+             <td>L</td>
+            <td>42</td>
+            <td>SD</td>
+            <td>L.Sembawa</td>
+            <td>Anggota</td>
+          </tr>
+           <tr>
+            <td>7</td>
+             <td>Tamam</td>
+             <td>L</td>
+            <td>57</td>
+            <td>SD</td>
+            <td>L.Sembawa</td>
+            <td>Anggota</td>
+          </tr>
+          <tr>
+            <td>8</td>
+             <td>Abdur Rahman</td>
+             <td>L</td>
+            <td>46</td>
+            <td>S1</td>
+            <td>L.Sembawa</td>
+            <td>Anggota</td>
+          </tr>
+          <tr>
+            <td>9</td>
+             <td>Suwito</td>
+             <td>L</td>
+            <td>34</td>
+            <td>SMA</td>
+            <td>L.Sembawa</td>
+            <td>Anggota</td>
+          </tr>
+          <tr>
+            <td>10</td>
+             <td>Nasipiah</td>
+             <td>P</td>
+            <td>57</td>
+            <td>SMA</td>
+            <td>L.Sembawa</td>
+            <td>Anggota</td>
+          </tr>
+          <tr>
+           </tbody>
+      </table>
+    </div>
+
+    <div style="text-align: center;">
+      <a href="index.html" class="back-button">Kembali ke Menu Utama</a>
+    </div>
+  </div>
+
+  <footer>
+    SISTEM INFORMASI MANAJEMEN PERIKANAN <span id="name">KELOMPOK 2 - </span>POKDAKAN
+  </footer>
+</body>
+</html>
