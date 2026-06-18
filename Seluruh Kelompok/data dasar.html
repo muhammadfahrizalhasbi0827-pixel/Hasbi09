@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Anggota - POKDAKAN Kelompok 2</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #72d7e7, #2caabe);
+      color: white;
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.3rem;
+    }
+    header h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    .content-container {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.6rem;
+      color: #3a6b9d;
+    }
+    .data-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .data-card h2 {
+      color: #2caabe;
+      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+      border-bottom: 2px solid #e0f7ff;
+      padding-bottom: 0.5rem;
+    }
+    .data-card table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1rem;
+    }
+    .data-card th {
+      background-color: #2caabe;
+      color: white;
+      padding: 0.8rem;
+      text-align: left;
+      font-weight: 500;
+    }
+    .data-card td {
+      padding: 0.8rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .data-card tr:hover {
+      background-color: #f5fcff;
+    }
+    .data-card p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .info-item {
+      background-color: #f8fbfd;
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 4px solid #2caabe;
+    }
+    .info-item strong {
+      color: #3a6b9d;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .back-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #2caabe;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: background 0.2s ease;
+    }
+    .back-button:hover {
+      background-color: #3d5887;
+    }
+    footer {
+      text-align: center;
+      padding: 1.2rem 1rem;
+      background-color: #2caabe;
+      color: #eaf3fb;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SISTEM INFORMASI MANAJEMEN PERIKANAN</h1>
+    <h3>POKDAKAN</h3>
+    <p>Halaman Data Dasar Kelompok</p>
+  </header>
+
+  <div class="content-container">
+    <h2 class="section-title">DATA DASAR POKDAKAN</h2>
+
+    <div class="data-card">
+      <h2>POKDAKAN SAHABAT BANYIUR</h2>
+      <div class="info-grid">
+        <div class="info-item">
+          <strong>Nama Kelompok</strong>
+          SAHABAT BANYIUR
+        </div>
+        <div class="info-item">
+          <strong>Nomor BA Pembentukan</strong>
+          89/BNY/AP/2021
+        </div>
+        <div class="info-item">
+          <strong>Nomor Badan Hukum</strong>
+         -
+        </div>
+        <div class="info-item">
+          <strong>Nomor KUSUKA Korporasi</strong>
+          -
+        </div>
+        <div class="info-item">
+          <strong>Alamat</strong>
+          Desa Banyiur RT.03
+        </div>
+        <div class="info-item">
+          <strong>Desa/Kelurahan</strong>
+          Banyiur RT.03
+        </div>
+        <div class="info-item">
+          <strong>Kecamatan</strong>
+          Anjir Pasar
+        </div>
+        <div class="info-item">
+          <strong>Kabupaten/Kota</strong>
+          Barito Kuala
+        </div>
+        <div class="info-item">
+          <strong>Provinsi</strong>
+          Kalimantan Selatan
+        </div>
+        <div class="info-item">
+          <strong>No Telp/Fak Sekretariat</strong>
+          -
+        </div>
+        <div class="info-item">
+          <strong>No.Hp Ketua Kelompok</strong>
+          0815252904339
+        </div>
+        <div class="info-item">
+          <strong>Email</strong>
+          -
+        </div>
+        <div class="info-item">
+          <strong>Koordinat Lokasi</strong>
+          30 07’17.1” S 1140 33’ 53.2 “ E
+        </div>
+      </div>
+      <h2>Pertumbuhan Kelompok</h2>
+      <div class="info-item">
+          <strong>Tanggal/Bulan/Tahun Pendirian</strong>
+          24 Maret 2021
+        </div>
+        <div class="info-item">
+          <strong>Kelas Kelompok</strong>
+          Pemula
+        </div>
+        <div class="info-item">
+          <strong>Nomor Sertifikat Pengukuhan</strong>
+         89/BNY/AP/2021
+        </div>
+        <h2>Peningkatan Kelompok</h2>
+      <div class="info-item">
+          <strong>Tanggal/Bulan/Tahun Pendirian</strong>
+          26 Agustus 2025
+        </div>
+        <div class="info-item">
+          <strong>Kelas Kelompok</strong>
+          Madya
+        </div>
+        <div class="info-item">
+          <strong>Nomor Sertifikat</strong>
+         400.14.11/309/DKPP/2025
+        </div>
+    </div>
+
+
+     <div class="data-card">
+      <h2>POKDAKAN GURAMI JAYA</h2>
+      <div class="info-grid">
+        <div class="info-item">
+          <strong>Nama Kelompok</strong>
+          Gurami Jaya
+        </div>
+        <div class="info-item">
+          <strong>Nomor Badan Hukum</strong>
+          -
+        </div>
+        <div class="info-item">
+          <strong>Alamat</strong>
+         Jl.Komet Raya Gg.V RT.03 RW.04 No.10
+        </div>
+        <div class="info-item">
+          <strong>Dusun</strong>
+          -
+        </div>
+        <div class="info-item">
+          <strong>Kelurahan</strong>
+          Mentaos
+        </div>
+        <div class="info-item">
+          <strong>Kecamatan</strong>
+          Banjarbaru Utara
+        </div>
+        <div class="info-item">
+          <strong>Kabupaten/Kota</strong>
+          Kota Banjarbaru
+        </div>
+        <div class="info-item">
+          <strong>No Telp/Fak Sekretariat</strong>
+          -
+        </div>
+        <div class="info-item">
+          <strong>No.Hp Ketua Kelompok</strong>
+          081348341121
+        </div>
+        <div class="info-item">
+          <strong>Email</strong>
+          -
+        </div>
+        <div class="info-item">
+          <strong>Koordinat Lokasi</strong>
+          3 26'10,6" LS 114 50'15,2" BT
+        </div>
+      </div>
+      <h2>Pertumbuhan Kelompok</h2>
+      <div class="info-item">
+          <strong>Tanggal/Bulan/Tahun Pendirian</strong>
+          Desember 2010
+        </div>
+        <div class="info-item">
+          <strong>Kelas Kelompok</strong>
+          Pemula
+        </div>
+        <div class="info-item">
+          <strong>Nomor Sertifikat Pengukuhan</strong>
+          1.1.63.72.04.1210.1210
+        </div>
+        <h2>Peningkatan Kelompok</h2>
+      <div class="info-item">
+          <strong>Tanggal/Bulan/Tahun Pendirian</strong>
+          -
+        </div>
+        <div class="info-item">
+          <strong>Kelas Kelompok</strong>
+          -
+        </div>
+        <div class="info-item">
+          <strong>Nomor Sertifikat</strong>
+         -
+        </div>
+    </div>
+
+
+     <div class="data-card">
+      <h2>POKDAKAN GURITA</h2>
+      <div class="info-grid">
+        <div class="info-item">
+          <strong>Nama Kelompok</strong>
+          Gurita
+        </div>
+        <div class="info-item">
+          <strong>Nomor Badan Hukum</strong>
+          157 Tahun 2024
+        </div>
+        <div class="info-item">
+          <strong>Alamat</strong>
+         Jl.Putik RT 004/RW 003 Desa Putik
+        </div>
+        <div class="info-item">
+          <strong>Dusun</strong>
+          1 (Satu)
+        </div>
+        <div class="info-item">
+          <strong>Kelurahan</strong>
+          Desa Putik
+        </div>
+        <div class="info-item">
+          <strong>Kecamatan</strong>
+          Palmatak
+        </div>
+        <div class="info-item">
+          <strong>Kabupaten/Kota</strong>
+          Kepulauan Anambas
+        </div>
+        <div class="info-item">
+          <strong>No Telp/Fak Sekretariat</strong>
+          -
+        </div>
+        <div class="info-item">
+          <strong>No.Hp Ketua Kelompok</strong>
+          082283908842
+        </div>
+        <div class="info-item">
+          <strong>Email</strong>
+          -
+        </div>
+        <div class="info-item">
+          <strong>Koordinat Lokasi</strong>
+          3 20'37.00"N 106 17'29.65"E
+        </div>
+      </div>
+      <h2>Pertumbuhan Kelompok</h2>
+      <div class="info-item">
+          <strong>Tanggal/Bulan/Tahun Pendirian</strong>
+          28 Desember 2020
+        </div>
+        <div class="info-item">
+          <strong>Kelas Kelompok</strong>
+          Pemula
+        </div>
+        <div class="info-item">
+          <strong>Nomor Sertifikat Pengukuhan</strong>
+          68.a Tahun 2020
+        </div>
+        <h2>Peningkatan Kelompok</h2>
+      <div class="info-item">
+          <strong>Tanggal/Bulan/Tahun Pendirian</strong>
+          -
+        </div>
+        <div class="info-item">
+          <strong>Kelas Kelompok</strong>
+          -
+        </div>
+        <div class="info-item">
+          <strong>Nomor Sertifikat</strong>
+         -
+        </div>
+    </div>
+
+
+    <div class="data-card">
+      <h2>POKDAKAN MINA SEJAHTERA</h2>
+      <div class="info-grid">
+        <div class="info-item">
+          <strong>Nama Kelompok</strong>
+          Mina Sejahtera
+        </div>
+        <div class="info-item">
+          <strong>Nomor Badan Hukum</strong>
+          43/21 Februari 2019
+        </div>
+        <div class="info-item">
+          <strong>Alamat</strong>
+         Jl. Gotong Royong
+        </div>
+        <div class="info-item">
+          <strong>Dusun</strong>
+          1 (Satu)
+        </div>
+        <div class="info-item">
+          <strong>Kelurahan</strong>
+          Desa Lalang Sembawa
+        </div>
+        <div class="info-item">
+          <strong>Kecamatan</strong>
+          Sembawa
+        </div>
+        <div class="info-item">
+          <strong>Kabupaten/Kota</strong>
+          Banyuasin
+        </div>
+        <div class="info-item">
+          <strong>No Telp/Fak Sekretariat</strong>
+          -
+        </div>
+        <div class="info-item">
+          <strong>No.Hp Ketua Kelompok</strong>
+          -
+        </div>
+        <div class="info-item">
+          <strong>Email</strong>
+          -
+        </div>
+        <div class="info-item">
+          <strong>Koordinat Lokasi</strong>
+          -2.92371 LS, 104.55136 BT
+        </div>
+      </div>
+      <h2>Pertumbuhan Kelompok</h2>
+      <div class="info-item">
+          <strong>Tanggal/Bulan/Tahun Pendirian</strong>
+          04 Juli 2018
+        </div>
+        <div class="info-item">
+          <strong>Kelas Kelompok</strong>
+          Pemula
+        </div>
+        <div class="info-item">
+          <strong>Nomor Sertifikat Pengukuhan</strong>
+          140/43/KPTS/LS/2018
+        </div>
+        <h2>Peningkatan Kelompok</h2>
+      <div class="info-item">
+          <strong>Tanggal/Bulan/Tahun Pendirian</strong>
+          -
+        </div>
+        <div class="info-item">
+          <strong>Kelas Kelompok</strong>
+          -
+        </div>
+        <div class="info-item">
+          <strong>Nomor Sertifikat</strong>
+         -
+        </div>
+    </div>
+
+
+    <div style="text-align: center;">
+      <a href="index.html" class="back-button">Kembali ke Menu Utama</a>
+    </div>
+  </div>
+
+  <footer>
+    SISTEM INFORMASI MANAJEMEN PERIKANAN <span id="name">KELOMPOK 2 - </span>POKDAKAN
+  </footer>
+</body>
+</html>

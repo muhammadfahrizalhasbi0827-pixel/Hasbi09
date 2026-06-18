@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Saya</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #caf0f8, #ade8f4);
+        }
+
+        header {
+            background: #0077b6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #023e8a;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #90e0ef;
+        }
+
+        .container {
+            padding: 40px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .video-box {
+            background: white;
+            padding: 20px;
+            width: 70%;
+            margin: auto;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        video {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        footer {
+            background: #0077b6;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .video-box {
+                width: 95%;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+<header>
+    <h1>Video Saya</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="biodata.html">Biodata</a>
+    <a href="galeri.html">Galeri</a>
+    <a href="video.html">Video</a>
+</nav>
+
+<div class="container">
+    <h2>Video Favorit</h2>
+
+    <div class="video-box">
+        <video controls>
+            <source src="rumah.mp4" type="mp4">
+            Browser Anda tidak mendukung video.
+        </video>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Website Saya</p>
+</footer>
+
+</body>
+</html>

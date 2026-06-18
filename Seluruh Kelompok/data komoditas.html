@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Komoditas - POKDAKAN Kelompok 2</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #72d7e7, #2caabe);
+      color: white;
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.3rem;
+    }
+    header h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    .content-container {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.6rem;
+      color: #3a6b9d;
+    }
+    .komoditas-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .komoditas-card h2 {
+      color: #2caabe;
+      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+      border-bottom: 2px solid #e0f7ff;
+      padding-bottom: 0.5rem;
+    }
+    .komoditas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .komoditas-item {
+      background-color: #f8fbfd;
+      border-radius: 10px;
+      padding: 1.5rem;
+      border-left: 5px solid #2caabe;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .komoditas-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+    .komoditas-item h3 {
+      color: #3a6b9d;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+    .komoditas-item p {
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+    .komoditas-item strong {
+      color: #3a6b9d;
+    }
+    .komoditas-item ul {
+      margin-left: 1.2rem;
+      margin-top: 0.5rem;
+      line-height: 1.6;
+    }
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    .info-table th {
+      background-color: #2caabe;
+      color: white;
+      padding: 0.8rem;
+      text-align: left;
+      font-weight: 500;
+    }
+    .info-table td {
+      padding: 0.8rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .info-table tr:hover {
+      background-color: #f5fcff;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-right: 0.5rem;
+    }
+    .badge-unggulan {
+      background-color: #4caf50;
+      color: white;
+    }
+    .badge-potensial {
+      background-color: #ff9800;
+      color: white;
+    }
+    .badge-bagian-bersama {
+      background-color: #2196f3;
+      color: white;
+    }
+    .back-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #2caabe;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: background 0.2s ease;
+    }
+    .back-button:hover {
+      background-color: #3d5887;
+    }
+    footer {
+      text-align: center;
+      padding: 1.2rem 1rem;
+      background-color: #2caabe;
+      color: #eaf3fb;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SISTEM INFORMASI MANAJEMEN PERIKANAN</h1>
+    <h3>POKDAKAN</h3>
+    <p>Halaman Data Komoditas Perikanan</p>
+  </header>
+
+  <div class="content-container">
+    <h2 class="section-title">DATA KOMODITAS PERIKANAN POKDAKAN</h2>
+
+    <div class="komoditas-card">
+      <h2>Komoditas Unggulan Pada "Sahabat Banyiur"</h2>
+      <div class="komoditas-grid">
+        <div class="komoditas-item">
+          <h3>Ikan Nila </h3>
+          <span class="badge badge-unggulan">Unggulan</span>
+          <p><strong>Luas : </strong>540 m2</p>
+          <p><strong>Produksi :</strong> 6,864</p>
+          <p><strong>Produktivitas :</strong> 52.045</p>
+          <p>Sebagai salah satu potensi utama kelompok</p>
+        </div>
+
+        <div class="komoditas-item">
+          <h3>Ikan Lele </h3>
+          <span class="badge badge-unggulan">Unggulan</span>
+          <p><strong>Luas : </strong>150 m2</p>
+          <p><strong>Produksi :</strong> 0,850</p>
+          <p><strong>Produktivitas :</strong> 18.530</p>
+          <p>dipriositaskan sebagai komoditas pembesaran anggota</p>
+        </div>
+
+        <div class="komoditas-item">
+          <h3>Ikan Gabus </h3>
+          <span class="badge badge-unggulan">Unggulan</span>
+          <p><strong>Luas : </strong>590 m2</p>
+          <p><strong>Produksi :</strong> 1,108</p>
+          <p><strong>Produktivitas :</strong> 16,734</p>
+          <p>Komoditas utama kelompok</p>
+        </div>
+
+        <div class="komoditas-item">
+          <h3>Ikan Betok </h3>
+          <span class="badge badge-unggulan">Unggulan</span>
+          <p><strong>Luas : </strong>530 m2</p>
+          <p><strong>Produksi :</strong> 0,758</p>
+          <p><strong>Produktivitas :</strong> 12.622</p>
+          <p>dipriositaskan sebagai komoditas pembesaran anggota</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="komoditas-card">
+      <h2>Komoditas Unggulan Pada "Gurami Jaya"</h2>
+      <div class="komoditas-grid">
+        <div class="komoditas-item">
+          <h3>Ikan Gurami </h3>
+          <span class="badge badge-unggulan">Unggulan</span>
+          <p><strong>Luas : </strong>276 m2</p>
+          <p><strong>Produksi :</strong> 250 kg </p>
+          <p><strong>Produktivitas :</strong> Gurami Jaya</p>
+        </div>
+
+        <div class="komoditas-item">
+          <h3>Ikan Patin </h3>
+          <span class="badge badge-unggulan">Unggulan</span>
+          <p><strong>Luas : </strong>400 m2</p>
+          <p><strong>Produksi :</strong>2.5 T</p>
+          <p><strong>Produktivitas :</strong> Gurami Jaya</p>
+        </div>
+    </div>
+</div>
+
+<div class="komoditas-card">
+      <h2>Komoditas Unggulan Pada "Gurita"</h2>
+      <div class="komoditas-grid">
+        <div class="komoditas-item">
+          <h3>Ikan Kerapu </h3>
+          <span class="badge badge-unggulan">Unggulan</span>
+          <p><strong>Luas : </strong>120 m2</p>
+          <p><strong>Produksi :</strong> 48 kg </p>
+          <p><strong>Produktivitas :</strong> 0,4</p>
+          <p>Keterangan: dalam 10 bulan</p>
+        </div>
+
+        <div class="komoditas-item">
+          <h3>Ikan Kerapu Sunu </h3>
+          <span class="badge badge-unggulan">Unggulan</span>
+          <p><strong>Luas : </strong>120 m2</p>
+          <p><strong>Produksi :</strong>65 kg</p>
+          <p><strong>Produktivitas :</strong>0,5</p>
+          <p>Keterangan: dalam 10 bulan</p>
+        </div>
+    </div>
+</div>
+
+  <div class="komoditas-card">
+      <h2>Komoditas Unggulan Pada "Mina Sejahtera"</h2>
+      <div class="komoditas-grid">
+        <div class="komoditas-item">
+          <h3>Ikan Gurami </h3>
+          <span class="badge badge-unggulan">Unggulan</span>
+          <p><strong>Luas : </strong>300 m2</p>
+          <p><strong>Produksi :</strong> 100 kg </p>
+          <p><strong>Produktivitas :</strong>-</p>
+        </div>
+
+        <div class="komoditas-item">
+          <h3>Ikan Nila </h3>
+          <span class="badge badge-unggulan">Unggulan</span>
+          <p><strong>Luas : </strong>300 m2</p>
+          <p><strong>Produksi :</strong>400 kg</p>
+          <p><strong>Produktivitas :</strong>-</p>
+        </div>
+    </div>
+</div>
+
+    <div style="text-align: center;">
+      <a href="index.html" class="back-button">Kembali ke Menu Utama</a>
+    </div>
+  </div>
+
+  <footer>
+    SISTEM INFORMASI MANAJEMEN PERIKANAN <span id="name">KELOMPOK 2 - </span>POKDAKAN
+  </footer>
+</body>
+</html>

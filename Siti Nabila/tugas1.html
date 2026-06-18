@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 1</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #caf0f8, #ade8f4);
+        }
+
+        header {
+            background: #0077b6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #023e8a;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #90e0ef;
+        }
+
+        .container {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        img.profile {
+            width: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        /* GALERI */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        /* VIDEO */
+        video {
+            width: 70%;
+            border-radius: 10px;
+        }
+
+        footer {
+            background: #0077b6;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+<body>
+
+<header>
+    <h1>Tugas 1</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="tugas2.html">Tugas 2</a>
+</nav>
+
+<div class="container">
+
+    <!-- BIODATA -->
+    <div class="card">
+        <h2>Biodata</h2>
+        <img src="nabila.jpeg" class="profile">
+        <p><b>Nama:</b> Siti Nabila</p>
+        <p><b>NIM:</b> 2310715220005</p>
+        <p><b>Jurusan:</b> Sosial Ekonomi Perikanan</p>
+        <p><b>Agama:</b> Islam</p>
+        <p><b>Gmail:</b> sitinabilaaa26@gmail.com</p>
+        <p><b>Alamat:</b>Sekumpul</p>
+        <p><b>Hobi:</b> Membaca</p>
+         </div>
+        <h3>Tentang Saya</h3>
+        <p>
+            Saya adalah mahasiswa aktif yang mempunyai semangat tinggi dalam belajar dan menuntut ilmu,
+            khususnya dalam pembuatan website. Saya senang belajar hal baru
+            dan mengembangkan kemampuan di bidang digital.
+    </div>
+
+                <!-- GALERI -->
+    <div class="card">
+        <h2>Galeri</h2>
+        <div class="gallery">
+            <img src="foto kanan atas.jpeg">
+            <img src="foto kanan bawah.jpeg">
+            <img src="kiri atas.jpeg">
+            <img src="kiri bawah.jpeg">
+        </div>
+    </div>
+
+    <!-- VIDEO -->
+    <div class="card">
+        <h2>Video</h2>
+        <video controls>
+            <source src="rumah.mp4" type="video/mp4">
+        </video>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Website Saya</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apriliana Putri - Daftar Tugas</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: Arial, sans-serif; 
+            background: linear-gradient(135deg, #ca6dbe 0%, #cf97bd 100%); 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            padding: 20px;
+        }
+        .container { 
+            background: rgb(243, 159, 233); 
+            padding: 50px 40px; 
+            border-radius: 20px; 
+            box-shadow: 0 20px 40px rgba(79, 75, 75, 0.1); 
+            text-align: center; 
+            max-width: 500px; 
+            width: 100%;
+        }
+        h1 { 
+            color: #fdfdfd; 
+            font-size: 2.5em; 
+            margin-bottom: 10px;
+        }
+        .subtitle { 
+            color: #4b4747; 
+            font-size: 1.2em; 
+            margin-bottom: 40px;
+        }
+        .task-buttons { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 20px;
+        }
+        .task-btn { 
+            background: linear-gradient(135deg, #75c4e1 0%, #75c4e1 100%); 
+            color: white; 
+            border: none; 
+            padding: 18px 30px; 
+            font-size: 1.3em; 
+            font-weight: bold; 
+            border-radius: 15px; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            text-decoration: none; 
+            display: block; 
+            box-shadow: 0 10px 25px rgba(44,90,160,0.3);
+        }
+        .task-btn:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 15px 35px rgba(44,90,160,0.4); 
+        }
+        .task-btn.tugas1 { background: linear-gradient(135deg, #6cd0e2 0%, #75c4e1 100%); box-shadow: 0 10px 25px rgba(16,185,129,0.3); }
+        .task-btn.tugas1:hover { box-shadow: 0 15px 35px rgba(243, 172, 244, 0.758); }
+        .task-btn.tugas2:hover { box-shadow: 0 15px 35px rgba(34, 11, 245, 0.4); }
+        
+        footer { 
+            margin-top: 50px; 
+            color: #75c4e1; 
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 480px) {
+            .container { padding: 30px 20px; margin: 10px; }
+            h1 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Apriliana Putri</h1>
+        <p class="subtitle">Sosial Ekonomi Perikanan<br>Universitas Lambung Mangkurat</p>
+        <div class="task-buttons">
+            <a href="https://forms.gle/58Ue9PsqyiZU7rWYA" class="task-btn Layanan">
+                Analisa Layanan Dompet Digital
+            </a>
+             <a href="TUGAS 4.xlsx" class="task-btn" tugas 4>
+                Diagram Activity 
+            </a>
+            <a href="index.html" class="home-btn">Back Pages</a>
+        </div>
+    </div>
+</body>
+</html>

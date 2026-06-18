@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Formulir Data Lengkap</title>
+
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 420px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+h2 {
+    text-align: center;
+    color: #3a7bd5;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 14px;
+    color: #555;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #cce0ff;
+    margin-top: 5px;
+}
+
+input:focus, select:focus {
+    border-color: #3a7bd5;
+    box-shadow: 0 0 5px rgba(58,123,213,0.3);
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* tombol */
+.next {
+    background: #5dade2;
+    color: white;
+    width: 100%;
+}
+
+.back {
+    background: #d6eaff;
+    width: 48%;
+}
+
+.submit {
+    background: #3a7bd5;
+    color: white;
+    width: 48%;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* step */
+.step { display: none; }
+.step.active { display: block; }
+
+/* jenis transaksi */
+.jenis-btn {
+    display: flex;
+    gap: 10px;
+}
+
+.jenis-btn button {
+    flex: 1;
+    background: #eaf4ff;
+    color: #3a7bd5;
+}
+
+.jenis-btn button.active {
+    background: #5dade2;
+    color: white;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+<form>
+
+<!-- STEP 1 : DEMOGRAFI -->
+<div class="step active">
+    <h2>Data Demografi</h2>
+
+    <div class="input-group">
+        <label>Nama Pengguna</label>
+        <input type="text" required>
+    </div>
+
+    <div class="input-group">
+        <label>Tanggal Lahir</label>
+        <input type="date" required>
+    </div>
+
+    <div class="input-group">
+        <label>Alamat</label>
+        <input type="text" required>
+    </div>
+
+    <div class="input-group">
+        <label>No Telepon</label>
+        <input type="tel" required>
+    </div>
+
+    <div class="input-group">
+        <label>Email</label>
+        <input type="email" required>
+    </div>
+
+    <div class="input-group">
+        <label>Pendidikan</label>
+        <select required>
+            <option value="">Pilih Pendidikan</option>
+            <option>SD</option>
+            <option>SMP</option>
+            <option>SMA/SMK</option>
+            <option>D3</option>
+            <option>S1</option>
+            <option>S2</option>
+            <option>S3</option>
+        </select>
+    </div>
+
+    <button type="button" class="next" onclick="nextStep()">Next ➜</button>
+</div>
+
+<!-- STEP 2 : DATA BANK -->
+<div class="step">
+    <h2>Data Bank</h2>
+
+    <div class="input-group">
+        <label>Nama Bank</label>
+        <select required>
+            <option value="">Pilih Bank</option>
+            <option>BCA</option>
+            <option>BRI</option>
+            <option>BNI</option>
+            <option>Mandiri</option>
+            <option>CIMB Niaga</option>
+        </select>
+    </div>
+
+    <div class="input-group">
+        <label>Nomor Rekening</label>
+        <input type="number" required>
+    </div>
+
+    <div class="btn-group">
+        <button type="button" class="back" onclick="prevStep()">⬅ Back</button>
+        <button type="button" class="next" onclick="nextStep()">Next ➜</button>
+    </div>
+</div>
+
+<!-- STEP 3 : TRANSAKSI -->
+<div class="step">
+    <h2>Data Transaksi</h2>
+
+    <div class="input-group">
+        <label>Tanggal Transaksi</label>
+        <input type="date" required>
+    </div>
+
+    <div class="input-group">
+        <label>Uraian Transaksi</label>
+        <input type="text" required>
+    </div>
+
+    <div class="input-group">
+        <label>Jenis Transaksi</label>
+        <div class="jenis-btn">
+            <button type="button" onclick="pilihJenis(this)">Debit</button>
+            <button type="button" onclick="pilihJenis(this)">Kredit</button>
+        </div>
+    </div>
+
+    <div class="input-group">
+        <label>Debet</label>
+        <input type="number">
+    </div>
+
+    <div class="input-group">
+        <label>Kredit</label>
+        <input type="number">
+    </div>
+
+    <div class="btn-group">
+        <button type="button" class="back" onclick="prevStep()">⬅ Back</button>
+        <button type="submit" class="submit">Submit</button>
+    </div>
+</div>
+
+</form>
+</div>
+
+<script>
+let step = 0;
+const steps = document.querySelectorAll(".step");
+
+function showStep(n){
+    steps.forEach(s => s.classList.remove("active"));
+    steps[n].classList.add("active");
+}
+
+function nextStep(){
+    step++;
+    showStep(step);
+}
+
+function prevStep(){
+    step--;
+    showStep(step);
+}
+
+function pilihJenis(btn){
+    document.querySelectorAll(".jenis-btn button")
+    .forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+}
+</script>
+
+</body>
+</html>

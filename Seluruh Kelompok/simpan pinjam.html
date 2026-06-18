@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simpan Pinjam</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #2caabe, #3282b8);
+      color: white;
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.3rem;
+    }
+    header h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    .content-container {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.6rem;
+      color: #3a6b9d;
+    }
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .card h2 {
+      color: #2caabe;
+      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+      border-bottom: 2px solid #e0f7ff;
+      padding-bottom: 0.5rem;
+    }
+    .card h3 {
+      color: #3a6b9d;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+    }
+    .card p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+    .card ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    .card li {
+      margin-bottom: 0.5rem;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.2s ease;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #2caabe;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background-color: #2caabe;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      text-decoration: none;
+      text-align: center;
+    }
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .back-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #2caabe;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: background 0.2s ease;
+    }
+    .back-button:hover {
+      background-color: #3d5887;
+    }
+    
+    /* STYLE TAMBAHAN UNTUK EMBED LOOKER STUDIO */
+    .looker-container {
+      width: 100%;
+      margin-top: 1rem;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    .looker-container iframe {
+      width: 100%;
+      height: 700px;
+      border: none;
+      display: block;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 1.2rem 1rem;
+      background-color: #2caabe;
+      color: eaf3fb;
+      font-size: 0.9rem;
+    }
+    
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SISTEM INFORMASI MANAJEMEN PERIKANAN</h1>
+    <h3>POKDAKAN</h3>
+    <p>Halaman Simpan Pinjam Anggota Kelompok</p>
+  </header>
+
+
+  <div class="content-container">
+    <h2 class="section-title">SISTEM SIMPAN PINJAM</h2>
+    <div class="card">
+      <h2>Formulir Permohonan Pinjaman</h2>
+      <p>Pokdakan (Kelompok Pembudidaya Ikan) adalah kelompok formal yang dibentuk oleh para pembudidaya ikan untuk saling berbagi pengetahuan, mengakses bantuan pemerintah, dan meningkatkan pengelolaannya. Beberapa Pokdakan juga mengembangkan unit simpan pinjam untuk membantu modal usaha anggota.</p>
+      <form>
+       
+        <div style="text-align: center;">
+        <a href="https://forms.gle/8ms2iZ6cceRLrPiW8" class="back-button">Permohonan Simpan Pinjam</a>
+        <a href="https://docs.google.com/spreadsheets/d/19OfXD3VtZfgU5uDQ5vS8xuyiYoZ3djAVuHnwSVBA3Tc/edit?usp=sharing" class="back-button">Nasabah Simpan Pinjam</a>
+      </div>
+      </div>
+
+      <div class="card">
+        <h2>📊 Sajian Data Looker Studio</h2>
+        <p>Lihat visualisasi data simpan pinjam secara interaktif dengan grafik dan dashboard yang otomatis terupdate setiap kali ada perubahan data di spreadsheet.</p>
+      
+        <div class="looker-container">
+          <iframe 
+            src="https://datastudio.google.com/embed/reporting/33f56401-a8bb-4f9f-85f8-7dc70f4d05bb/page/page_12345" 
+            allowfullscreen loading="lazy">
+          </iframe>
+        </div>
+        
+        <p style="text-align: center; color: #666; font-size: 0.85rem; margin-top: 1rem;">
+          ⚡ Data otomatis terupdate setiap 15 menit | Dashboard langsung tampil di halaman
+        </p>
+      </div>
+      
+    <div class="content-container">
+    <h2 class="section-title">EVALUASI LAYANAN</h2>
+    <div class="card">
+      <h2>Survei Kepuasan Pengguna</h2>
+      <p>Evaluasi layanan adalah proses penilaian sistematis terhadap kinerja, kualitas, efektivitas, dan efisiensi layanan yang diberikan oleh suatu lembaga atau entitas kepada pengguna layanannya.</p>
+      <div style="text-align: center;">
+        <a href="https://forms.gle/8ZCoSUZPEhXr3QoA6" class="back-button">Evaluasi Simpan Pinjam</a>
+        <a href="https://docs.google.com/spreadsheets/d/14qohWE6UobXxrLlC22EOWc1tvopPrKWnKu5VgTJXIXQ/edit?usp=sharing" class="back-button">Penilaian Nasabah</a>
+      </div>
+    </div>
+  
+ <div class="card">
+<div style="text-align: center;">
+  <div class="card">
+    <p>File Excel untuk evaluasi simpan pinjam anggota Pokdakan telah tersedia. Anda dapat mengunduhnya melalui tombol di bawah ini untuk melengkapi dan menganalisis data hasil survei.</p>
+      <a href="Excel Simpan Pinjam.xlsx" class="back-button">Unduh Evaluasi Layanan</a>
+    </div>
+  </div>
+</div>
+
+    <div style="text-align: center;">
+      <a href="index.html" class="back-button">Kembali ke Menu Utama</a>
+    </div>
+  </div>
+
+
+  <footer>
+    SISTEM INFORMASI MANAJEMEN PERIKANAN <span id="name">KELOMPOK 2 - </span>POKDAKAN
+  </footer>
+</body>
+</html>

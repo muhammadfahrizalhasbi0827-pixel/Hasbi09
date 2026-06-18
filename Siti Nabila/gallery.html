@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Saya</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #caf0f8, #ade8f4);
+        }
+
+        header {
+            background: #0077b6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #023e8a;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #90e0ef;
+        }
+
+        .container {
+            padding: 30px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        /* GALERI GRID */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 12px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+
+        footer {
+            background: #0077b6;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        /* RESPONSIVE TAMBAHAN */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+<header>
+    <h1>Galeri Foto</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="biodata.html">Biodata</a>
+    <a href="galeri.html">Galeri</a>
+    <a href="video.html">Video</a>
+</nav>
+
+<div class="container">
+    <h2>Kumpulan Foto Saya</h2>
+
+    <div class="gallery">
+        <img src="kiri atas.jpeg" alt="Foto 1">
+        <img src="foto kanan atas.jpeg" alt="Foto 2">
+        <img src="foto kanan bawah.jpeg" alt="Foto 3">
+        <img src="kiri bawah.jpeg" alt="Foto 4">
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Website Saya</p>
+</footer>
+
+</body>
+</html>
