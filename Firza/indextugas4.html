@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran</title>
+    <style>
+        /* CSS untuk mengatur tampilan halaman */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8; /* Warna latar belakang halaman */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* CSS untuk wadah (container) formulir */
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+            width: 100%;
+            max-width: 800px; /* Lebar maksimal wadah */
+            text-align: center;
+            position: relative;
+        }
+
+        /* CSS untuk Tombol Kembali */
+        .btn-kembali {
+            display: inline-block;
+            background-color: #007bff; /* Warna biru modern */
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        /* Efek saat tombol di-hover (disentuh kursor) */
+        .btn-kembali:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        h2 {
+            color: #333333;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        /* CSS untuk iframe agar responsif di HP */
+        iframe {
+            width: 100%; /* Membuat iframe menyesuaikan lebar layar */
+            border: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <!-- Tombol Navigasi Kembali ke Beranda -->
+        <a href="index.html" class="btn-kembali">⬅ Kembali ke Beranda</a>
+
+        <h2>Silakan Isi Formulir Berikut</h2>
+        
+        <!-- Link iframe Google Form Anda -->
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScd0GF5cJ1AHFXXxmhtTQYFyMI5-mnfcnn46SfS8pgy1L7e1g/viewform?embedded=true" width="640" height="4459" frameborder="0" marginheight="0" marginwidth="0">Memuat…</iframe>
+    </div>
+
+</body>
+</html>

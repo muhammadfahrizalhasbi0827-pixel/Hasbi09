@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Website - Gallery</title>
+    <style>
+        /* CSS TEMA GREEN (Konsisten dengan halaman lain) */
+        :root {
+            --primary-green: #2d6a4f;
+            --light-green: #d8f3dc;
+            --accent-green: #40916c;
+            --dark-green: #1b4332;
+            --text-color: #1b4332;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-green);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: var(--primary-green);
+            display: flex;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            padding: 15px 25px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            background-color: var(--accent-green);
+        }
+
+        /* --- STYLING KHUSUS GALLERY --- */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--primary-green);
+            margin-bottom: 30px;
+        }
+
+        /* Grid untuk 4 Foto */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 8px;
+            border: 3px solid var(--light-green);
+            transition: transform 0.3s ease;
+            background-color: #f9f9f9;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px; /* Ukuran tinggi seragam */
+            object-fit: cover; /* Foto dipotong rapi, tidak gepeng */
+            display: block;
+        }
+
+        /* Efek saat kursor di atas foto */
+        .gallery-item:hover {
+            transform: scale(1.05);
+            border-color: var(--accent-green);
+        }
+
+        .caption {
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: var(--dark-green);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--dark-green);
+            color: var(--white);
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>DANI_KTB</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="biodata.html">Biodata</a>
+        <a href="galery.html">Gallery</a>
+        <a href="video.html">Video</a>
+    </nav>
+
+    <div class="container">
+        <h2>Galeri Foto Alam</h2>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="samping rmh.jpeg" alt="Pemandangan 1">
+                <div class="caption">samping rumah</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="tanaman.jpeg" alt="Pemandangan 2">
+                <div class="caption">tanaman</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="rg.tamu.jpeg" alt="Pemandangan 3">
+                <div class="caption">ruang tamu</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="dapur.jpeg" alt="Pemandangan 4">
+                <div class="caption">dapur</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Dani - Tugas Sistem Informasi Manajemen Perikanan</p>
+    </footer>
+
+</body>
+</html>

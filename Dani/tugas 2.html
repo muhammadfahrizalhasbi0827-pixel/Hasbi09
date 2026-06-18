@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendataan & Transaksi</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h2 { border-bottom: 2px solid #007bff; padding-bottom: 10px; color: #333; margin-top: 30px; }
+        h2:first-child { margin-top: 0; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
+        input[type="text"], input[type="date"], input[type="tel"], input[type="email"], input[type="number"], textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        
+        /* Styling untuk Radio Button menjadi Tombol */
+        .radio-toolbar { display: flex; gap: 10px; }
+        .radio-toolbar input[type="radio"] { display: none; }
+        .radio-toolbar label { display: inline-block; background-color: #e9ecef; padding: 10px 20px; font-family: sans-serif; font-size: 14px; border: 2px solid #ccc; border-radius: 4px; cursor: pointer; flex: 1; text-align: center; }
+        .radio-toolbar input[type="radio"]:checked + label { background-color: #007bff; color: white; border-color: #0056b3; }
+        
+        .submit-btn { background-color: #28a745; color: white; border: none; padding: 12px 20px; font-size: 16px; border-radius: 4px; cursor: pointer; width: 100%; margin-top: 20px; font-weight: bold; }
+        .submit-btn:hover { background-color: #218838; }
+        .loading { display: none; text-align: center; margin-top: 15px; color: #007bff; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <form id="dataForm">
+        <h2>Data Demografi</h2>
+        <div class="form-group">
+            <label>Nama Pengguna</label>
+            <input type="text" name="nama" required>
+        </div>
+        <div class="form-group">
+            <label>Tanggal Lahir</label>
+            <input type="date" name="tanggalLahir" required>
+        </div>
+        <div class="form-group">
+            <label>Alamat</label>
+            <textarea name="alamat" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+            <label>No Telepon</label>
+            <input type="tel" name="telepon" required>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label>Pendidikan (Ketik untuk mencari)</label>
+            <input list="listPendidikan" name="pendidikan" placeholder="Pilih atau cari..." required>
+            <datalist id="listPendidikan">
+                <option value="SD">
+                <option value="SMP">
+                <option value="SMA/SMK">
+                <option value="D3 / Diploma">
+                <option value="S1 / Sarjana">
+                <option value="S2 / Magister">
+            </datalist>
+        </div>
+
+        <h2>Data Bank</h2>
+        <div class="form-group">
+            <label>Nama Bank (Ketik untuk mencari)</label>
+            <input list="listBank" name="bank" placeholder="Pilih atau cari bank..." required>
+            <datalist id="listBank">
+                <option value="BCA">
+                <option value="Bank Mandiri">
+                <option value="BNI">
+                <option value="BRI">
+                <option value="Bank Syariah Indonesia (BSI)">
+                <option value="CIMB Niaga">
+            </datalist>
+        </div>
+        <div class="form-group">
+            <label>Nomor Rekening</label>
+            <input type="number" name="rekening" required>
+        </div>
+
+        <h2>Data Transaksi Keuangan</h2>
+        <div class="form-group">
+            <label>Tanggal Transaksi</label>
+            <input type="date" name="tanggalTransaksi" required>
+        </div>
+        <div class="form-group">
+            <label>Uraian Transaksi</label>
+            <input type="text" name="uraian" required>
+        </div>
+        <div class="form-group">
+            <label>Jenis Transaksi</label>
+            <div class="radio-toolbar">
+                <input type="radio" id="radioMasuk" name="jenisTransaksi" value="Pemasukan" required>
+                <label for="radioMasuk">Pemasukan</label>
+
+                <input type="radio" id="radioKeluar" name="jenisTransaksi" value="Pengeluaran">
+                <label for="radioKeluar">Pengeluaran</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Debet (Rp)</label>
+            <input type="number" name="debet" value="0" min="0">
+        </div>
+        <div class="form-group">
+            <label>Kredit (Rp)</label>
+            <input type="number" name="kredit" value="0" min="0">
+        </div>
+
+        <button type="submit" class="submit-btn">Simpan Data</button>
+        <div class="loading" id="loadingText">Sedang menyimpan data...</div>
+    </form>
+</div>
+
+<script>
+    // GANTI URL DI BAWAH DENGAN URL WEB APP GOOGLE APPS SCRIPT ANDA
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby8lbn4m0jj2JvSmxbzBFHxOxj9suZ-zF6dEJxj9_b5eP99n51EyOiYdyCeMEXh2w5z/exec';
+    const form = document.getElementById('dataForm');
+    const loading = document.getElementById('loadingText');
+    const btn = document.querySelector('.submit-btn');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        loading.style.display = 'block';
+        btn.disabled = true;
+
+        let formData = new FormData(form);
+
+        fetch(scriptURL, { method: 'POST', body: formData })
+            .then(response => {
+                alert('Data berhasil disimpan ke Google Sheets!');
+                form.reset();
+                loading.style.display = 'none';
+                btn.disabled = false;
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                alert('Gagal menyimpan data.');
+                loading.style.display = 'none';
+                btn.disabled = false;
+            });
+    });
+</script>
+
+</body>
+</html>

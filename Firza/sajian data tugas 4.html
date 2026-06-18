@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sajian Data Dashboard & Spreadsheet</title>
+    <style>
+        /* CSS Reset Dasar */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Styling Body */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        /* Styling Bagian Judul Utama (Header) */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 1000px;
+            padding-top: 20px;
+        }
+
+        header h1 {
+            color: #1a365d;
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #4a5568;
+            font-size: 1.1rem;
+        }
+
+        /* Styling Judul Per Bagian */
+        .section-title {
+            width: 100%;
+            max-width: 1000px;
+            color: #2d3748;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            padding-left: 5px;
+            border-left: 4px solid #3182ce;
+        }
+
+        /* Container untuk membungkus Iframe agar responsif */
+        .iframe-container {
+            width: 100%;
+            max-width: 1000px; /* Batas lebar maksimal di PC */
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 40px; /* Jarak antar container */
+        }
+
+        /* Tinggi khusus untuk Dashboard Looker Studio */
+        .dashboard-view {
+            height: 70vh; 
+            min-height: 500px;
+        }
+
+        /* Tinggi khusus untuk Spreadsheet */
+        .spreadsheet-view {
+            height: 60vh;
+            min-height: 400px;
+        }
+
+        /* Menyesuaikan Iframe agar memenuhi container */
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Styling Footer */
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #a0aec0;
+            font-size: 0.9rem;
+            padding-bottom: 20px;
+        }
+
+        /* Responsivitas tambahan untuk layar HP */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            .dashboard-view {
+                height: 60vh;
+            }
+            .spreadsheet-view {
+                height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Laporan Data Interaktif</h1>
+        <p>Sajian visualisasi dan rekapitulasi data terkini</p>
+    </header>
+
+    <h2 class="section-title">Visualisasi Dashboard</h2>
+    <div class="iframe-container dashboard-view">
+        <iframe 
+            src="https://datastudio.google.com/embed/reporting/2e1e608a-6f49-4db2-9d21-30794027acf7/page/page_12345" 
+            frameborder="0" 
+            allowfullscreen 
+            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+        </iframe>
+    </div>
+
+    <h2 class="section-title">Data Spreadsheet</h2>
+    <div class="iframe-container spreadsheet-view">
+        <iframe 
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnMQ4h7-lIuXDMAYMatrmfaJpUmu-JgBROTnQXmHQ3DW4j3U1dBgV8g8kog9iceb_L4jxUITcvoa0a/pubhtml?gid=193662847&amp;single=true&amp;widget=true&amp;headers=false">
+        </iframe>
+    </div>
+
+    <footer>
+        &copy; 2026 Sajian Data. Dihosting melalui GitHub Pages.
+    </footer>
+
+</body>
+</html>

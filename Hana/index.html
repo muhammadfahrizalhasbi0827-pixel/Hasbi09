@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Hana Fakhriah | Website Ungu</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        :root {
+            --ungu-tua: #4a148c;
+            --ungu-medium: #6a1b9a;
+            --ungu-muda: #9c27b0;
+            --lavender: #e1bee7;
+            --lavender-muda: #f3e5f5;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            color: var(--ungu-tua);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        /* Navigasi */
+        nav {
+            background: linear-gradient(90deg, #6a1b9a, #9c27b0);
+            padding: 1.2rem 0;
+            box-shadow: 0 4px 15px rgba(106, 27, 154, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .logo {
+            color: white;
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            color: #e1bee7;
+            text-shadow: 0 0 8px rgba(255,255,255,0.6);
+            transform: translateY(-2px);
+        }
+        /* Hero Section */
+        .hero {
+            max-width: 900px;
+            margin: 80px auto 50px;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--ungu-tua);
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        .hero .subtitle {
+            font-size: 1.4rem;
+            color: var(--ungu-medium);
+            margin-bottom: 30px;
+        }
+        .divider {
+            height: 5px;
+            width: 80px;
+            background: linear-gradient(to right, #9c27b0, #e1bee7);
+            margin: 0 auto 30px;
+            border-radius: 10px;
+        }
+        /* Card Utama */
+        .main-card {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 35px rgba(106, 27, 154, 0.15);
+            text-align: center;
+        }
+        .main-card p {
+            font-size: 1.15rem;
+            color: #5e35b1;
+            margin-bottom: 25px;
+        }
+        /* Tombol */
+        .btn {
+            display: inline-block;
+            margin: 12px 8px;
+            padding: 14px 32px;
+            background: linear-gradient(90deg, #9c27b0, #7b1fa2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 6px 20px rgba(156, 39, 176, 0.3);
+        }
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 25px rgba(156, 39, 176, 0.4);
+            background: linear-gradient(90deg, #7b1fa2, #6a1b9a);
+        }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px 30px;
+            color: var(--ungu-medium);
+            font-size: 0.95rem;
+            margin-top: 60px;
+        }
+        /* Responsif */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+            .main-card {
+                padding: 35px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigasi -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🌸 Hana</a>
+            <div>
+                <a href="index.html">Beranda</a>
+                <a href="biodata.html">Biodata</a>
+                <a href="galeri.html">Galeri Foto</a>
+                <a href="video.html">Video</a>
+                <a href="tugas2.html">Tugas 2</a>
+                <a href="tugas3.html">Tugas 3</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero & Konten Utama -->
+    <div class="hero">
+        <h1>Selamat Datang di Website Saya</h1>
+        <div class="divider"></div>
+        <p class="subtitle">Hana Fakhriah</p>
+    </div>
+
+    <div class="main-card">
+        <h2 style="color: #6a1b9a; margin-bottom: 20px;">Halo, saya Hana Fakhriah 👋</h2>
+        <p>
+            Mahasiswi Program Studi Sosial Ekonomi Perikanan<br>
+            Fakultas Perikanan dan Ilmu Kelautan<br>
+            <strong>Universitas Lambung Mangkurat</strong>, Banjarmasin
+        </p>
+        <p>
+            Website pribadi ini dirancang dengan nuansa warna <strong>Lavender dan Deep Purple</strong> yang lembut dan elegan.
+        </p>
+       
+        <!-- Tombol-tombol aksi -->
+        <a href="biodata.html" class="btn">Lihat Biodata Saya</a>
+        <a href="https://hanafkh27-bot.github.io/HanaHANA/" class="btn">Lihat Tugas 2</a>
+        
+        <!-- Tugas 3 -->
+        <a href="tugas3.html" class="btn">Lihat Tugas 3</a>
+        <a href="https://forms.gle/7FvFMW2rkZRHZiA88" class="btn">Formulir (Tugas 3)</a>
+        <a href="https://datastudio.google.com/reporting/d9088de1-cc46-4926-b537-4c660d7f682f" class="btn">Sajian Data (Tugas 3)</a>
+        
+        <!-- Tugas 4 -->
+        <a href="https://hanafkh27-bot.github.io/HANA.FAKHRIAH/" class="btn">Lihat Tugas 4</a>
+        <a href="https://forms.gle/o6N41zmkVhY8SyML9" class="btn">Formulir (Tugas 4)</a>
+        <a href="https://docs.google.com/spreadsheets/d/1oeBZeNR9DaN8O8pcDzT5BVhIZYtu6w5U/edit?usp=sharing&ouid=112328977301631788057&rtpof=true&sd=true" class="btn">Sajian Data (Tugas 4)</a>
+    </div>
+
+    <footer>
+        &copy; 2026 Hana Fakhriah • Website Estetik Ungu • Banjarmasin
+    </footer>
+</body>
+</html>

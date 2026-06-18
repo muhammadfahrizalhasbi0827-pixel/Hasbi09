@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Website - Biodata</title>
+    <style>
+        /* CSS UNTUK TEMA GREEN (Sama seperti Index) */
+        :root {
+            --primary-green: #2d6a4f;
+            --light-green: #d8f3dc;
+            --accent-green: #40916c;
+            --dark-green: #1b4332;
+            --text-color: #1b4332;
+            --white: #ffffff;
+            --border-color: #c7e9c0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-green);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        /* Navigasi */
+        nav {
+            background-color: var(--primary-green);
+            display: flex;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            padding: 15px 25px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--accent-green);
+        }
+
+        /* Konten Utama */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary-green);
+            text-align: center;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* --- STYLING KHUSUS BIODATA & FOTO --- */
+        .profile-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Atur ukuran dan bentuk foto */
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%; /* Membuat foto jadi lingkaran */
+            object-fit: cover; /* Foto tidak gepeng */
+            border: 5px solid var(--accent-green);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .bio-table {
+            width: 100%;
+            max-width: 600px;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .bio-table th, .bio-table td {
+            text-align: left;
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .bio-table th {
+            color: var(--primary-green);
+            width: 35%;
+            font-weight: 600;
+        }
+
+        .bio-table tr:last-child td, .bio-table tr:last-child th {
+            border-bottom: none;
+        }
+
+        .bio-table tr:hover {
+            background-color: #f9fff9;
+        }
+        /* ------------------------------------ */
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--dark-green);
+            color: var(--white);
+            margin-top: 50px;
+        }
+
+        /* Responsif untuk HP */
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px;
+                padding: 20px;
+            }
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>DANI_KTB</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="biodata.html">Biodata</a>
+        <a href="galery.html">Gallery</a>
+        <a href="video.html">Video</a>
+    </nav>
+
+    <div class="container">
+        <h2>Profil Lengkap Saya</h2>
+
+        <div class="profile-wrapper">
+            <img src="gw.jpeg" alt="Foto Profil Saya" class="profile-photo">
+
+            <table class="bio-table">
+                <tr>
+                    <th>Nama Lengkap</th>
+                    <td>: Muhammad Rahiel Almadani</td>
+                </tr>
+                <tr>
+                    <th>NIM</th>
+                    <td>: 2310715210010</td>
+                </tr>
+                <tr>
+                    <th>Fakultas / Prodi</th>
+                    <td>: FPIK / Sosial Ekonomi Perikanan</td>
+                </tr>
+                <tr>
+                    <th>Tempat, Tanggal Lahir</th>
+                    <td>: Pantai, 28 Agustus 2004</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>: m.rahelalmadani@email.com</td>
+                </tr>
+                <tr>
+                    <th>Minat / Hobi</th>
+                    <td>: Masak dan renang</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+    </footer>
+
+</body>
+</html>
