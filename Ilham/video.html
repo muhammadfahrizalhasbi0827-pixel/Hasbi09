@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Video</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background: linear-gradient(135deg,#020617,#0f172a);
+    color:white;
+}
+
+/* Navbar */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+}
+
+nav h1{
+    font-family:'Playfair Display', serif;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav li{
+    margin-left:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    position:relative;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    background:#38bdf8;
+    left:0;
+    bottom:-5px;
+    transition:0.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* Container */
+.container{
+    padding:50px 80px;
+}
+
+/* Judul */
+.container h2{
+    font-family:'Playfair Display', serif;
+    margin-bottom:30px;
+}
+
+/* Grid Video */
+.video-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+/* Card */
+.video-card{
+    background: rgba(255,255,255,0.05);
+    border-radius:20px;
+    padding:15px;
+    backdrop-filter: blur(10px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+    transition:0.4s;
+}
+
+/* Hover */
+.video-card:hover{
+    transform:translateY(-10px);
+}
+
+/* Video */
+video{
+    width:100%;
+    border-radius:15px;
+}
+
+/* Judul video */
+.video-card h3{
+    margin-top:10px;
+    font-weight:500;
+}
+
+/* Animasi */
+.video-card{
+    animation:fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+    <h1>XilhamBillabong Website</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="biodata.html">Biodata</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="Lain-lain.html">Koleksi</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <h2>Video My Home</h2>
+
+    <div class="video-grid">
+
+        <div class="video-card">
+            <video controls>
+                <source src="Depan rumah v.mp4" type="video/mp4">
+            </video>
+            <h3>Depan Rumah</h3>
+        </div>
+
+        <div class="video-card">
+            <video controls>
+                <source src="Samping rumah v.mp4" type="video/mp4">
+            </video>
+            <h3>Samping Rumah</h3>
+        </div>
+
+        <div class="video-card">
+            <video controls>
+                <source src="Belakang rumah video.mp4" type="video/mp4">
+            </video>
+            <h3>Belakang Rumah</h3>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

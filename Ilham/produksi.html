@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventaris Barang Kelompok</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #2caabe, #3282b8);
+      color: white;
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.3rem;
+    }
+    header h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    .content-container {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.6rem;
+      color: #3a6b9d;
+    }
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .card h2 {
+      color: #2caabe;
+      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+      border-bottom: 2px solid #e0f7ff;
+      padding-bottom: 0.5rem;
+    }
+    .card p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+    .back-button {
+      display: inline-block;
+      margin-top: 1rem;
+      margin-right: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #2caabe;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: background 0.2s ease;
+    }
+    .back-button:hover {
+      background-color: #3d5887;
+    }
+    .button-container {
+      text-align: center;
+    }
+    .dashboard-container {
+      background-color: #f9f9f9;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 2rem;
+      margin-top: 1.5rem;
+      overflow: hidden;
+    }
+    .dashboard-container iframe {
+      width: 100%;
+      height: 600px;
+      border-radius: 8px;
+    }
+    @media (max-width: 768px) {
+      .dashboard-container iframe {
+        height: 400px;
+      }
+    }
+    footer {
+      text-align: center;
+      padding: 1.2rem 1rem;
+      background-color: #2caabe;
+      color: eaf3fb;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SISTEM INFORMASI MANAJEMEN PERIKANAN</h1>
+    <h3>POKDAKAN</h3>
+    <p>Halaman Inventaris Barang Kelompok</p>
+  </header>
+
+  <div class="content-container">
+    <h2 class="section-title">SISTEM INVENTARIS BARANG KELOMPOK</h2>
+
+    <!-- Form Input -->
+    <div class="card">
+      <h2>Formulir Input Inventaris Barang</h2>
+      <p>Pokdakan (Kelompok Pembudidaya Ikan) adalah kelompok formal yang dibentuk oleh para pembudidaya ikan untuk saling berbagi pengetahuan, mengakses bantuan pemerintah, dan meningkatkan pengelolaannya. Rencana usaha kelompok perikanan membantu anggota dalam mengelola kegiatan budidaya, penangkapan, maupun pemasaran hasil perikanan secara lebih terstruktur. Perencanaan yang jelas mendukung tercapainya tujuan usaha dan perkembangan kelompok.</p>
+      <div class="button-container">
+        <a href="https://forms.gle/83KJDfY1MBTUYJnZ9" class="back-button" target="_blank">Input Inventaris Barang</a>
+        <a href="https://docs.google.com/spreadsheets/d/1qCSRxLmCYRc5O3YQuavqlhL6Iox0a-u_JLqcHKBTp4M/edit?usp=sharing" class="back-button" target="_blank">Lihat Data Inventaris</a>
+      </div>
+    </div>
+ <div class="card">
+      <h2>Survei Kepuasan Pengguna</h2>
+      <p>Evaluasi layanan adalah proses penilaian sistematis terhadap kinerja, kualitas, efektivitas, dan efisiensi layanan yang diberikan oleh suatu lembaga atau entitas kepada pengguna layanannya.</p>
+      <div class="button-container">
+        <a href="https://forms.gle/QxqKHKicS9APvnqG7" class="back-button" target="_blank">Input Inventaris Barang</a>
+        <a href="https://docs.google.com/spreadsheets/d/1qTZX42tpK7cg7WlmQ3ZXUUgHGLXeFEsYVTrR1YV14MM/edit?usp=sharing" class="back-button" target="_blank">Lihat Data Inventaris</a>
+      </div>
+    </div>
+
+
+    <!-- Data Studio Dashboard -->
+    <div class="card">
+      <h2>Dashboard Data Inventaris</h2>
+      <p>Gambaran rencana usaha kelompok perikanan yang disajikan dalam bentuk dashboard interaktif. Dashboard ini menampilkan informasi mengenai tujuan usaha, kegiatan yang direncanakan, kebutuhan modal, serta target produksi dan pemasaran.</p>
+      <div class="button-container" style="margin-bottom: 1.5rem;">
+        <a href="https://datastudio.google.com/reporting/b12454da-b81e-40f7-af72-7427f48bf583" class="back-button" target="_blank">Buka Dashboard Lengkap</a>
+      </div>
+      <div style="margin-top: 1.5rem; text-align: center;">
+        <p style="color: #999; margin-bottom: 1rem; font-size: 0.95rem;">Dashboard akan tampil di bawah ini:</p>
+        <div class="dashboard-container">
+          <iframe src="https://datastudio.google.com/embed/reporting/b12454da-b81e-40f7-af72-7427f48bf583/page/page_12345" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    
+    <div style="text-align: center;">
+      <a href="tugas kelompok.html" class="back-button">Kembali ke Menu Utama</a>
+    </div>
+  </div>
+
+  <footer>
+    SISTEM INFORMASI MANAJEMEN PERIKANAN <span id="name">KELOMPOK 2 - </span>POKDAKAN
+  </footer>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Indexs</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background: linear-gradient(135deg,#020617,#0f172a);
+    color:white;
+}
+
+/* Navbar */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+}
+
+nav h1{
+    font-family:'Playfair Display', serif;
+    font-size:1.5rem;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav li{
+    margin-left:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    position:relative;
+}
+
+/* Underline animasi */
+nav a::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    background:#38bdf8;
+    left:0;
+    bottom:-5px;
+    transition:0.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* Hero Section */
+.hero{
+    height:90vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 80px;
+}
+
+/* Text */
+.hero-text{
+    max-width:500px;
+    animation:fadeUp 1.5s;
+}
+
+.hero-text h2{
+    font-family:'Playfair Display', serif;
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.hero-text p{
+    opacity:0.7;
+    line-height:1.6;
+}
+
+/* Button */
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 25px;
+    background:#38bdf8;
+    color:white;
+    border-radius:30px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#0ea5e9;
+    transform:translateY(-3px);
+}
+
+/* Glass Card */
+.hero-card{
+    background: rgba(255,255,255,0.05);
+    padding:30px;
+    border-radius:20px;
+    backdrop-filter: blur(15px);
+    box-shadow:0 10px 40px rgba(0,0,0,0.5);
+    animation:fadeUp 2s;
+}
+
+.hero-card h3{
+    margin-bottom:10px;
+}
+
+/* Animasi */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+    <h1>XilhamBillabong Website</h1>
+    <ul>
+        <li><a href="index.html">Indexs</a></li>
+        <li><a href="biodata.html">Biodata</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="Lain-lain.html">Koleksi</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+
+    <!-- Kiri -->
+    <div class="hero-text">
+        <h2>Selamat Datang👋</h2>
+        <p>
+            Ini adalah website pribadi saya yang menampilkan biodata, 
+            galeri, dan video. Semoga dapat nilai 100
+        </p>
+
+        <a href="biodata.html" class="btn">Lihat My Profil</a>
+        <a href="tugas2.html" class="btn">Lihat tugas 2 Form Demografi</a>
+        <a href="https://forms.gle/tZapLYbHtzEsJtAt6" class="btn">Lihat tugas 3</a>
+        <a href="https://datastudio.google.com/reporting/f91eacaa-d139-4cc0-a2da-b38ad170e85d" class="btn">Sajian Data Tugas 3</a>
+        <a href="https://forms.gle/gz7KY2BzbjwkswS7A" class="btn">Lihat tugas 4</a>
+        <a href="sajian data tugas 4.html" class="btn">Sajian Data Tugas 4</a>
+        <a href="index2.html" class="btn">Tugas Akhir</a>
+    </div>
+
+    <!-- Kanan -->
+    <div class="hero-card">
+        <h3>✨ My Website</h3>
+        <p>
+            Website ini dibuat untuk memberikan informasi sederhana tentang seorang mahasiswa aktif universitas lambung mangkurat
+            yang Berprestasi Aamiin.
+        </p>
+    </div>
+
+</section>
+
+</body>
+</html>

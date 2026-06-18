@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendataan & Transaksi</title>
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --primary-hover: #4338CA;
+            --bg: #F3F4F6;
+            --card-bg: #FFFFFF;
+            --text: #1F2937;
+            --border: #D1D5DB;
+        }
+        * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg); color: var(--text); padding: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; background: var(--card-bg); padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: var(--primary); margin-bottom: 20px; border-bottom: 2px solid var(--border); padding-bottom: 10px; }
+        .form-section { margin-bottom: 30px; }
+        .form-section h3 { background: var(--primary); color: white; padding: 10px; border-radius: 5px; font-size: 16px; margin-bottom: 15px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 14px; }
+        input[type="text"], input[type="date"], input[type="email"], input[type="tel"], input[type="number"], textarea, select {
+            width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 5px; font-size: 14px; outline: none;
+        }
+        input:focus, textarea:focus { border-color: var(--primary); }
+        
+        /* Styling untuk Radio Button menjadi seperti Button biasa */
+        .radio-button-group { display: flex; gap: 10px; }
+        .radio-button-group input[type="radio"] { display: none; }
+        .radio-button-group label {
+            flex: 1; text-align: center; padding: 10px; border: 1px solid var(--border); border-radius: 5px; cursor: pointer; background: var(--bg); transition: 0.3s;
+        }
+        .radio-button-group input[type="radio"]:checked + label { background: var(--primary); color: white; border-color: var(--primary); }
+
+        .btn-submit { width: 100%; background: var(--primary); color: white; border: none; padding: 15px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; transition: 0.3s; }
+        .btn-submit:hover { background: var(--primary-hover); }
+        #loadingMsg { display: none; text-align: center; color: var(--primary); font-weight: bold; margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Formulir Ilhamsyah</h2>
+    
+    <form id="dataForm">
+        <div class="form-section">
+            <h3>📝 Data Demografi</h3>
+            <div class="form-group">
+                <label>Nama Pengguna</label>
+                <input type="text" name="nama" required placeholder="Masukkan nama lengkap">
+            </div>
+            <div class="form-group">
+                <label>Tanggal Lahir</label>
+                <input type="date" name="tgl_lahir" required>
+            </div>
+            <div class="form-group">
+                <label>Alamat</label>
+                <textarea name="alamat" rows="3" required placeholder="Masukkan alamat lengkap"></textarea>
+            </div>
+            <div class="form-group">
+                <label>No. Telepon</label>
+                <input type="tel" name="telepon" required placeholder="0812xxxxxxx">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" required placeholder="email@contoh.com">
+            </div>
+            <div class="form-group">
+                <label>Pendidikan (Pilih atau Ketik)</label>
+                <input list="list-pendidikan" name="pendidikan" placeholder="Pilih tingkat pendidikan..." required>
+                <datalist id="list-pendidikan">
+                    <option value="SD">
+                    <option value="SMP">
+                    <option value="SMA/SMK">
+                    <option value="D3">
+                    <option value="S1">
+                    <option value="S2">
+                    <option value="S3">
+                </datalist>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h3>🏦 Data Bank</h3>
+            <div class="form-group">
+                <label>Nama Bank (Pilih atau Ketik)</label>
+                <input list="list-bank" name="bank" placeholder="Cari nama bank..." required>
+                <datalist id="list-bank">
+                    <option value="Bank Mandiri">
+                    <option value="Bank BCA">
+                    <option value="Bank BNI">
+                    <option value="Bank BRI">
+                    <option value="Bank Syariah Indonesia (BSI)">
+                    <option value="CIMB Niaga">
+                    <option value="Bank Jago">
+                </datalist>
+            </div>
+            <div class="form-group">
+                <label>Nomor Rekening</label>
+                <input type="number" name="rekening" required placeholder="Masukkan nomor rekening">
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h3>💸 Data Transaksi Keuangan</h3>
+            <div class="form-group">
+                <label>Tanggal Transaksi</label>
+                <input type="date" name="tgl_transaksi" required>
+            </div>
+            <div class="form-group">
+                <label>Uraian Transaksi</label>
+                <textarea name="uraian" rows="2" required placeholder="Penjelasan singkat transaksi"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Jenis Transaksi</label>
+                <div class="radio-button-group">
+                    <input type="radio" id="btn-debet" name="jenis_transaksi" value="Debet" required>
+                    <label for="btn-debet">Pemasukan (Debet)</label>
+
+                    <input type="radio" id="btn-kredit" name="jenis_transaksi" value="Kredit">
+                    <label for="btn-kredit">Pengeluaran (Kredit)</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Jumlah Debet (Rp)</label>
+                <input type="number" name="debet" placeholder="0" value="0" min="0">
+            </div>
+            <div class="form-group">
+                <label>Jumlah Kredit (Rp)</label>
+                <input type="number" name="kredit" placeholder="0" value="0" min="0">
+            </div>
+        </div>
+
+        <button type="submit" class="btn-submit">Kirim Data ke Spreadsheet</button>
+        <p id="loadingMsg">Memproses pengiriman data... ⏳</p>
+    </form>
+</div>
+
+<script>
+    const form = document.getElementById('dataForm');
+    const loadingMsg = document.getElementById('loadingMsg');
+    
+    // GANTI URL DI BAWAH INI DENGAN URL WEB APP DARI GOOGLE APPS SCRIPT KAMU
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwxL_i1m0WlIIZcxK68st3PWpmsWJX3HbVCWkA8xfYXqbPLUrsmV6SXwVFL07cByPgH/exec';
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        loadingMsg.style.display = 'block';
+        
+        let requestBody = new FormData(form);
+        
+        fetch(scriptURL, { method: 'POST', body: requestBody })
+            .then(response => {
+                loadingMsg.style.display = 'none';
+                alert('Berhasil! Data telah tersimpan di Google Spreadsheet.');
+                form.reset();
+            })
+            .catch(error => {
+                loadingMsg.style.display = 'none';
+                alert('Gagal mengirim data. Silakan coba lagi.');
+                console.error('Error!', error.message);
+            });
+    });
+</script>
+
+</body>
+</html>

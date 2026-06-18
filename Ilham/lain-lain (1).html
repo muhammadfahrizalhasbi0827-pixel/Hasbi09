@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Foto</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background: linear-gradient(135deg,#020617,#0f172a);
+    color:white;
+}
+
+/* Navbar */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+}
+
+nav h1{
+    font-family:'Playfair Display', serif;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav li{
+    margin-left:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    position:relative;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    background:#38bdf8;
+    left:0;
+    bottom:-5px;
+    transition:0.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* Container */
+.container{
+    padding:50px 80px;
+}
+
+/* Judul */
+.container h2{
+    font-family:'Playfair Display', serif;
+    margin-bottom:30px;
+}
+
+/* Grid Foto */
+.photo-grid{
+    columns:3 250px;
+    column-gap:20px;
+}
+
+/* Card */
+.photo-item{
+    margin-bottom:20px;
+    break-inside:avoid;
+    border-radius:15px;
+    overflow:hidden;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.5);
+    transition:0.4s;
+}
+
+/* Gambar */
+.photo-item img{
+    width:100%;
+    display:block;
+    transition:0.4s;
+}
+
+/* Hover */
+.photo-item:hover{
+    transform:translateY(-10px);
+}
+
+.photo-item:hover img{
+    transform:scale(1.05);
+}
+
+/* Caption */
+.caption{
+    padding:10px;
+    font-size:0.9rem;
+    opacity:0.8;
+}
+
+/* Animasi */
+.photo-item{
+    animation:fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+    <h1>MyPortfolio</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="biodata.html">Biodata</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="foto.html">Foto</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <h2>Koleksi Foto</h2>
+
+    <div class="photo-grid">
+
+        <div class="photo-item">
+            <img src="assets/foto1.jpg">
+            <div class="caption">Kegiatan 1</div>
+        </div>
+
+        <div class="photo-item">
+            <img src="assets/foto2.jpg">
+            <div class="caption">Kegiatan 2</div>
+        </div>
+
+        <div class="photo-item">
+            <img src="assets/foto3.jpg">
+            <div class="caption">Kegiatan 3</div>
+        </div>
+
+        <div class="photo-item">
+            <img src="assets/foto4.jpg">
+            <div class="caption">Kegiatan 4</div>
+        </div>
+
+        <div class="photo-item">
+            <img src="assets/foto5.jpg">
+            <div class="caption">Kegiatan 5</div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
