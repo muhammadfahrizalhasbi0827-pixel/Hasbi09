@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Project - Home</title>
+    <style>
+        /* CSS UNTUK TEMA RED */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #1a0000; /* Hitam kemerahan agar elegan */
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Navigasi */
+        nav {
+            background-color: #8B0000; /* Dark Red */
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff4d4d;
+            text-shadow: 0 0 10px #ff4d4d;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1541339907198-e08756ebafe3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); /* Gambar background bertema merah */
+            background-size: cover;
+            background-position: center;
+            border-bottom: 5px solid #ff0000;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            color: #ff0000;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            color: #ccc;
+        }
+
+        /* Tombol Call to Action */
+        .btn {
+            margin-top: 25px;
+            padding: 12px 30px;
+            background-color: #ff0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.4s;
+        }
+
+        .btn:hover {
+            background-color: white;
+            color: #ff0000;
+            box-shadow: 0 0 20px #ff0000;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="biodata.html">BIODATA</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="video.html">VIDEO</a>
+        <a href="tugas 2.html">tugas 2</a>
+        <a href="https://forms.gle/N8h4KUjSBaYyig3g7">tugas 3</a>
+        <a href="https://datastudio.google.com/reporting/335711b5-76cd-480a-aded-1359ac8e1dde">Sajian Data</a>
+         <a href="https://forms.gle/D4EvQ9QKBMiapL9f9"> google form tugas 4 </a>
+           <a href="https://datastudio.google.com/reporting/7ff3bcb4-699c-4b44-9d08-0014fb676f5c"> Sajian Data </a>
+         <a href="https://docs.google.com/spreadsheets/d/1t77VW3TUjXyCbyyN5yMl4GJJ4cjztt0EnV_-1BuvId4/edit?usp=sharing"> Sajian Data Sheets</a>
+    </nav>
+
+    <header class="hero">
+        <h1>selamat datang </h1>
+        <p>Halo, SayaParni Pratama </p>
+        <a href="biodata.html" class="btn">Ini adalah website tugas sistem Informasi Manajemen Perikanan (SIMP) Saya yang dibuat menggunakan HTMLdan Github.</a>
+    </header>
+
+    <footer>
+        &copy; 2026 - Website Design Parni Pratama
+    </footer>
+
+</body>
+</html>

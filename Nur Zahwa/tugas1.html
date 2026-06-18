@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Tugas 1</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+    }
+
+    nav {
+      background: rgba(0,0,0,0.7);
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #00d4ff;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .container {
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Card */
+    .card {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 15px;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+
+    /* Biodata */
+    .profile {
+      width: 120px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    /* Galeri */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Video */
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 15px;
+      text-align: center;
+      background: rgba(0,0,0,0.7);
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+  <a href="#">tugas1.html</a>
+  <a href="#">tugas2.html</a>
+</nav>
+
+<!-- BIODATA -->
+<h2>Biodata</h2>
+<div class="container">
+  <div class="card">
+    <img src="https://via.placeholder.com/150" class="profile">
+    <p><b>Nama:</b> Nur Zahwa</p>
+    <p><b>NIM:</b> 2310715220002</p>
+    <p><b>Alamat:</b> Banjarbaru</p>
+    <p><b>Email:</b> zahwa4046@gmail.com</p>
+    <p><b>Hobi:</b> Bermain game mobile legend</p>
+  </div>
+</div>
+
+<!-- GALERI -->
+<h2>Galeri</h2>
+<div class="gallery">
+  <img src="Rumah depan.jpeg">
+  <img src="kanan.jpeg">
+  <img src="kiri.jpeg">
+  <img src="belakang.jpeg">
+</div>
+
+<!-- VIDEO -->
+<h2>Video</h2>
+<div class="video-wrapper">
+  <iframe src="vidio rumah.mp4" allowfullscreen></iframe>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 Tugas 1 Website</p>
+</footer>
+
+</body>
+</html>

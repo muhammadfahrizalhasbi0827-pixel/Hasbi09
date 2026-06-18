@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Tugas 2 - Formulir</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px;
+    }
+
+    form {
+      max-width: 800px;
+      margin: auto;
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+
+    fieldset {
+      border: 2px solid white;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      padding: 15px;
+    }
+
+    legend {
+      font-weight: bold;
+      padding: 0 10px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    .radio-group {
+      margin-top: 10px;
+    }
+
+    .radio-group label {
+      display: inline;
+      margin-right: 15px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      background: #00d4ff;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #00aacc;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Formulir Data Pengguna</h1>
+
+<form>
+
+  <!-- DATA DEMOGRAFI -->
+  <fieldset>
+    <legend>Data Demografi</legend>
+
+    <label>Nama:</label>
+    <input type="text" placeholder="Masukkan nama">
+
+    <label>Tanggal Lahir:</label>
+    <input type="date">
+
+    <label>Alamat:</label>
+    <textarea placeholder="Masukkan alamat"></textarea>
+
+    <label>No Telepon:</label>
+    <input type="tel" placeholder="08xxxxxxxxxx">
+
+    <label>Email:</label>
+    <input type="email" placeholder="email@gmail.com">
+
+    <label>Pendidikan:</label>
+    <select>
+      <option>Pilih Pendidikan</option>
+      <option>SMA</option>
+      <option>D3</option>
+      <option>S1</option>
+      <option>S2</option>
+    </select>
+  </fieldset>
+
+  <!-- DATA BANK -->
+  <fieldset>
+    <legend>Data Bank</legend>
+
+    <label>Nama Bank:</label>
+    <select>
+      <option>Pilih Bank</option>
+      <option>BRI</option>
+      <option>BCA</option>
+      <option>Mandiri</option>
+      <option>BNI</option>
+      <option>BSI</option>
+      <option>DANA</option>
+    </select>
+
+    <label>Nomor Rekening:</label>
+    <input type="text" placeholder="Masukkan nomor rekening">
+  </fieldset>
+
+  <!-- DATA TRANSAKSI -->
+  <fieldset>
+    <legend>Data Transaksi</legend>
+
+    <label>Tanggal Transaksi:</label>
+    <input type="date">
+
+    <label>Uraian Transaksi:</label>
+    <textarea placeholder="Contoh: Pembelian buku"></textarea>
+
+    <label>Jenis Transaksi:</label>
+    <div class="radio-group">
+      <label><input type="radio" name="jenis"> Debit</label>
+      <label><input type="radio" name="jenis"> Kredit</label>
+    </div>
+
+    <label>Debet:</label>
+    <input type="number">
+
+    <label>Kredit:</label>
+    <input type="number">
+  </fieldset>
+
+  <button type="submit">Kirim Data</button>
+
+</form>
+
+</body>
+</html>
