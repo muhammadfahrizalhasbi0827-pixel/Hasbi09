@@ -4,117 +4,374 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Tugas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+        }
+
+        :root {
+            --primary-color: #0083b0;
+            --secondary-color: #00b4db;
+            --accent-color: #00d4ff;
+            --dark-bg: #0a1f2e;
+            --light-text: #ffffff;
+            --card-bg: #ffffff;
+            --card-text: #0a1f2e;
+            --shadow-sm: 0 2px 8px rgba(0, 131, 176, 0.1);
+            --shadow-md: 0 8px 24px rgba(0, 131, 176, 0.15);
+            --shadow-lg: 0 16px 40px rgba(0, 131, 176, 0.2);
         }
 
         body {
-            height: 100vh;
-            background: linear-gradient(to right, #00b4db, #0083b0);
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #0d2d42 50%, #0a4d6d 100%);
+            font-family: 'Poppins', sans-serif;
+            color: var(--light-text);
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Tombol Kembali (Back Button) */
+        .back-btn {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-btn svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .back-btn:hover {
+            color: var(--accent-color);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent-color);
+        }
+
+        .back-btn:hover svg {
+            transform: translateX(-3px);
+        }
+
+        /* Animated background elements */
+        .bg-decoration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        .blob-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent-color);
+            top: -100px;
+            right: -100px;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .blob-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--secondary-color);
+            bottom: -50px;
+            left: -50px;
+            animation: float 10s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(30px) translateX(20px); }
         }
 
         .container {
             text-align: center;
-            color: white;
+            max-width: 1200px;
+            width: 100%;
+            animation: fadeIn 0.8s ease-out;
+            margin-top: 40px; /* Memberi ruang di bawah tombol kembali */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            margin-bottom: 60px;
         }
 
         h1 {
-            margin-bottom: 40px;
-            font-size: 36px;
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .menu {
-            display: flex;
-            gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
             justify-content: center;
+            margin-bottom: 80px;
         }
 
         .card {
-            background: white;
-            color: #0077b6;
-            padding: 30px;
-            width: 200px;
-            border-radius: 15px;
+            position: relative;
+            background: var(--card-bg);
+            color: var(--card-text);
+            padding: 32px 24px;
+            border-radius: 16px;
             text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: 0.3s;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0, 131, 176, 0.1);
+            overflow: hidden;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 140px;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .card:hover::before {
+            left: 100%;
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            background: #caf0f8;
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--secondary-color);
+            background: linear-gradient(135deg, rgba(0, 180, 219, 0.05), rgba(0, 212, 255, 0.05));
+        }
+
+        .card:active {
+            transform: translateY(-4px);
         }
 
         footer {
-            position: absolute;
-            bottom: 10px;
-            color: white;
-            font-size: 14px;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            font-weight: 300;
         }
 
-        @media (max-width: 600px) {
-            .menu {
-                flex-direction: column;
-                align-items: center;
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .back-btn {
+                top: 16px;
+                left: 16px;
+                font-size: 13px;
+                padding: 6px 12px;
             }
+
+            .container {
+                margin-top: 60px;
+            }
+
+            h1 {
+                font-size: 36px;
+                margin-bottom: 8px;
+            }
+
+            .header {
+                margin-bottom: 40px;
+            }
+
+            .menu {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+                gap: 16px;
+            }
+
+            .card {
+                padding: 24px 16px;
+                min-height: 120px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 16px;
+            }
+
+            .container {
+                margin-top: 80px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .subtitle {
+                font-size: 14px;
+            }
+
+            .header {
+                margin-bottom: 32px;
+            }
+
+            .menu {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .card {
+                padding: 20px 16px;
+                min-height: 100px;
+                font-size: 13px;
+            }
+
+            footer {
+                font-size: 12px;
+                bottom: 16px;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
+        /* Focus styles for keyboard navigation */
+        .card:focus-visible {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
         }
     </style>
 
 </head>
 <body>
 
-<div class="container">
-    <h1>Website Tugas</h1>
+    <!-- Tombol Kembali -->
+    <a href="index kelompok.html" class="back-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Kembali
+    </a>
 
-    <div class="menu">
-        <a href="tugas1.html" class="card">
-            Tugas 1
-        </a>
+    <div class="bg-decoration">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
 
-        <a href="tugas2.html" class="card">
-            Tugas 2
-        </a>
-    </div>
-</div>
+    <div class="container">
+        <div class="header">
+            <h1>Website Tugas</h1>
+            <p class="subtitle">Portal Pengumpulan Tugas</p>
+        </div>
 
-    <a href="https://forms.gle/2BwEEFh87fLqqn5y8" class="card">
-            Tugas 3
-        </a>
-    </div>
-</div>
+        <div class="menu">
+            <a href="tugas1.html" class="card">
+                Tugas 1
+            </a>
 
-    <a href="https://datastudio.google.com/reporting/ec01e32d-8ccd-4c7b-93e7-5f174e341637" class="card">
-        sajian data
-        </a>
+            <a href="tugas2.html" class="card">
+                Tugas 2
+            </a>
+            
+            <a href="https://forms.gle/2BwEEFh87fLqqn5y8" class="card">
+                Tugas 3
+            </a>
+
+            <a href="https://datastudio.google.com/reporting/ec01e32d-8ccd-4c7b-93e7-5f174e341637" class="card">
+                Sajian Data
+            </a>
+
+            <a href="https://forms.gle/es87JKE5746wHTtf9" class="card">
+                Gform Tugas 4
+            </a>
+
+            <a href="https://datastudio.google.com/reporting/836d28a9-702c-4a83-a8fd-fa0b053bfe8e" class="card">
+                Sajian Data
+            </a>
+            
+            <a href="https://docs.google.com/spreadsheets/d/119Kw3YtHkpVMEC-KKKrcVBxgdjsxkZ1tbNHRLITlNI0/edit?usp=sharing" class="card">
+                Sajian Data Sheets
+            </a>
+
+            <a href="tugas akhir.html" class="card">
+                Tugas Akhir
+            </a>
+        </div>
     </div>
-</div>
-    <a href="https://forms.gle/es87JKE5746wHTtf9" class="card">
-        Gfrom Tugas 4
-        </a>
-    </div>
-</div>
-<a href="https://datastudio.google.com/reporting/836d28a9-702c-4a83-a8fd-fa0b053bfe8e" class="card">
-        Sajian Data
-        </a>
-    </div>
-</div>
-    <a href="https://docs.google.com/spreadsheets/d/119Kw3YtHkpVMEC-KKKrcVBxgdjsxkZ1tbNHRLITlNI0/edit?usp=sharing" class="card">
-        Sajian Data sheets
-        </a>
-    </div>
-</div>
-<footer>
-    <p>© 2026 Website Saya</p>
-</footer>
+    
+    <footer>
+        <p>© 2026 Website Saya</p>
+    </footer>
 
 </body>
 </html>
