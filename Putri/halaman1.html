@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apriliana Putri - Sosial Ekonomi Perikanan - 2310715220004</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: Arial, sans-serif; 
+            line-height: 1.6; 
+            color: #302d2d; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 20px;
+            background: #a0dcd9;
+        }
+        header { 
+            text-align: center; 
+            padding: 30px 0; 
+            border-bottom: 3px solid #4c4b4c; 
+            margin-bottom: 30px;
+        }
+        h1 { 
+            color: #f42ba7; 
+            font-size: 2.2em; 
+            margin-bottom: 10px;
+        }
+        .subtitle { 
+            color: #0e0d0d; 
+            font-size: 1.1em;
+        }
+        nav { 
+            display: flex; 
+            justify-content: center; 
+            gap: 30px; 
+            margin-bottom: 40px; 
+            flex-wrap: wrap;
+        }
+        nav a { 
+            text-decoration: none; 
+            color: #f42ba7; 
+            font-weight: bold; 
+            padding: 10px 20px; 
+            border: 2px solid #504b50; 
+            border-radius: 25px; 
+            transition: all 0.3s;
+        }
+        nav a:hover { 
+            background: #f42ba7; 
+            color: rgb(134, 133, 133);
+        }
+        section { 
+            margin-bottom: 50px; 
+            padding: 30px; 
+            background: rgb(227, 221, 221); 
+            border-radius: 10px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        section h2 { 
+            color: #f42ba7; 
+            font-size: 1.8em; 
+            margin-bottom: 20px; 
+            border-left: 5px solid #a0dcd9; 
+            padding-left: 15px;
+        }
+        .biodata { 
+            font-family: Arial, sans-serif;
+            line-height: 1.5; 
+            color: #333; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 20px;
+            background: #f9f9f9;
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 20px; 
+            margin-top: 20px;
+        }
+        .biodata img { 
+            max-width: 100%; 
+            max-height: 285px; 
+            border-radius: 15px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        .photo-gallery {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        .photo-gallery img {
+            flex: 1;
+            max-height: 250px;
+        }
+        
+        .biodata-item strong { color: #f42ba7; }
+        
+        .gallery { 
+            display: flex; 
+            gap: 20px; 
+            flex-wrap: wrap; 
+            justify-content: center;
+        }
+        .gallery img { 
+            max-width: 300px; 
+            height: 250px; 
+            object-fit: cover; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        .gallery img:hover { transform: scale(1.05); }
+        
+        .video-container { 
+            text-align: center; 
+            margin-top: 30px;
+        }
+        video { 
+            max-width: 100%; 
+            max-height: 285px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        
+        footer { 
+            text-align: center; 
+            padding: 20px; 
+            color: #666; 
+            border-top: 1px solid #efeaea; 
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            body { padding: 10px; }
+            nav { flex-direction: column; gap: 10px; }
+            .gallery { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Selamat Datang</h1>
+        <p class="subtitle">Tugas Sistem Informasi Manajemen Perikanan</p>
+        <p> Apriliana Putri - 2310715220004</p>
+    </header>
+
+    <section id="biodata">
+        <h2>Biodata Diri</h2>
+        <div class="biodata">
+            <div class="biodata-item">
+                <div class="photo-gallery">
+                    <img src="fotodiri.jpeg" alt="Foto diri Apriliana Putri 1">
+                    <img src="fotodiri2.jpeg" alt="Foto diri Apriliana Putri 2">
+                </div>
+                <h4>Perkenalan Singkat</h4>
+                <p>Saya Apriliana Putri berasal dari Kabupaten Kotabaru, Kalimantan Selatan. Saya lahir di Gunung Calang, 01 April 2005 saat ini berusia 21 tahun dan saat ini sedang menempuh pendidikan di Universitas Lambung Mangkurat, Fakultas Perikanan dan Ilmu Kelautan, Program Studi S1-Sosial Ekonomi Perikanan. Saya adalah pemilik Nomor Induk Mahasiswa 2310715220004 yang dapat diketahui bahwa dua angka depan merupakan tahun saya bergabung menjadi Mahasiwi.Saya memiliki hobi menonton film dan drama korea dengan genre thriller, horor, dan action. Saya merupakan Mahasiswi angkatan 2023 yang saat ini sudah memasuki semester 6, saya juga merupakan anggota aktif di Himpunan Mahasiswa Sosial Ekonomi Perikanan.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <p style="text-align: center; margin-bottom: 30px; color: #666;">Foto/Dokumentasi Tempat Tinggal Sekarang</p>
+        <div class="gallery">
+            <img src="foto1.jpeg" alt="Foto 1 - Bagian Tampak Depan" width="500">
+            <img src="foto2.jpeg" alt="Foto 2 - Bagian Sisi Kanan" width="500">
+            <img src="foto3.jpeg" alt="Foto 3 - Bagian Sisi Kiri" width="500">
+            <img src="foto4.jpeg" alt="Foto 4 - Bagian Tampak Belakang" width="500">
+        </div>
+    </section>
+
+    <section id="video">
+        <h2>Video Keadaan</h2>
+        <p style="text-align: center; margin-bottom: 20px; color: #666;">Video Keadaan Tempat Tinggal Dari Bagian Dalam</p>
+        <div class="video-container">
+            <video controls width="500" height="500">
+                <source src="video1.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <footer>
+        <p>Apriliana Putri [2310715220004] | Tugas SIM-P</p>
+        <br>
+        <a href="index.html" class="home-btn">Back Pages</a>
+    </footer>
+</body>
+</html>

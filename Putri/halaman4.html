@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data  Transaksi</title>
+    <style>
+       * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #d987c6 0%, #e757e7 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .form-container {
+            background: rgb(233, 227, 227);
+            border-radius: 20px;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 500px;
+            padding: 50px 40px;
+        }
+        h1 { color: #333; text-align: center; margin-bottom: 40px; font-size: 1.7em; }
+        .form-group { margin-bottom: 25px; }
+        label { display: block; margin-bottom: 8px; color: #555; font-weight: 500; }
+        input, select { 
+            width: 100%; padding: 15px; border: 2px solid #b6c1cb; 
+            border-radius: 12px; font-size: 16px; transition: all 0.3s; 
+            background: #dee0e1;
+        }
+        input:focus, select:focus {
+            outline: none; border-color: #4facfe; background: white;
+            box-shadow: 0 0 0 4px rgba(79,172,254,0.1);
+        }
+        .date-group {
+            display: grid; grid-template-columns: 2fr 2fr 3fr; gap: 12px;
+        }
+        .progress { 
+            text-align: center; color: #666; margin-bottom: 20px;
+            font-weight: bold; font-size: 0.9em;
+        }
+        button {
+            width: 100%; padding: 18px; border: none; border-radius: 15px;
+            background: linear-gradient(135deg, #c9d4de, #d3ddde); color: white;
+            font-size: 16px; font-weight: bold; cursor: pointer; transition: all 0.3s;
+            margin-top: 10px;
+        }
+        button:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(79,172,254,0.4); }
+        .link-next { background: linear-gradient(135deg, #eb96e4, #da64c8); margin-top: 20px; }
+        .storage-warning { background: #dad3ba; padding: 15px; border-radius: 10px; margin-bottom: 20px; border-left: 5px solid #e0dcd1; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="progress">Progres: 3 dari 3</div>
+        <h1>Riwayat Transaksi Keuangan</h1>
+        <div id="transaksiList"></div>
+        <button onclick="addTransaksiRow()">Tambah Transaksi</button>
+        <div class="nav-buttons" style="margin-top: 30px; display: flex; gap: 15px; flex-direction: column;">
+            <a href="halaman3.html" style="text-decoration: none;">
+                <button class="btn-prev">Kembali</button>
+            </a>
+            <button onclick="submitToSpreadsheet()" style="background: linear-gradient(135deg, #ff6b6b, #ee5a24);">Submit</button>
+        </div>
+    </div>
+
+    <script>
+        let transaksiCount = 0;
+
+        function createTanggalOptions() {
+            return Array.from({ length: 31 }, (_, i) => `<option value="${i + 1}">${i + 1}</option>`).join('');
+        }
+
+        function addTransaksiRow() {
+            transaksiCount++;
+            const div = document.createElement('div');
+            div.className = 'transaksi-row';
+            div.innerHTML = `
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label>Tanggal Transaksi #${transaksiCount}</label>
+                    <div class="date-group">
+                        <select class="tglTrans">
+                            <option value="">Tanggal</option>
+                            ${createTanggalOptions()}
+                        </select>
+                        <select class="blnTrans">
+                            <option value="">Bulan</option>
+                            <option value="01">Jan</option>
+                            <option value="02">Feb</option>
+                            <option value="03">Mar</option>
+                            <option value="04">Apr</option>
+                            <option value="05">Mei</option>
+                            <option value="06">Jun</option>
+                            <option value="07">Jul</option>
+                            <option value="08">Ags</option>
+                            <option value="09">Sep</option>
+                            <option value="10">Okt</option>
+                            <option value="11">Nov</option>
+                            <option value="12">Des</option>
+                        </select>
+                        <select class="thnTrans">
+                            <option value="">Tahun</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Uraian Transaksi</label>
+                    <input type="text" class="uraianTrans" placeholder="Contoh: Gaji bulanan">
+                </div>
+                <div class="form-group">
+                    <label>Jenis Transaksi</label>
+                    <div style="display: flex; gap: 10px;">
+                        <button type="button" class="jenisBtn debet" onclick="selectJenis(this)">Debet (-)</button>
+                        <button type="button" class="jenisBtn kredit" onclick="selectJenis(this)">Kredit (+)</button>
+                    </div>
+                    <input type="hidden" class="jenisTrans" value="">
+                    <input type="number" class="jumlahTrans" placeholder="0" style="margin-top: 10px;">
+                </div>
+                <button type="button" onclick="this.parentElement.remove()" style="background: #dc3545; width: 100%; margin-top: 10px;">Hapus</button>
+            `;
+            document.getElementById('transaksiList').appendChild(div);
+        }
+
+        function selectJenis(btn) {
+            const wrapper = btn.closest('.form-group');
+            wrapper.querySelectorAll('.jenisBtn').forEach(b => {
+                b.style.background = '#e1e5e9';
+                b.style.color = '#000';
+            });
+
+            btn.style.background = btn.classList.contains('debet') ? '#dc3545' : '#28a745';
+            btn.style.color = '#fff';
+
+            const jenisInput = wrapper.querySelector('.jenisTrans');
+            jenisInput.value = btn.classList.contains('debet') ? 'Debet' : 'Kredit';
+            wrapper.querySelector('.jumlahTrans').dataset.jenis = jenisInput.value;
+        }
+
+        async function submitToSpreadsheet() {
+            const demografi = JSON.parse(localStorage.getItem('demografiData') || '{}');
+            const bank = JSON.parse(localStorage.getItem('bankData') || '{}');
+
+            const transaksi = [];
+            document.querySelectorAll('.transaksi-row').forEach(row => {
+                const tgl = row.querySelector('.tglTrans').value;
+                const bln = row.querySelector('.blnTrans').value;
+                const thn = row.querySelector('.thnTrans').value;
+                const uraian = row.querySelector('.uraianTrans').value.trim();
+                const jenis = row.querySelector('.jenisTrans').value;
+                const jumlah = row.querySelector('.jumlahTrans').value.trim();
+
+                if (tgl && bln && thn && uraian && jenis && jumlah) {
+                    transaksi.push({
+                        tanggal: `${thn}-${bln.padStart(2, '0')}-${tgl.padStart(2, '0')}`,
+                        uraian,
+                        jenis,
+                        jumlah: Number(jumlah)
+                    });
+                }
+            });
+
+            if (!demografi.nama || !bank.namaBank) {
+                alert('Lengkapi data demografi & bank terlebih dahulu!');
+                return;
+            }
+
+            if (transaksi.length === 0) {
+                alert('Tambahkan minimal satu transaksi lengkap sebelum submit.');
+                return;
+            }
+
+            const allData = {
+                ...demografi,
+                ...bank,
+                transaksi: JSON.stringify(transaksi),
+                totalTransaksi: transaksi.length,
+                submitTime: new Date().toISOString()
+            };
+
+            const SCRIPT_URL = 'https://docs.google.com/spreadsheets/d/10zOXvLc1ns0U94agfAUmN5O_pF6yAOlah4Ct83cjnt8/edit?usp=drivesdk'; // Ganti dengan URL Web App Google Apps Script Anda
+            try {
+                await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(allData)
+                });
+
+                alert('🎉 Data berhasil dikirim ke Google Spreadsheet!\nCek console untuk detail.');
+                console.log('Data submitted:', allData);
+                localStorage.clear();
+            } catch (error) {
+                alert('Error: Setup Google Apps Script dulu!\nLihat petunjuk di bawah.');
+                console.error(error);
+            }
+        }
+
+        window.onload = addTransaksiRow;
+    </script>
+</body>
+</html>
