@@ -4,8 +4,39 @@
     <meta charset="UTF-8">
     <title>Beranda - Website M Firza Arif Rahman</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS Tambahan untuk Tombol Kembali */
+        body {
+            position: relative;
+        }
+        .btn-kembali {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #2caabe;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-family: sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+        }
+        .btn-kembali:hover {
+            background-color: #3282b8;
+        }
+    </style>
 </head>
 <body>
+    <!-- Tombol Kembali ke Halaman Index Kelompok -->
+    <a href="../index.html" class="btn-kembali">&larr; Kembali</a>
+
     <header>
         <h1>Selamat datang</h1>
     </header>
