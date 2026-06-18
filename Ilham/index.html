@@ -3,100 +3,83 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Indexs</title>
+<title>XilhamBillabong Website</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
-    --bg-color: #030712;
-    --accent-color: #38bdf8;
-    --accent-hover: #0ea5e9;
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --glass-bg: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(255, 255, 255, 0.08);
+    --bg-dark: #030712;
+    --bg-card: rgba(15, 23, 42, 0.45);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --primary: #38bdf8;
+    --primary-hover: #0ea5e9;
+    --accent: #818cf8;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
 }
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    font-family:'Poppins', sans-serif;
-    background-color: var(--bg-color);
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
     background-image: 
-        radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.15), transparent 40%),
-        radial-gradient(circle at 20% 80%, rgba(14, 165, 233, 0.08), transparent 50%);
+        radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(129, 140, 248, 0.08) 0%, transparent 40%);
     background-attachment: fixed;
-    color: var(--text-primary);
+    color: var(--text-main);
     min-height: 100vh;
-    overflow-x: hidden;
+    line-height: 1.5;
 }
 
-/* Navbar */
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 80px;
-    background: rgba(3, 7, 18, 0.6);
+/* Floating Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 16px 32px;
+    background: rgba(15, 23, 42, 0.6);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--glass-border);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
     position: sticky;
-    top: 0;
+    top: 20px;
     z-index: 100;
 }
 
-nav h1{
-    font-family:'Playfair Display', serif;
-    font-size:1.6rem;
-    font-weight: 700;
-    background: linear-gradient(to right, #ffffff, #e2e8f0);
+nav h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    background: linear-gradient(to right, #ffffff, var(--text-muted));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-nav ul{
-    display:flex;
-    list-style:none;
-    gap: 30px;
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 24px;
 }
 
-nav li{
-    margin: 0;
-}
-
-nav a{
-    color: var(--text-secondary);
-    text-decoration:none;
-    font-size: 0.95rem;
+nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
     font-weight: 500;
-    position:relative;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
 nav a:hover {
-    color: var(--text-primary);
-}
-
-/* Underline animasi */
-nav a::after{
-    content:"";
-    position:absolute;
-    width:0;
-    height:2px;
-    background: var(--accent-color);
-    left:0;
-    bottom:-5px;
-    transition:0.3s ease;
-}
-
-nav a:hover::after{
-    width:100%;
+    color: var(--primary);
 }
 
 /* Tombol Kembali Custom */
@@ -104,193 +87,257 @@ nav a:hover::after{
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: var(--text-primary) !important;
+    color: var(--text-main) !important;
     text-decoration: none;
-    background: var(--glass-bg);
-    padding: 8px 18px;
-    border-radius: 100px;
-    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-size: 0.8rem;
     font-weight: 500;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid var(--glass-border);
-}
-
-.btn-back::after {
-    display: none !important; 
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
 }
 
 .btn-back:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--primary);
     transform: translateX(-3px);
-    box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
 }
 
-/* Hero Section */
-.hero{
-    min-height: calc(100vh - 85px);
+/* Hero Section Grid */
+.hero {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    align-items: center;
+    grid-template-columns: 1fr 1.2fr;
     gap: 60px;
-    padding: 40px 80px;
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 40px 24px;
+    align-items: center;
+    min-height: calc(100vh - 160px);
 }
 
-/* Text */
-.hero-text{
-    max-width:650px;
-    animation:fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+/* Left Column */
+.hero-text {
+    animation: fadeUp 1s ease forwards;
 }
 
-.hero-text h2{
-    font-family:'Playfair Display', serif;
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    color: var(--primary);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.hero-text h2 {
+    font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
-    line-height: 1.2;
-    margin-bottom:20px;
-    background: linear-gradient(to bottom right, #ffffff, #cbd5e1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
-.hero-text p{
-    color: var(--text-secondary);
-    font-size: 1.05rem;
-    line-height:1.7;
+.hero-text p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.7;
     margin-bottom: 30px;
 }
 
-/* Group Button Wrapper */
-.btn-group {
+/* Action Buttons */
+.hero-actions {
     display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+    gap: 16px;
 }
 
-/* Button */
-.btn{
-    display:inline-flex;
+.btn {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding:10px 20px;
-    background: var(--glass-bg);
-    color: var(--text-primary);
+    padding: 12px 28px;
     border-radius: 12px;
     font-size: 0.9rem;
     font-weight: 500;
-    text-decoration:none;
-    border: 1px solid var(--glass-border);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-.btn:hover{
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
-    transform:translateY(-2px);
-}
-
-/* Primary Button Override */
 .btn-primary {
-    background: var(--accent-color);
-    color: #030712;
-    border-color: var(--accent-color);
-    font-weight: 600;
+    background: var(--primary);
+    color: #000;
 }
 
 .btn-primary:hover {
-    background: var(--accent-hover);
-    border-color: var(--accent-hover);
-    color: #030712;
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
 }
 
-/* Glass Card */
-.hero-card{
-    background: rgba(255, 255, 255, 0.02);
-    padding: 40px;
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--text-muted);
+    transform: translateY(-2px);
+}
+
+/* Dashboard Panel (Right Side) */
+.hero-dashboard {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 30px;
     border-radius: 24px;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid var(--glass-border);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    animation:fadeUp 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-    transition: border-color 0.5s, transform 0.5s;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    animation: fadeUp 1.2s ease forwards;
 }
 
-.hero-card:hover {
-    border-color: rgba(56, 189, 248, 0.3);
-    transform: translateY(-5px);
+.dashboard-header {
+    margin-bottom: 24px;
 }
 
-.hero-card h3{
-    margin-bottom:15px;
-    font-size: 1.3rem;
+.dashboard-header h3 {
+    font-size: 1.2rem;
     font-weight: 600;
-    letter-spacing: -0.02em;
+    margin-bottom: 4px;
 }
 
-.hero-card p {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.6;
+.dashboard-header p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
 }
 
-/* Animasi */
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(30px);
+/* Bento Grid Tasks */
+.task-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.task-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 16px;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.task-card .task-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.task-card h4 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.task-card p {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.task-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+.task-card:hover .task-icon {
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--primary);
+}
+
+/* Highlight Task Card */
+.task-card.highlight {
+    grid-column: span 2;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(129, 140, 248, 0.08));
+    border-color: rgba(56, 189, 248, 0.2);
+}
+
+.task-card.highlight:hover {
+    border-color: var(--accent);
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    to{
-        opacity:1;
-        transform:translateY(0);
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-/* Responsivitas Layar (Responsive Design) */
+/* Responsive Design */
 @media (max-width: 1024px) {
-    nav {
-        padding: 20px 40px;
-    }
-    .hero {
-        padding: 40px;
-        gap: 40px;
-    }
-    .hero-text h2 {
-        font-size: 2.8rem;
-    }
-}
-
-@media (max-width: 900px) {
     .hero {
         grid-template-columns: 1fr;
+        gap: 40px;
         text-align: center;
-        margin-top: 20px;
+        padding-top: 20px;
     }
     .hero-text {
-        max-width: 100%;
+        max-width: 600px;
         margin: 0 auto;
     }
-    .btn-group {
+    .hero-actions {
         justify-content: center;
     }
-    .hero-card {
-        max-width: 500px;
-        margin: 0 auto;
+    nav {
+        margin: 10px;
+        width: calc(100% - 20px);
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
     nav {
         flex-direction: column;
-        gap: 15px;
-        padding: 20px;
+        gap: 16px;
+        padding: 16px;
     }
     nav ul {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 15px;
+        gap: 12px 16px;
+    }
+    .hero-text h2 {
+        font-size: 2.5rem;
+    }
+    .task-grid {
+        grid-template-columns: 1fr;
+    }
+    .task-card.highlight {
+        grid-column: span 1;
+    }
+    .hero-actions {
+        flex-direction: column;
     }
 }
 </style>
@@ -300,16 +347,15 @@ nav a:hover::after{
 <body>
 
 <nav>
-    <!-- Kontainer bagian kiri navbar untuk Tombol Kembali dan Judul -->
-    <div style="display: flex; align-items: center; gap: 20px;">
+    <div style="display: flex; align-items: center; gap: 16px;">
         <a href="../index kelompok.html" class="btn-back">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="19" y1="12" x2="5" y2="12"></line>
                 <polyline points="12 19 5 12 12 5"></polyline>
             </svg>
             Kembali
         </a>
-        <h1>XilhamBillabong Website</h1>
+        <h1>XilhamBillabong</h1>
     </div>
     
     <ul>
@@ -325,31 +371,74 @@ nav a:hover::after{
 
     <!-- Kiri -->
     <div class="hero-text">
-        <h2>Selamat Datang👋</h2>
+        <span class="badge">Selamat Datang 👋</span>
+        <h2>Website Portofolio</h2>
         <p>
-            Ini adalah website pribadi saya yang menampilkan biodata, 
-            galeri, dan video. Semoga dapat nilai 100
+            Halaman personal ini dikembangkan untuk mendokumentasikan biodata diri, galeri visual, video kreatif, serta repositori pengerjaan tugas akademik secara interaktif.
         </p>
 
-        <!-- Tombol dikelompokkan agar tertata rapi -->
-        <div class="btn-group">
-            <a href="biodata.html" class="btn btn-primary">Lihat My Profil</a>
-            <a href="tugas2.html" class="btn">Lihat tugas 2 Form Demografi</a>
-            <a href="https://forms.gle/tZapLYbHtzEsJtAt6" class="btn">Lihat tugas 3</a>
-            <a href="https://datastudio.google.com/reporting/f91eacaa-d139-4cc0-a2da-b38ad170e85d" class="btn">Sajian Data Tugas 3</a>
-            <a href="https://forms.gle/gz7KY2BzbjwkswS7A" class="btn">Lihat tugas 4</a>
-            <a href="sajian data tugas 4.html" class="btn">Sajian Data Tugas 4</a>
-            <a href="produksi.html" class="btn">Tugas Akhir</a>
+        <div class="hero-actions">
+            <a href="biodata.html" class="btn btn-primary">Lihat Profil</a>
+            <a href="produksi.html" class="btn btn-secondary">Tugas Akhir</a>
         </div>
     </div>
 
-    <!-- Kanan -->
-    <div class="hero-card">
-        <h3>✨ My Website</h3>
-        <p>
-            Website ini dibuat untuk memberikan informasi sederhana tentang seorang mahasiswa aktif universitas lambung mangkurat
-            yang Berprestasi Aamiin.
-        </p>
+    <!-- Kanan: Dashboard Interaktif Tugas -->
+    <div class="hero-dashboard">
+        <div class="dashboard-header">
+            <h3>✨ Kumpulan Tugas & Sajian Data</h3>
+            <p>Silakan pilih tugas yang ingin Anda tinjau di bawah ini.</p>
+        </div>
+        
+        <div class="task-grid">
+            <a href="tugas2.html" class="task-card">
+                <div class="task-icon">📋</div>
+                <div>
+                    <h4>Tugas 2</h4>
+                    <p>Form Demografi</p>
+                </div>
+            </a>
+            
+            <a href="https://forms.gle/tZapLYbHtzEsJtAt6" target="_blank" class="task-card">
+                <div class="task-icon">📝</div>
+                <div>
+                    <h4>Tugas 3</h4>
+                    <p>Form Kuesioner</p>
+                </div>
+            </a>
+
+            <a href="https://datastudio.google.com/reporting/f91eacaa-d139-4cc0-a2da-b38ad170e85d" target="_blank" class="task-card">
+                <div class="task-icon">📊</div>
+                <div>
+                    <h4>Sajian Data T3</h4>
+                    <p>Looker Studio</p>
+                </div>
+            </a>
+
+            <a href="https://forms.gle/gz7KY2BzbjwkswS7A" target="_blank" class="task-card">
+                <div class="task-icon">✍️</div>
+                <div>
+                    <h4>Tugas 4</h4>
+                    <p>Form Input Baru</p>
+                </div>
+            </a>
+
+            <a href="sajian data tugas 4.html" class="task-card">
+                <div class="task-icon">💻</div>
+                <div>
+                    <h4>Sajian Data T4</h4>
+                    <p>Visualisasi Web</p>
+                </div>
+            </a>
+
+            <a href="produksi.html" class="task-card highlight">
+                <div class="task-icon">🚀</div>
+                <div>
+                    <h4>Tugas Akhir</h4>
+                    <p>Karya Produksi Akhir Akademik</p>
+                </div>
+            </a>
+        </div>
     </div>
 
 </section>
