@@ -44,11 +44,50 @@
     z-index: 0;
   }
 
+  /* TOMBOL KEMBALI */
+  .back-btn-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 3rem 0;
+    position: relative;
+    z-index: 20;
+  }
+
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--muted2);
+    font-family: 'Syne', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    transition: border-color 0.3s, color 0.3s, transform 0.3s;
+  }
+
+  .back-btn:hover {
+    color: var(--gold);
+    border-color: var(--border-hover);
+    transform: translateX(-4px);
+  }
+
+  .back-btn svg {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.3s;
+  }
+
   /* HEADER */
   header {
     position: relative;
     z-index: 10;
-    padding: 3.5rem 3rem 0;
+    padding: 1.5rem 3rem 0; /* Disesuaikan sedikit agar ada ruang untuk tombol kembali di atasnya */
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -339,7 +378,8 @@
 
   /* RESPONSIVE */
   @media (max-width: 680px) {
-    header { padding: 2rem 1.5rem 0; flex-direction: column; gap: 1rem; }
+    .back-btn-container { padding: 2rem 1.5rem 0; }
+    header { padding: 1rem 1.5rem 0; flex-direction: column; gap: 1rem; }
     .header-meta { text-align: left; }
     .divider { padding: 0 1.5rem; }
     .grid-section { padding: 2rem 1.5rem 4rem; }
@@ -349,6 +389,17 @@
 </style>
 </head>
 <body>
+
+<!-- TOMBOL KEMBALI DI ATAS SEBELAH KIRI -->
+<div class="back-btn-container">
+  <a href="../index kelompok.html" class="back-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="12 19 5 12 12 5"></polyline>
+    </svg>
+    Kembali ke Beranda Kelompok
+  </a>
+</div>
 
 <header>
   <div class="header-left">
@@ -364,7 +415,7 @@
 <div class="divider"><hr></div>
 
 <div class="grid-section">
-  <div class="grid-label">Pilih Folder Dari 01 Sampai 04 Tugas</div>
+  <div class="grid-label">Pilih Folder Dari 01 Sampai 05 Tugas</div>
 
   <div class="folder-grid">
 
@@ -459,14 +510,36 @@
         </div>
       </div>
     </a>
+    <!-- TUGAS 4 -->
+    <a href="tugas akhir/index2.html" class="folder-card">
+      <div class="card-num">
+        Folder 05
+        <span class="card-num-badge">Aktif</span>
+      </div>
+      <div class="card-icon icon-4">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 7a2 2 0 012-2h3.17a2 2 0 011.41.59l1.83 1.83A2 2 0 0012.83 8H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/>
+        </svg>
+      </div>
+      <div class="card-title">Tugas Akhir</div>
+      <div class="card-desc">Didalam Folder Tugas Akhir Yang Berisikan Tugas Akhir.</div>
+      <div class="card-footer">
+        <span class="card-meta">tugas4/profil.html</span>
+        <div class="card-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </div>
+      </div>
+    </a>
 
   </div>
 </div>
 
 <footer>
-  <span class="footer-text">Arya Santosa &mdash; Portofolio Tugas &copy; 2025</span>
+  <span class="footer-text">Muhammad Fahrizal Hasbi &mdash; Portofolio Tugas &copy; 2026</span>
   <div class="footer-dot"></div>
-  <span class="footer-text">Banjarmasin, Kalimantan Selatan</span>
+  <span class="footer-text">Banjarbaru, Kalimantan Selatan</span>
 </footer>
 
 </body>
