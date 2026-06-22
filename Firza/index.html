@@ -5,10 +5,21 @@
     <title>Beranda - Website M Firza Arif Rahman</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* CSS Tambahan untuk Tombol Kembali */
-        body {
-            position: relative;
+        /* Reset & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+            padding: 80px 20px 40px 20px;
+        }
+
+        /* Tombol Kembali */
         .btn-kembali {
             position: absolute;
             top: 20px;
@@ -16,20 +27,168 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background-color: #2caabe;
+            background-color: #0f172a;
             color: #ffffff;
             text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-family: sans-serif;
+            padding: 10px 18px;
+            border-radius: 8px;
             font-size: 14px;
-            font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-            transition: background-color 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
             z-index: 1000;
         }
         .btn-kembali:hover {
-            background-color: #3282b8;
+            background-color: #1e293b;
+            transform: translateY(-2px);
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            color: #0f172a;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 40px;
+            background: #ffffff;
+            padding: 8px;
+            border-radius: 12px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        nav a {
+            text-decoration: none;
+            color: #64748b;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+        nav a:hover {
+            background-color: #f1f5f9;
+            color: #0f172a;
+        }
+        nav a.active {
+            background-color: #0284c7;
+            color: #ffffff;
+        }
+
+        /* Main Layout Wrapper */
+        .main-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* Welcome/Intro Section */
+        .intro-container {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            color: #ffffff;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 10px 15px -3px rgba(2, 132, 199, 0.2);
+        }
+        .intro-container h2 {
+            font-size: 1.75rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        .intro-container p {
+            color: #e0f2fe;
+            font-size: 1.05rem;
+        }
+
+        /* Assignment Grid Section */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        /* Cards for Tasks */
+        .task-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .task-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px -8px rgba(0,0,0,0.15);
+        }
+        .task-card h2 {
+            font-size: 1.25rem;
+            color: #0f172a;
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+        .task-card p {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        /* Style Buttons inside Cards */
+        .btn-action {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            background-color: #0284c7;
+            color: #ffffff;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease;
+            margin-bottom: 8px;
+        }
+        .btn-action:last-child {
+            margin-bottom: 0;
+        }
+        .btn-action:hover {
+            background-color: #0369a1;
+        }
+        .btn-action.secondary {
+            background-color: #f1f5f9;
+            color: #334155;
+            border: 1px solid #e2e8f0;
+        }
+        .btn-action.secondary:hover {
+            background-color: #e2e8f0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 20px;
         }
     </style>
 </head>
@@ -40,43 +199,73 @@
     <header>
         <h1>Selamat datang</h1>
     </header>
+
     <nav>
         <a href="index.html" class="active">Beranda</a>
         <a href="biodata.html">Biodata</a>
         <a href="galeri-foto.html">Foto</a>
         <a href="galeri-video.html">Video</a>
     </nav>
-    <div class="container">
-        <h2>Selamat Datang di Portofolio Saya</h2>
-        <p>Selamat datang di ruang profil saya. Ini adalah tugas membuat website mata kuliah Sistem Informasi Manajemen Perikanan.</p>
-    </div>
- <div class="container">
-        <h2>TUGAS 2 </h2>
-        <p>SILAHKAN KLIK LINK </p>
-        <a href="tugas 2.html">Tugas 2</a>
-     
-     <div class="container">
-        <h2>TUGAS 3 </h2>
-        <p>SILAHKAN KLIK LINK </p>
-        <a href="https://forms.gle/V4UwxFmTTKRfBski8">Tugas 3</a>
-         
-         <h2>SAJIAN DATA </h2>
-        <p>SILAHKAN KLIK LINK </p>
-          <a href="https://datastudio.google.com/s/sIMONGKSXHk">SAJIAN DATA</a>
-    </div>
-     
-     <div class="container">
-        <h2>TUGAS 4 </h2>
-        <p>SILAHKAN KLIK LINK </p>
-        <a href="indextugas4.html">Tugas 4</a>
-         <a href="sajian data tugas 4.html">sajian data 4</a>
-     </div>
-         <div class="container">
-        <h2>TUGAS AKHIR </h2>
-        <p>SILAHKAN KLIK LINK </p>
-        <a href="rencana usaha kelompok.html">Tugas Akhir</a>
-     </div>
-         
+
+    <main class="main-wrapper">
+        <!-- Portofolio Welcome Section -->
+        <div class="intro-container">
+            <h2>Selamat Datang di Portofolio Saya</h2>
+            <p>Selamat datang di ruang profil saya. Ini adalah tugas membuat website mata kuliah Sistem Informasi Manajemen Perikanan.</p>
+        </div>
+
+        <!-- Tugas Sections Grid -->
+        <div class="grid-container">
+            <!-- TUGAS 2 -->
+            <div class="task-card">
+                <div>
+                    <h2>TUGAS 2</h2>
+                    <p>SILAHKAN KLIK LINK</p>
+                </div>
+                <a href="tugas 2.html" class="btn-action">Tugas 2</a>
+            </div>
+
+            <!-- TUGAS 3 -->
+            <div class="task-card">
+                <div>
+                    <h2>TUGAS 3</h2>
+                    <p>SILAHKAN KLIK LINK</p>
+                </div>
+                <a href="https://forms.gle/V4UwxFmTTKRfBski8" class="btn-action">Tugas 3</a>
+            </div>
+
+            <!-- SAJIAN DATA -->
+            <div class="task-card">
+                <div>
+                    <h2>SAJIAN DATA</h2>
+                    <p>SILAHKAN KLIK LINK</p>
+                </div>
+                <a href="https://datastudio.google.com/s/sIMONGKSXHk" class="btn-action">SAJIAN DATA</a>
+            </div>
+
+            <!-- TUGAS 4 -->
+            <div class="task-card">
+                <div>
+                    <h2>TUGAS 4</h2>
+                    <p>SILAHKAN KLIK LINK</p>
+                </div>
+                <div>
+                    <a href="indextugas4.html" class="btn-action">Tugas 4</a>
+                    <a href="sajian data tugas 4.html" class="btn-action secondary">sajian data 4</a>
+                </div>
+            </div>
+
+            <!-- TUGAS AKHIR -->
+            <div class="task-card">
+                <div>
+                    <h2>TUGAS AKHIR</h2>
+                    <p>SILAHKAN KLIK LINK</p>
+                </div>
+                <a href="rencana usaha kelompok.html" class="btn-action">Tugas Akhir</a>
+            </div>
+        </div>
+    </main>
+
     <footer>&copy; Muhammad Firza Arif Rahman 2026</footer>
 </body>
 </html>
