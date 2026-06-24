@@ -58,69 +58,28 @@
       border-bottom: 2px solid #e0f7ff;
       padding-bottom: 0.5rem;
     }
-    .card h3 {
-      color: #3a6b9d;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      margin-top: 1.5rem;
-    }
     .card p {
       line-height: 1.6;
       margin-bottom: 1rem;
       text-align: justify;
     }
-    .card ul {
-      margin-left: 1.5rem;
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
-    .card li {
-      margin-bottom: 0.5rem;
-    }
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
     
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
+    /* Wadah responsif untuk Google Form, Sheets, dan Looker Studio */
+    .embed-container {
       width: 100%;
-      padding: 0.8rem;
-      border: 2px solid #e0e0e0;
+      height: 600px; /* Tinggi default, silakan sesuaikan dengan isi form */
+      border: 1px solid #e0e0e0;
       border-radius: 8px;
-      font-size: 1rem;
-      font-family: inherit;
-      transition: border-color 0.2s ease;
+      overflow: hidden;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
     }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: #2caabe;
-    }
-    .btn {
-      display: inline-block;
-      padding: 0.8rem 2rem;
-      background-color: #2caabe;
-      color: white;
+    .embed-container iframe {
+      width: 100%;
+      height: 100%;
       border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background 0.2s ease;
-      text-decoration: none;
-      text-align: center;
     }
-    .button-group {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
-    }
+
     .back-button {
       display: inline-block;
       margin-top: 1rem;
@@ -131,6 +90,8 @@
       border-radius: 8px;
       font-weight: 500;
       transition: background 0.2s ease;
+      margin-right: 5px;
+      margin-left: 5px;
     }
     .back-button:hover {
       background-color: #3d5887;
@@ -139,7 +100,7 @@
       text-align: center;
       padding: 1.2rem 1rem;
       background-color: #2caabe;
-      color: eaf3fb;
+      color: #eaf3fb;
       font-size: 0.9rem;
     }
   </style>
@@ -151,56 +112,96 @@
     <p>Halaman Tamu Kelompok dan Agenda Surat</p>
   </header>
 
-
+  <!-- BAGIAN KONTEN UTAMA: BUKU TAMU KELOMPOK & AGENDA SURAT -->
   <div class="content-container">
     <h2 class="section-title">BUKU TAMU KELOMPOK & AGENDA SURAT</h2>
+    
     <div class="card">
       <h2>Formulir Buku Tamu</h2>
-      <p>Buku tamu kelompok adalah catatan resmi yang mencatat kunjungan anggota, tamu eksternal, atau Agenda surat adalah buku atau sistem pencatatan yang mencatat semua surat masuk dan surat keluar yang terkait dengan kegiatan Pokdakan. Pencatatan ini meliputi tanggal, nomor surat, perihal, pengirim, dan penerima surat. pihak lain yang berkunjung ke kantor atau tempat pertemuan Pokdakan. Pencatatan ini penting untuk dokumentasi dan arsip kegiatan kelompok.
-      </p>
+      <p>Buku tamu kelompok adalah catatan resmi yang mencatat kunjungan anggota, tamu eksternal, atau pihak lain yang berkunjung ke kantor atau tempat pertemuan Pokdakan. Agenda surat adalah buku atau sistem pencatatan yang mencatat semua surat masuk dan surat keluar yang terkait dengan kegiatan Pokdakan. Pencatatan ini meliputi tanggal, nomor surat, perihal, pengirim, dan penerima surat. Pencatatan ini penting untuk dokumentasi dan arsip kegiatan kelompok.</p>
       
+      <!-- Embed Google Form Buku Tamu -->
+      <div class="embed-container">
+        <iframe 
+          src="https://docs.google.com/forms/d/e/1FAIpQLScG-ZU4cpe2v8YNnTX6aoIiKwmkWi6HdrlzJV_n2cVz8lHyQg/viewform?embedded=true" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0">
+          Memuat…
+        </iframe>
+      </div>
+
+      <!-- Embed Google Sheets Data Buku Tamu -->
+      <p style="color: #666; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: bold;">Tampilan Data Spreadsheet:</p>
+      <div class="embed-container" style="height: 500px;">
+        <iframe 
+          src="https://docs.google.com/spreadsheets/d/1gTowY5D191qbgE5ftz2ZFxQRcAa1cGi2RM23K7MqbuY/edit?usp=sharing" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0"
+          loading="lazy">
+          Memuat…
+        </iframe>
+      </div>
+
       <div style="text-align: center;">
-        <a href="https://forms.gle/mxc8ndseY9B9bcM76" class="back-button">Pendaftaran Tamu dan Agenda Surat Kelompok</a>
-        <a href="https://docs.google.com/spreadsheets/d/1gTowY5D191qbgE5ftz2ZFxQRcAa1cGi2RM23K7MqbuY/edit?usp=sharing" class="back-button">Data Tamu dan Surat Kelompok</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScG-ZU4cpe2v8YNnTX6aoIiKwmkWi6HdrlzJV_n2cVz8lHyQg/viewform?usp=header" target="_blank" class="back-button">Pendaftaran Tamu dan Agenda Surat Kelompok</a>
+        <a href="https://docs.google.com/spreadsheets/d/1gTowY5D191qbgE5ftz2ZFxQRcAa1cGi2RM23K7MqbuY/edit?usp=sharing" target="_blank" class="back-button">Data Tamu dan Surat Kelompok</a>
       </div>
     </div>
-<div class="card">
-    <h2>Sajian Data Looker Studio</h2>
-<iframe 
-  class="dashboard-container"
-  src="https://datastudio.google.com/embed/reporting/93b273c1-2614-44ef-b070-ce3485477a04/page/page_12345" width="800" height="500"
-  frameborder="0" 
-  allowfullscreen>
-</iframe>
-</div>
 
-    <div class="content-container">
-    <h2 class="section-title">TINGKAT KEPUASAN LAYANAN</h2>
     <div class="card">
-      <h2>Tingkat Kepuasan Terhadap Layanan</h2>
-      <p></p>
+      <h2>📊 Sajian Data Looker Studio</h2>
+      <p>Gambaran data tamu kelompok dan agenda surat perikanan yang disajikan dalam bentuk dashboard interaktif.</p>
       
-      <div style="text-align: center;">
-        <a href="https://forms.gle/DtBeU2jPkB43VcsP8" class="back-button">Tingkat Kepuasan Tamu</a>
-        <a href="https://docs.google.com/spreadsheets/d/1ibN5V0lq7RCEcx9ssIY6un3r0o9QtY06Scb9kUW1sbM/edit?usp=sharing" class="back-button">Penilaian Tamu</a>
+      <div class="embed-container" style="height: 500px;">
+        <iframe 
+          src="https://datastudio.google.com/embed/reporting/84e18980-1d69-4ecc-8ef1-48002e365f97/page/page_12345" 
+          frameborder="0" 
+          allowfullscreen
+          loading="lazy">
+        </iframe>
       </div>
-    </div>
-
-    <div class="card">
-<div style="text-align: center;">
-  <div class="card">
-    <p>File Excel untuk tingkat kepuasan tamu dan agenda surat anggota Pokdakan telah tersedia. Anda dapat mengunduhnya melalui tombol di bawah ini untuk melengkapi dan menganalisis data hasil survei.</p>
-      <a href="exsel tamu.xlsx" class="back-button">Unduh Evaluasi Layanan</a>
     </div>
   </div>
-</div>
 
+  <!-- BAGIAN KONTEN KEDUA: TINGKAT KEPUASAN LAYANAN -->
+  <div class="content-container" style="margin-top: 0;">
+    <h2 class="section-title">TINGKAT KEPUASAN LAYANAN</h2>
+    
+    <div class="card">
+      <h2>Tingkat Kepuasan Terhadap Layanan</h2>
+      <p>Evaluasi tingkat kepuasan layanan bagi para tamu yang berkunjung. Hal ini berguna untuk terus memantau kinerja, efektivitas, serta meningkatkan kualitas pelayanan kelompok perikanan (Pokdakan).</p>
+      
+      <div style="text-align: center;">
+        <a href="https://forms.gle/DtBeU2jPkB43VcsP8" target="_blank" class="back-button">Tingkat Kepuasan Tamu</a>
+        <a href="https://docs.google.com/spreadsheets/d/1ibN5V0lq7RCEcx9ssIY6un3r0o9QtY06Scb9kUW1sbM/edit?usp=sharing" target="_blank" class="back-button">Penilaian Tamu</a>
+      </div>
+    </div>
 
-    <div style="text-align: center;">
+    <!-- Dashboard & Unduh Evaluasi Layanan -->
+    <div class="card">
+      <h2>📊 Dashboard Tingkat Kepuasan</h2>
+      <div class="embed-container" style="height: 500px;">
+        <iframe 
+          src="https://datastudio.google.com/embed/reporting/bdf9882c-60d3-4ae5-b6fb-7e6a6cd7ca4d/page/page_12345" 
+          frameborder="0" 
+          allowfullscreen 
+          sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+          loading="lazy">
+        </iframe>
+      </div>
+      <div style="text-align: center; margin-top: 1.5rem;">
+        <p>File Excel untuk tingkat kepuasan tamu dan agenda surat anggota Pokdakan telah tersedia. Anda dapat mengunduhnya melalui tombol di bawah ini untuk melengkapi dan menganalisis data hasil survei.</p>
+        <a href="exsel tamu.xlsx" class="back-button" download>Unduh Evaluasi Layanan</a>
+      </div>
+    </div>
+
+    <!-- Tombol Kembali -->
+    <div style="text-align: center; margin-bottom: 3rem;">
       <a href="index.html" class="back-button">Kembali ke Menu Utama</a>
     </div>
   </div>
-
 
   <footer>
     SISTEM INFORMASI MANAJEMEN PERIKANAN <span id="name">KELOMPOK 2 - </span>POKDAKAN
