@@ -74,6 +74,23 @@
       text-align: justify;
     }
 
+    /* Wadah responsif untuk Google Form, Spreadsheet, dan Looker Studio */
+    .embed-container {
+      width: 100%;
+      height: 600px; /* Tinggi default untuk form */
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .embed-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
     .back-button {
       display: inline-block;
       margin-top: 1rem;
@@ -84,6 +101,8 @@
       border-radius: 8px;
       font-weight: 500;
       transition: background 0.2s ease;
+      margin-right: 5px;
+      margin-left: 5px;
     }
 
     .back-button:hover {
@@ -121,19 +140,44 @@
         akuntabel dapat meningkatkan kemandirian dan keberlanjutan kelompok.
       </p>
 
-      <div style="text-align:center;">
-        <a href="https://forms.gle/dFY5LRAn7qNUC1nG9"
-           class="back-button">Input Pembayaran Iuran</a>
+      <!-- Embed Google Form (Pembayaran Iuran) -->
+      <div class="embed-container">
+        <iframe 
+          src="https://forms.gle/dFY5LRAn7qNUC1nG9" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0">
+          Memuat…
+        </iframe>
+      </div>
 
-        <a href="https://docs.google.com/spreadsheets/d/1tX8cSnq3wYwr4rP0oWRcJFZ7RkammcGteAkQlvqXU7w/edit?usp=sharing"
-           class="back-button">Data Iuran Anggota</a>
+      <!-- Embed Google Sheets (Data Iuran Anggota) -->
+      <p style="color: #666; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: bold;">Tampilan Data Spreadsheet:</p>
+      <div class="embed-container" style="height: 500px;">
+        <iframe 
+          src="https://docs.google.com/spreadsheets/d/19W61DWTYNKwGDASV1ZWSCedcviWgWcw4S5T_sCYXY2w/edit?usp=sharing" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0"
+          loading="lazy">
+          Memuat…
+        </iframe>
+      </div>
+
+      <div style="text-align:center;">
+        <a href="https://forms.gle/dFY5LRAn7qNUC1nG9" target="_blank" class="back-button">Input Pembayaran Iuran</a>
+        <a href="https://docs.google.com/spreadsheets/d/19W61DWTYNKwGDASV1ZWSCedcviWgWcw4S5T_sCYXY2w/edit?usp=sharing" target="_blank" class="back-button">Data Iuran Anggota</a>
       </div>
     </div>
 
- <div class="card">
-        <h2>Sajian Data Looker Studio</h2>
-        <iframe src="https://datastudio.google.com/embed/reporting/bbcc297c-017f-4fa6-83cd-828b9d6d051a/page/page_12345" width="850" height="500" loading="lazy">
+    <div class="card">
+      <h2>Sajian Data Looker Studio</h2>
+      <div class="embed-container" style="height: 500px;">
+        <iframe 
+          src="https://datastudio.google.com/embed/reporting/3e07f53f-334f-4b30-85d2-12bb06b98a9d/page/page_12345" 
+          loading="lazy">
         </iframe>
+      </div>
     </div>
 
     <h2 class="section-title">EVALUASI PENGELOLAAN IURAN</h2>
@@ -148,25 +192,53 @@
         kelompok secara berkelanjutan.
       </p>
 
-      <div style="text-align:center;">
-        <a href="https://forms.gle/Hy9CRRX1A14J8uxC6"
-           class="back-button">Evaluasi Pengelolaan Iuran</a>
+      <!-- Embed Google Form (Evaluasi Pengelolaan Iuran) -->
+      <div class="embed-container">
+        <iframe 
+          src="https://forms.gle/Hy9CRRX1A14J8uxC6" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0">
+          Memuat…
+        </iframe>
+      </div>
 
-        <a href="https://docs.google.com/spreadsheets/d/1oFUuFelDpnbIgZAjHfN4mGL55B-f-cpyj01MNpuuYQY/edit?usp=sharing"
-           class="back-button">Hasil Penilaian Anggota</a>
+      <!-- Embed Google Sheets (Hasil Penilaian Anggota) -->
+      <p style="color: #666; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: bold;">Tampilan Data Spreadsheet:</p>
+      <div class="embed-container" style="height: 500px;">
+        <iframe 
+          src="https://docs.google.com/spreadsheets/d/1oFUuFelDpnbIgZAjHfN4mGL55B-f-cpyj01MNpuuYQY/edit?usp=sharing" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0"
+          loading="lazy">
+          Memuat…
+        </iframe>
+      </div>
+
+      <div style="text-align:center;">
+        <a href="https://forms.gle/Hy9CRRX1A14J8uxC6" target="_blank" class="back-button">Evaluasi Pengelolaan Iuran</a>
+        <a href="https://docs.google.com/spreadsheets/d/1oFUuFelDpnbIgZAjHfN4mGL55B-f-cpyj01MNpuuYQY/edit?usp=sharing" target="_blank" class="back-button">Hasil Penilaian Anggota</a>
       </div>
     </div>
    
-<div class="card">
-<div style="text-align: center;">
-  <div class="card">
-    <p>File Excel untuk tingkat kepuasan layanan iuran Pokdakan telah tersedia. Anda dapat mengunduhnya melalui tombol di bawah ini untuk melengkapi dan menganalisis data hasil survei.</p>
-      <a href="AXCEL IURAN KELOMPOK.xlsx" class="back-button">Unduh Evaluasi Layanan</a>
+    <div class="card">
+      <div style="text-align: center;">
+        <div class="embed-container" style="height: 500px;">
+          <iframe 
+            src="https://datastudio.google.com/embed/reporting/e0893db6-f413-47d4-a761-9e8f7de8d96c/page/page_12345" 
+            frameborder="0" 
+            style="border:0" 
+            allowfullscreen 
+            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+          </iframe>
+        </div>
+        <p>File Excel untuk tingkat kepuasan layanan iuran Pokdakan telah tersedia. Anda dapat mengunduhnya melalui tombol di bawah ini untuk melengkapi dan menganalisis data hasil survei.</p>
+        <a href="AXCEL IURAN KELOMPOK.xlsx" class="back-button" download>Unduh Evaluasi Layanan</a>
+      </div>
     </div>
-  </div>
-</div>
 
-    <div style="text-align:center;">
+    <div style="text-align:center; margin-bottom: 3rem;">
       <a href="index.html" class="back-button">
         Kembali ke Menu Utama
       </a>
