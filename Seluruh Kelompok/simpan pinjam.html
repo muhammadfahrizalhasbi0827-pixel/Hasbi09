@@ -131,12 +131,29 @@
       border-radius: 8px;
       font-weight: 500;
       transition: background 0.2s ease;
+      margin-right: 5px;
+      margin-left: 5px;
     }
     .back-button:hover {
       background-color: #3d5887;
     }
     
-    /* STYLE TAMBAHAN UNTUK EMBED LOOKER STUDIO */
+    /* Wadah responsif untuk Google Form dan Sheets (Disamakan dengan rencana usaha) */
+    .embed-container {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .embed-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
     .looker-container {
       width: 100%;
       margin-top: 1rem;
@@ -155,10 +172,9 @@
       text-align: center;
       padding: 1.2rem 1rem;
       background-color: #2caabe;
-      color: eaf3fb;
+      color: #eaf3fb;
       font-size: 0.9rem;
     }
-    
   </style>
 </head>
 <body>
@@ -168,61 +184,89 @@
     <p>Halaman Simpan Pinjam Anggota Kelompok</p>
   </header>
 
-
+  <!-- BAGIAN KONTEN UTAMA: SISTEM SIMPAN PINJAM -->
   <div class="content-container">
     <h2 class="section-title">SISTEM SIMPAN PINJAM</h2>
+    
     <div class="card">
       <h2>Formulir Permohonan Pinjaman</h2>
       <p>Pokdakan (Kelompok Pembudidaya Ikan) adalah kelompok formal yang dibentuk oleh para pembudidaya ikan untuk saling berbagi pengetahuan, mengakses bantuan pemerintah, dan meningkatkan pengelolaannya. Beberapa Pokdakan juga mengembangkan unit simpan pinjam untuk membantu modal usaha anggota.</p>
-      <form>
-       
-        <div style="text-align: center;">
-        <a href="https://forms.gle/8ms2iZ6cceRLrPiW8" class="back-button">Permohonan Simpan Pinjam</a>
-        <a href="https://docs.google.com/spreadsheets/d/19OfXD3VtZfgU5uDQ5vS8xuyiYoZ3djAVuHnwSVBA3Tc/edit?usp=sharing" class="back-button">Nasabah Simpan Pinjam</a>
-      </div>
+      
+      <!-- Embed Google Form (Simpan Pinjam) -->
+      <div class="embed-container">
+        <iframe 
+          src="https://forms.gle/xQfhzFizXw5TJjnA7" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0">
+          Memuat…
+        </iframe>
       </div>
 
-      <div class="card">
-        <h2>📊 Sajian Data Looker Studio</h2>
-        <p>Lihat visualisasi data simpan pinjam secara interaktif dengan grafik dan dashboard yang otomatis terupdate setiap kali ada perubahan data di spreadsheet.</p>
-      
-        <div class="looker-container">
-          <iframe 
-            src="https://datastudio.google.com/embed/reporting/33f56401-a8bb-4f9f-85f8-7dc70f4d05bb/page/page_12345" 
-            allowfullscreen loading="lazy">
-          </iframe>
-        </div>
-        
-        <p style="text-align: center; color: #666; font-size: 0.85rem; margin-top: 1rem;">
-          ⚡ Data otomatis terupdate setiap 15 menit | Dashboard langsung tampil di halaman
-        </p>
+      <!-- Embed Google Sheets (Data Simpan Pinjam) -->
+      <p style="color: #666; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: bold;">Tampilan Data Spreadsheet:</p>
+      <div class="embed-container" style="height: 500px;">
+        <iframe 
+          src="https://docs.google.com/spreadsheets/d/1XJj6LlWnFjLvcIigFsgLMsnyPchT8TRBoWgysrt1p3E/edit?usp=sharing" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0"
+          loading="lazy">
+          Memuat…
+        </iframe>
+      </div>
+
+      <div style="text-align: center;">
+        <a href="https://forms.gle/xQfhzFizXw5TJjnA7" target="_blank" class="back-button">Permohonan Simpan Pinjam</a>
+        <a href="https://docs.google.com/spreadsheets/d/1XJj6LlWnFjLvcIigFsgLMsnyPchT8TRBoWgysrt1p3E/edit?usp=sharing" target="_blank" class="back-button">Nasabah Simpan Pinjam</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📊 Sajian Data Looker Studio</h2>
+      <p>Lihat visualisasi data simpan pinjam secara interaktif dengan grafik dan dashboard yang otomatis terupdate setiap kali ada perubahan data di spreadsheet.</p>
+    
+      <div class="looker-container">
+        <iframe 
+          src="https://datastudio.google.com/embed/reporting/90604fe4-c775-4782-a6fa-b750e91d8826/page/h6R1F" 
+          allowfullscreen loading="lazy">
+        </iframe>
       </div>
       
-    <div class="content-container">
+      <p style="text-align: center; color: #666; font-size: 0.85rem; margin-top: 1rem;">
+        ⚡ Data otomatis terupdate setiap 15 menit | Dashboard langsung tampil di halaman
+      </p>
+    </div>
+  </div>
+      
+  <!-- BAGIAN KONTEN KEDUA: EVALUASI LAYANAN -->
+  <div class="content-container" style="margin-top: 0;">
     <h2 class="section-title">EVALUASI LAYANAN</h2>
+    
     <div class="card">
       <h2>Survei Kepuasan Pengguna</h2>
       <p>Evaluasi layanan adalah proses penilaian sistematis terhadap kinerja, kualitas, efektivitas, dan efisiensi layanan yang diberikan oleh suatu lembaga atau entitas kepada pengguna layanannya.</p>
       <div style="text-align: center;">
-        <a href="https://forms.gle/8ZCoSUZPEhXr3QoA6" class="back-button">Evaluasi Simpan Pinjam</a>
-        <a href="https://docs.google.com/spreadsheets/d/14qohWE6UobXxrLlC22EOWc1tvopPrKWnKu5VgTJXIXQ/edit?usp=sharing" class="back-button">Penilaian Nasabah</a>
+        <a href="https://forms.gle/8ZCoSUZPEhXr3QoA6" target="_blank" class="back-button">Evaluasi Simpan Pinjam</a>
+        <a href="https://docs.google.com/spreadsheets/d/14qohWE6UobXxrLlC22EOWc1tvopPrKWnKu5VgTJXIXQ/edit?usp=sharing" target="_blank" class="back-button">Penilaian Nasabah</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="text-align: center;">
+        <div style="margin-bottom: 1.5rem;">
+          <iframe width="600" height="450" src="https://datastudio.google.com/embed/reporting/8c04535f-bfb0-45af-8384-baaaa67da812/page/page_12345" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+        </div>
+        <p>File Excel untuk evaluasi layanan simpan pinjam Pokdakan telah tersedia. Anda dapat mengunduhnya melalui tombol di bawah ini untuk melengkapi dan menganalisis data hasil survei.</p>
+        <a href="Excel Simpan Pinjam.xlsx" class="back-button" download>Unduh Evaluasi Layanan</a>
       </div>
     </div>
   
- <div class="card">
-<div style="text-align: center;">
-  <div class="card">
-    <p>File Excel untuk evaluasi simpan pinjam anggota Pokdakan telah tersedia. Anda dapat mengunduhnya melalui tombol di bawah ini untuk melengkapi dan menganalisis data hasil survei.</p>
-      <a href="Excel Simpan Pinjam.xlsx" class="back-button">Unduh Evaluasi Layanan</a>
-    </div>
-  </div>
-</div>
-
-    <div style="text-align: center;">
+    <!-- Tombol Kembali -->
+    <div style="text-align: center; margin-bottom: 3rem;">
       <a href="index.html" class="back-button">Kembali ke Menu Utama</a>
     </div>
   </div>
-
 
   <footer>
     SISTEM INFORMASI MANAJEMEN PERIKANAN <span id="name">KELOMPOK 2 - </span>POKDAKAN
