@@ -58,69 +58,28 @@
       border-bottom: 2px solid #e0f7ff;
       padding-bottom: 0.5rem;
     }
-    .card h3 {
-      color: #3a6b9d;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      margin-top: 1.5rem;
-    }
     .card p {
       line-height: 1.6;
       margin-bottom: 1rem;
       text-align: justify;
     }
-    .card ul {
-      margin-left: 1.5rem;
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
-    .card li {
-      margin-bottom: 0.5rem;
-    }
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
     
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
+    /* Wadah responsif untuk Google Form, Sheets, dan Looker Studio */
+    .embed-container {
       width: 100%;
-      padding: 0.8rem;
-      border: 2px solid #e0e0e0;
+      height: 600px; /* Tinggi default, silakan sesuaikan dengan isi */
+      border: 1px solid #e0e0e0;
       border-radius: 8px;
-      font-size: 1rem;
-      font-family: inherit;
-      transition: border-color 0.2s ease;
+      overflow: hidden;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
     }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: #2caabe;
-    }
-    .btn {
-      display: inline-block;
-      padding: 0.8rem 2rem;
-      background-color: #2caabe;
-      color: white;
+    .embed-container iframe {
+      width: 100%;
+      height: 100%;
       border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background 0.2s ease;
-      text-decoration: none;
-      text-align: center;
     }
-    .button-group {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
-    }
+
     .back-button {
       display: inline-block;
       margin-top: 1rem;
@@ -131,6 +90,8 @@
       border-radius: 8px;
       font-weight: 500;
       transition: background 0.2s ease;
+      margin-right: 5px;
+      margin-left: 5px;
     }
     .back-button:hover {
       background-color: #3d5887;
@@ -142,25 +103,6 @@
       color: #eaf3fb;
       font-size: 0.9rem;
     }
-
-    /* Tambahan khusus untuk saldo */
-    .saldo-box {
-      background: linear-gradient(90deg, #2caabe, #3282b8);
-      color: white;
-      padding: 1.5rem;
-      border-radius: 12px;
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    .saldo-box h2 {
-      color: white;
-      border: none;
-    }
-    .saldo-amount {
-      font-size: 2.2rem;
-      font-weight: bold;
-      margin: 0.5rem 0;
-    }
   </style>
 </head>
 <body>
@@ -170,54 +112,100 @@
     <p>Halaman Kas Kelompok</p>
   </header>
 
+  <!-- BAGIAN KONTEN UTAMA: KAS KELOMPOK -->
   <div class="content-container">
     <h2 class="section-title">KAS KELOMPOK</h2>
-
+    
     <div class="card">
       <h2>Formulir Input Transaksi Kas</h2>
-      <p>Silakan catat pemasukan atau pengeluaran kas kelompok di sini.</p>
+      <p>Silakan catat pemasukan atau pengeluaran kas kelompok di sini. Pengelolaan kas yang transparan membantu kelompok pembudidaya ikan memantau modal, biaya operasional, dan hasil penjualan secara teratur.</p>
       
-      <div style="text-align: center; margin: 2rem 0;">
-        <a href="https://forms.gle/cspuWhLofHYfbGP16" class="back-button">Input Pemasukan / Pengeluaran</a>
-        <a href="https://docs.google.com/spreadsheets/d/1wwNabq0V3_2GA2bGBY5ee2ok-Xx5w9LrwZvWjhz8Lg4/edit?usp=sharing" class="back-button">Lihat Buku Kas Lengkap</a>
+      <!-- Embed Google Form (Input Transaksi Kas) -->
+      <div class="embed-container">
+        <iframe 
+          src="https://forms.gle/oZq3CL22ETHZHTfXA" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0">
+          Memuat…
+        </iframe>
+      </div>
+
+      <!-- Embed Google Sheets (Data Buku Kas) -->
+      <p style="color: #666; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: bold;">Tampilan Data Spreadsheet:</p>
+      <div class="embed-container" style="height: 500px;">
+        <iframe 
+          src="https://docs.google.com/spreadsheets/d/1p0612KUCAVLXA2SotwZedx19IXkuNfiw57cKY3l6ZPM/edit?usp=sharing" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0"
+          loading="lazy">
+          Memuat…
+        </iframe>
+      </div>
+
+      <div style="text-align: center;">
+        <a href="https://forms.gle/oZq3CL22ETHZHTfXA" target="_blank" class="back-button">Input Pemasukan / Pengeluaran</a>
+        <a href="https://docs.google.com/spreadsheets/d/1p0612KUCAVLXA2SotwZedx19IXkuNfiw57cKY3l6ZPM/edit?usp=sharing" target="_blank" class="back-button">Lihat Buku Kas Lengkap</a>
       </div>
     </div>
 
     <div class="card">
-        <h2>📊 Sajian Data Looker Studio</h2>
-        <p>Lihat visualisasi data simpan pinjam secara interaktif dengan grafik dan dashboard yang otomatis terupdate setiap kali ada perubahan data di spreadsheet.</p>
+      <h2>📊 Sajian Data Looker Studio</h2>
+      <p>Lihat visualisasi data simpan pinjam secara interaktif dengan grafik dan dashboard yang otomatis terupdate setiap kali ada perubahan data di spreadsheet.</p>
+    
+      <div class="embed-container" style="height: 500px;">
+        <iframe 
+          src="https://datastudio.google.com/embed/reporting/1720f61e-2924-4224-9d15-aaa300b1f45e/page/page_12345" 
+          allowfullscreen 
+          loading="lazy">
+        </iframe>
+      </div>
       
-        <div class="looker-container">
-          <iframe 
-            src="https://datastudio.google.com/embed/reporting/215657d0-5d37-4746-8d04-a9851b9c763d/page/page_12345" width="800" height="500"
-            allowfullscreen loading="lazy">
-          </iframe>
-        </div>
-        
-        <p style="text-align: center; color: #666; font-size: 0.85rem; margin-top: 1rem;">
-          ⚡ Data otomatis terupdate setiap 15 menit | Dashboard langsung tampil di halaman
-        </p>
-      </div>
-
-    <div class="card">
-      <h2>Tingkat Kepuasan Layanan</h2>
-      <div style="text-align: center; margin: 2rem 0;">
-        <a href="https://forms.gle/BJcix1i8BZNRtAjW9" class="back-button">Tingkat Kepuasan</a>
-        <a href="https://docs.google.com/spreadsheets/d/1_l4suChDH3nh2weE_HXBsHe6p9M1kxLK_ailYpEEcIs/edit?usp=sharing" class="back-button">Data Tingkat Kepuasan</a>
-      </div>
-    </div>
-    </div>
-
-    <div class="card">
-<div style="text-align: center;">
-  <div class="card">
-    <p>File Excel untuk evaluasi Kas anggota Pokdakan telah tersedia. Anda dapat mengunduhnya melalui tombol di bawah ini untuk melengkapi dan menganalisis data hasil survei.</p>
-      <a href="Excel/Excel Kas Kelompok 1.xlsx" class="back-button">Unduh Evaluasi Layanan</a>
+      <p style="text-align: center; color: #666; font-size: 0.85rem; margin-top: 1rem;">
+        ⚡ Data otomatis terupdate setiap 15 menit | Dashboard langsung tampil di halaman
+      </p>
     </div>
   </div>
-</div>
+           
+  <!-- BAGIAN KONTEN KEDUA: EVALUASI LAYANAN -->
+  <div class="content-container" style="margin-top: 0;">
+    <h2 class="section-title">EVALUASI LAYANAN</h2>
+    
+    <div class="card">
+      <h2>Tingkat Kepuasan Layanan</h2>
+      <p>Evaluasi layanan adalah proses penilaian sistematis terhadap kinerja, kualitas, efektivitas, dan efisiensi layanan yang diberikan oleh suatu lembaga atau entitas kepada pengguna layanannya.</p>
+ 
+      <div style="text-align: center;">
+        <a href="https://forms.gle/BJcix1i8BZNRtAjW9" target="_blank" class="back-button">Tingkat Kepuasan</a>
+        <a href="https://docs.google.com/spreadsheets/d/1_l4suChDH3nh2weE_HXBsHe6p9M1kxLK_ailYpEEcIs/edit?usp=sharing" target="_blank" class="back-button">Data Tingkat Kepuasan</a>
+      </div>
+    </div>
 
-    <div style="text-align: center; margin-top: 2rem;">
+    <!-- Dashboard Kepuasan Layanan -->
+    <div class="card">
+      <h2>📊 Dashboard Tingkat Kepuasan</h2>
+      <p>Visualisasi interaktif hasil survei tingkat kepuasan anggota terhadap pengelolaan kas kelompok.</p>
+      
+      <div class="embed-container" style="height: 500px;">
+        <iframe 
+          src="https://datastudio.google.com/embed/reporting/200e7009-96ef-48e6-9adf-bc8f8552b895/page/page_12345" 
+          allowfullscreen 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Unduh Evaluasi Layanan -->
+    <div class="card">
+      <div style="text-align: center;">
+        <p>File Excel untuk evaluasi Kas anggota Pokdakan telah tersedia. Anda dapat mengunduhnya melalui tombol di bawah ini untuk melengkapi dan menganalisis data hasil survei.</p>
+        <a href="Excel Kas Kelompok 1.xlsx" class="back-button" download>Unduh Evaluasi Layanan</a>
+      </div>
+    </div>
+
+    <!-- Tombol Kembali -->
+    <div style="text-align: center; margin-bottom: 3rem;">
       <a href="index.html" class="back-button">Kembali ke Menu Utama</a>
     </div>
   </div>
