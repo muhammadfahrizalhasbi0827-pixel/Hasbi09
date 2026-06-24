@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produksi Kelompok/Hasil Tangkapan</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #2caabe, #3282b8);
+      color: white;
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.3rem;
+    }
+    header h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    .content-container {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.6rem;
+      color: #3a6b9d;
+    }
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .card h2 {
+      color: #2caabe;
+      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+      border-bottom: 2px solid #e0f7ff;
+      padding-bottom: 0.5rem;
+    }
+    .card p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+    
+    /* Wadah responsif untuk Google Form dan Looker Studio */
+    .embed-container {
+      width: 100%;
+      height: 600px; /* Tinggi default, silakan sesuaikan dengan isi form */
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .embed-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #2caabe;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: background 0.2s ease;
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+    .back-button:hover {
+      background-color: #3d5887;
+    }
+    footer {
+      text-align: center;
+      padding: 1.2rem 1rem;
+      background-color: #2caabe;
+      color: #eaf3fb;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SISTEM INFORMASI MANAJEMEN PERIKANAN</h1>
+    <h3>POKDAKAN</h3>
+    <p>Halaman Produksi Kelompok/Hasil Tangkapan</p>
+  </header>
+
+  <!-- BAGIAN KONTEN UTAMA: PRODUKSI KELOMPOK/HASIL TANGKAPAN -->
+  <div class="content-container">
+    <h2 class="section-title">SISTEM PRODUKSI KELOMPOK/HASIL TANGKAPAN</h2>
+    
+    <div class="card">
+      <h2>Formulir Input Produksi Kelompok/Hasil Tangkapan</h2>
+      <p>Pokdakan (Kelompok Pembudidaya Ikan) adalah kelompok formal yang dibentuk oleh para pembudidaya ikan untuk saling berbagi pengetahuan, mengakses bantuan pemerintah, dan meningkatkan pengelolaannya. Rencana usaha kelompok perikanan membantu anggota dalam mengelola kegiatan budidaya, penangkapan, maupun pemasaran hasil perikanan secara lebih terstruktur. Perencanaan yang jelas mendukung tercapainya tujuan usaha dan perkembangan kelompok.</p>
+      
+      <!-- Embed Google Form 1 (Produksi Kelompok/Hasil Tangkapan) -->
+      <div class="embed-container">
+        <iframe 
+          src="https://forms.gle/eXBPPNvDgwZAnZDp6" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0">
+          Memuat…
+        </iframe>
+      </div>
+
+      <!-- Embed Google Sheets (Data Produksi Kelompok/Hasil Tangkapan) -->
+      <p style="color: #666; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: bold;">Tampilan Data Spreadsheet:</p>
+      <div class="embed-container" style="height: 500px;">
+        <iframe 
+          src="https://docs.google.com/spreadsheets/d/1643momQjS5FDivCUO6GQ6B0h4rFF8aa6Zq2q_aUrnGo/edit?usp=sharing" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0"
+          loading="lazy">
+          Memuat…
+        </iframe>
+      </div>
+
+      <div style="text-align: center;">
+        <a href="https://forms.gle/eXBPPNvDgwZAnZDp6" target="_blank" class="back-button">Input Produksi Kelompok/Hasil Tangkapan</a>
+        <a href="https://docs.google.com/spreadsheets/d/1643momQjS5FDivCUO6GQ6B0h4rFF8aa6Zq2q_aUrnGo/edit?usp=sharing" target="_blank" class="back-button">Lihat Data Produksi Kelompok/Hasil Tangkapan</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📊 Dashboard Data Produksi</h2>
+      <p>Visualisasi data produksi kelompok/hasil tangkapan dalam bentuk dashboard interaktif. Dashboard ini menampilkan statistik dan analisis real-time dari data inventaris yang telah diinputkan.</p>
+    
+      <div class="embed-container" style="height: 500px;">
+        <iframe 
+          src="https://datastudio.google.com/embed/reporting/214ff9f9-3111-4c6f-af8f-773ba75cd361/page/p_eom8ysbo4d" 
+          allowfullscreen 
+          loading="lazy">
+        </iframe>
+      </div>
+
+      <div style="text-align: center; margin-top: 1rem;">
+        <a href="https://datastudio.google.com/embed/reporting/214ff9f9-3111-4c6f-af8f-773ba75cd361/page/p_eom8ysbo4d" target="_blank" class="back-button">Buka Dashboard Lengkap</a>
+      </div>
+    </div>
+  </div>
+           
+  <!-- BAGIAN KONTEN KEDUA: EVALUASI LAYANAN -->
+  <div class="content-container" style="margin-top: 0;">
+    <h2 class="section-title">EVALUASI LAYANAN</h2>
+    
+    <div class="card">
+      <h2>Survei Kepuasan Pengguna</h2>
+      <p>Evaluasi layanan adalah proses penilaian sistematis terhadap kinerja, kualitas, efektivitas, dan efisiensi layanan yang diberikan oleh suatu lembaga atau entitas kepada pengguna layanannya.</p>
+ 
+      <div style="text-align: center;">
+        <a href="https://forms.gle/QxqKHKicS9APvnqG7" target="_blank" class="back-button">Input Produksi Kelompok/Hasil Tangkapan</a>
+        <a href="https://docs.google.com/spreadsheets/d/1qTZX42tpK7cg7WlmQ3ZXUUgHGLXeFEsYVTrR1YV14MM/edit?usp=sharing" target="_blank" class="back-button">Lihat Data Produksi Kelompok/Hasil Tangkapan.</a>
+      </div>
+    </div>
+
+    <!-- Unduh Evaluasi Layanan & Embed Pendukung -->
+    <div class="card">
+      <div style="text-align: center;">
+        <div class="embed-container" style="height: 450px;">
+          <iframe 
+            src="https://datastudio.google.com/embed/reporting/dcf1ddcb-534a-4b7d-9530-2d1bb0f15ffd/page/page_12345" 
+            frameborder="0" 
+            style="border:0" 
+            allowfullscreen 
+            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+          </iframe>
+        </div>
+        <p>File Excel untuk evaluasi produksi kelompok/hasil tangkapan Pokdakan telah tersedia. Anda dapat mengunduhnya melalui tombol di bawah ini untuk melengkapi dan menganalisis data hasil survei.</p>
+        <a href="Excel Produksi.xlsx" class="back-button" download>Unduh Evaluasi Layanan</a>
+      </div>
+    </div>
+
+    <!-- Tombol Kembali -->
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <a href="tugas individu/index.html" class="back-button">Kembali ke Menu Utama</a>
+    </div>
+  </div>
+
+  <footer>
+    SISTEM INFORMASI MANAJEMEN PERIKANAN <span id="name">KELOMPOK 2 - </span>POKDAKAN
+  </footer>
+</body>
+</html>
