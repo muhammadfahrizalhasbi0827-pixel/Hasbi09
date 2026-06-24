@@ -131,6 +131,8 @@
       border-radius: 8px;
       font-weight: 500;
       transition: background 0.2s ease;
+      margin-right: 5px;
+      margin-left: 5px;
     }
     .back-button:hover {
       background-color: #3d5887;
@@ -142,6 +144,23 @@
       color: #eaf3fb;
       font-size: 0.9rem;
     }
+
+    /* Wadah responsif untuk Google Form dan Google Sheets */
+    .embed-container {
+      width: 100%;
+      height: 600px; /* Tinggi default, silakan sesuaikan dengan isi form */
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .embed-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
     /* Style tambahan untuk membungkus Looker Studio agar responsif */
     .responsive-iframe-container {
       position: relative;
@@ -177,9 +196,33 @@
       <h2>Pencatatan Penebaran Benih</h2>
       <p>Pola tebar yang terencana sangat krusial bagi Pokdakan untuk menghindari risiko gagal panen akibat overpopulasi kolam, menjaga kestabilan kualitas air, serta mengatur siklus panen agar pasokan ikan di pasar tetap stabil secara berkelanjutan.</p>
       
+      <!-- Embed Google Form (Pola Tebar) -->
+      <div class="embed-container">
+        <iframe 
+          src="https://docs.google.com/forms/d/e/1FAIpQLSffy4IJ1hwHgfPAnsYyJzsTAEMebRcDp1C2wsdGgvVhCqQ8tw/viewform?embedded=true" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0">
+          Memuat…
+        </iframe>
+      </div>
+
+      <!-- Embed Google Sheets (Data Penebaran Benih) -->
+      <p style="color: #666; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: bold;">Tampilan Data Spreadsheet:</p>
+      <div class="embed-container" style="height: 500px;">
+        <iframe 
+          src="https://docs.google.com/spreadsheets/d/1PEdQQuPPV4GZ1auHpfDjXNqduYrAauoUe7JmoV3IxK8/edit?usp=sharing" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0"
+          loading="lazy">
+          Memuat…
+        </iframe>
+      </div>
+
       <div style="text-align: center;">
-        <a href="https://forms.gle/UjCVuqEQbVrH7M2u5" class="back-button">Formulir Pola Tebar</a>
-        <a href="https://docs.google.com/spreadsheets/d/1s_o6kj_WxBRk6SNABMICMmIfqxg0hYdiMhmbQ2ZR10E/edit?usp=sharing" class="back-button">Data Penebaran Benih</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSffy4IJ1hwHgfPAnsYyJzsTAEMebRcDp1C2wsdGgvVhCqQ8tw/viewform?usp=header" target="_blank" class="back-button">Formulir Pola Tebar</a>
+        <a href="https://docs.google.com/spreadsheets/d/1PEdQQuPPV4GZ1auHpfDjXNqduYrAauoUe7JmoV3IxK8/edit?usp=sharing" target="_blank" class="back-button">Data Penebaran Benih</a>
       </div>
     </div>
 
@@ -200,18 +243,19 @@
       <p>Berikut adalah tampilan interaktif mengenai perkembangan data operasional, sebaran benih, dan hasil analisis performa budidaya Pokdakan secara real-time.</p>
       
       <div class="responsive-iframe-container">
-        <iframe src="https://datastudio.google.com/embed/reporting/2681ba9d-0d63-44f5-b302-d07565c138e3/page/page_12345" allowfullscreen></iframe>
+        <iframe src="https://datastudio.google.com/embed/reporting/9f39a47d-b29b-4d7d-a660-47e4addd9877/page/page_12345" allowfullscreen></iframe>
       </div>
     </div>
 
     <div class="card">
-<div style="text-align: center;">
-  <div class="card">
-    <p>File Excel untuk evaluasi pola tebar anggota Pokdakan telah tersedia. Anda dapat mengunduhnya melalui tombol di bawah ini untuk melengkapi dan menganalisis data hasil survei.</p>
-      <a href="Excel/POLA TEBAR.xlsx" class="back-button">Unduh Evaluasi Layanan</a>
+      <div style="text-align: center;">
+        <div class="card">
+          <iframe width="600" height="450" src="https://datastudio.google.com/embed/reporting/701519e5-9b34-46ec-868c-090aa2ce03c1/page/page_12345" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+          <p>File Excel untuk evaluasi pola tebar anggota Pokdakan telah tersedia. Anda dapat mengunduhnya melalui tombol di bawah ini untuk melengkapi dan menganalisis data hasil survei.</p>
+          <a href="POLA TEBAR.xlsx" class="back-button">Unduh Evaluasi Layanan</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
     <div style="text-align: center;">
       <a href="index.html" class="back-button">Kembali ke Menu Utama</a>
