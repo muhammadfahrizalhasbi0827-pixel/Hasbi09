@@ -131,10 +131,29 @@
       border-radius: 8px;
       font-weight: 500;
       transition: background 0.2s ease;
+      margin-right: 5px;
+      margin-left: 5px;
     }
     .back-button:hover {
       background-color: #3d5887;
     }
+
+    /* Wadah responsif untuk Google Form dan Google Sheets */
+    .embed-container {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .embed-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
     footer {
       text-align: center;
       padding: 1.2rem 1rem;
@@ -151,57 +170,75 @@
     <p>Halaman Notulen Rapat Anggota Kelompok</p>
   </header>
 
-  <<div class="content-container">
+  <div class="content-container">
     <h2 class="section-title">SISTEM DOKUMENTASI RAPAT</h2>
+    
     <div class="card">
       <h2>Pencatatan Notulen Rapat</h2>
       <p>Notulen rapat Pokdakan (Kelompok Pembudidaya Ikan) berfungsi sebagai rekam medis keputusan bersama, rencana kerja, evaluasi budidaya, serta penyaluran bantuan. Pendokumentasian yang baik memastikan seluruh anggota kelompok memiliki pemahaman yang sama demi kemajuan usaha perikanan bersama.</p>
       
+      <!-- Embed Google Form (Pencatatan Notulen Rapat) -->
+      <div class="embed-container">
+        <iframe 
+          src="https://forms.gle/acwYXJJesw5TCCVP6" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0">
+          Memuat…
+        </iframe>
+      </div>
+
+      <!-- Embed Google Sheets (Arsip Notulen Rapat) -->
+      <p style="color: #666; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: bold;">Tampilan Data Spreadsheet:</p>
+      <div class="embed-container" style="height: 500px;">
+        <iframe 
+          src="https://docs.google.com/spreadsheets/d/1QkWVlfYIIm_WyuqsE-uNjDGpTaP7XiZjVxr91KKtf7I/edit?usp=sharing" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0"
+          loading="lazy">
+          Memuat…
+        </iframe>
+      </div>
+
       <div style="text-align: center;">
-        <a href="https://forms.gle/LgQVzPZjTKNaqVFB6" class="back-button">Input Notulen Rapat</a>
-        <a href="https://docs.google.com/spreadsheets/d/1MnxJl3pOZY45lFum1Sjn6yrCtSi9Vicg3zjxnuI_3DI/edit?usp=sharing" class="back-button">Arsip Notulen Rapat</a>
+        <a href="https://forms.gle/acwYXJJesw5TCCVP6" class="back-button">Input Notulen Rapat</a>
+        <a href="https://docs.google.com/spreadsheets/d/1QkWVlfYIIm_WyuqsE-uNjDGpTaP7XiZjVxr91KKtf7I/edit?usp=sharing" class="back-button">Arsip Notulen Rapat</a>
       </div>
     </div>
 
- <div class="card">
-        <h2>📊 Sajian Data Looker Studio</h2>
-        <p>Lihat visualisasi data secara interaktif dengan grafik dan dashboard yang otomatis terupdate setiap kali ada perubahan data di spreadsheet.</p>
-      
-        <div class="looker-container">
-          <iframe 
-            src="https://datastudio.google.com/embed/reporting/3f017505-0096-480e-8ec8-727bf496a40c/page/page_12345" width="800" height="500"
-            allowfullscreen loading="lazy">
-          </iframe>
-        </div>
-</div>
+    <div class="card">
+      <h2>📊 Sajian Data Looker Studio</h2>
+      <p>Lihat visualisasi data secara interaktif dengan grafik dan dashboard yang otomatis terupdate setiap kali ada perubahan data di spreadsheet.</p>
+    
+      <div class="looker-container">
+        <iframe 
+          src="https://datastudio.google.com/embed/reporting/98bd3183-f8fd-4697-b924-5c05fe0aa67a/page/page_12345" width="800" height="500"
+          allowfullscreen loading="lazy">
+        </iframe>
+      </div>
+    </div>
 
     <h2 class="section-title">Tingkat Kepuasan</h2>
+    
     <div class="card">
       <h2>Tingkat Kepuasan</h2>
       <p>Monitoring kehadiran anggota merupakan bagian penting dalam evaluasi keaktifan kelompok Pokdakan. Data ini digunakan untuk melihat partisipasi anggota dalam setiap pengambilan keputusan penting.</p>
-      
-      <div style="text-align: center;">
-        <a href="https://forms.gle/cJTyrFPKqNaS97PM6" class="back-button">Tingkat Kepuasan</a>
-        <a href="https://docs.google.com/spreadsheets/d/1bKvyfInq4fJWPK74YVCJB2c_Y2wse5ZqMbIe4wjTWIY/edit?usp=sharing" class="back-button">Data Kepuasan</a>
-      </div>
-    </div>
 
     <div class="card">
-<div style="text-align: center;">
-  <div class="card">
-    <p>File Excel untuk evaluasi notulen anggota Pokdakan telah tersedia. Anda dapat mengunduhnya melalui tombol di bawah ini untuk melengkapi dan menganalisis data hasil survei.</p>
-      <a href="Excel/Parni Notulen rapat kelompok.xlsx" class="back-button">Unduh Evaluasi Layanan</a>
+      <div style="text-align: center;">
+        <div class="card">
+          <iframe width="600" height="450" src="https://datastudio.google.com/embed/reporting/e50eed4a-a962-49a3-8ac6-0d84840eedf7/page/page_12345" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+          <p>File Excel untuk evaluasi notulen anggota Pokdakan telah tersedia. Anda dapat mengunduhnya melalui tombol di bawah ini untuk melengkapi dan menganalisis data hasil survei.</p>
+          <a href="Parni Notulen rapat kelompok.xlsx" class="back-button">Unduh Evaluasi Layanan</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
 
     <div style="text-align: center;">
       <a href="index.html" class="back-button">Kembali ke Menu Utama</a>
     </div>
   </div>
-
-    
 
   <footer>
     SISTEM INFORMASI MANAJEMEN PERIKANAN <span id="name">KELOMPOK 2 - </span>POKDAKAN
