@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inventaris Barang Kelompok</title>
+  <title>Rencana Usaha Kelompok</title>
   <style>
     * {
       margin: 0;
@@ -63,10 +63,26 @@
       margin-bottom: 1rem;
       text-align: justify;
     }
+    
+    /* Wadah responsif untuk Google Form dan Looker Studio */
+    .embed-container {
+      width: 100%;
+      height: 600px; /* Tinggi default, silakan sesuaikan dengan isi form */
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .embed-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
     .back-button {
       display: inline-block;
       margin-top: 1rem;
-      margin-right: 1rem;
       padding: 0.8rem 1.5rem;
       background-color: #2caabe;
       color: white;
@@ -74,36 +90,17 @@
       border-radius: 8px;
       font-weight: 500;
       transition: background 0.2s ease;
+      margin-right: 5px;
+      margin-left: 5px;
     }
     .back-button:hover {
       background-color: #3d5887;
-    }
-    .button-container {
-      text-align: center;
-    }
-    .dashboard-container {
-      background-color: #f9f9f9;
-      border: 2px solid #e0e0e0;
-      border-radius: 8px;
-      padding: 2rem;
-      margin-top: 1.5rem;
-      overflow: hidden;
-    }
-    .dashboard-container iframe {
-      width: 100%;
-      height: 600px;
-      border-radius: 8px;
-    }
-    @media (max-width: 768px) {
-      .dashboard-container iframe {
-        height: 400px;
-      }
     }
     footer {
       text-align: center;
       padding: 1.2rem 1rem;
       background-color: #2caabe;
-      color: eaf3fb;
+      color: #eaf3fb;
       font-size: 0.9rem;
     }
   </style>
@@ -115,48 +112,73 @@
     <p>Halaman Rencana Usaha Kelompok</p>
   </header>
 
+  <!-- BAGIAN KONTEN UTAMA: RENCANA USAHA KELOMPOK -->
   <div class="content-container">
     <h2 class="section-title">RENCANA USAHA KELOMPOK</h2>
-
+    
     <div class="card">
       <h2>Formulir Input Rencana Usaha Kelompok</h2>
       <p>Pokdakan (Kelompok Pembudidaya Ikan) adalah kelompok formal yang dibentuk oleh para pembudidaya ikan untuk saling berbagi pengetahuan, mengakses bantuan pemerintah, dan meningkatkan pengelolaannya. Rencana usaha kelompok perikanan membantu anggota dalam mengelola kegiatan budidaya, penangkapan, maupun pemasaran hasil perikanan secara lebih terstruktur. Perencanaan yang jelas mendukung tercapainya tujuan usaha dan perkembangan kelompok.</p>
-      <div class="button-container">
-        <a href="https://forms.gle/mdkaqukYyLpLzHD49" class="back-button" target="_blank">Input Rencana Usaha Kelompok</a>
-        <a href="https://docs.google.com/spreadsheets/d/1Fq4LO0z0P4O5TxuOzwLN8EA-c9r3Ejlnirx2sb8SIkE/edit?usp=sharing" class="back-button" target="_blank">Data Rencana Usaha Kelompok</a>
+      
+      <!-- Embed Google Form 1 (Rencana Usaha Kelompok) -->
+      <div class="embed-container">
+        <iframe 
+          src="https://forms.gle/hAd8WJZ4gzzq3zE99" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0">
+          Memuat…
+        </iframe>
       </div>
-    </div>
- <div class="card">
-      <h2>Survei Kepuasan Pengguna</h2>
-      <p>Evaluasi layanan adalah proses penilaian sistematis terhadap kinerja, kualitas, efektivitas, dan efisiensi layanan yang diberikan oleh suatu lembaga atau entitas kepada pengguna layanannya.</p>
-      <div class="button-container">
-        <a href="https://forms.gle/WYyqdZ3ibCpNVcMa9" class="back-button" target="_blank">Input Inventaris Barang</a>
-        <a href="https://docs.google.com/spreadsheets/d/1-JFwfKKxUOXZR0LcDAJtbryO3mHcPI0RK-TgvI_3Oug/edit?usp=sharing" class="back-button" target="_blank">Lihat Data Inventaris</a>
+
+      <div style="text-align: center;">
+        <a href="https://forms.gle/hAd8WJZ4gzzq3zE99" target="_blank" class="back-button">Input Rencana Usaha Kelompok</a>
+        <a href="https://docs.google.com/spreadsheets/d/171tAyxUSrOvjk-XMteivEgPRQkQ1gxZsD2zQbV7MJjc/edit?usp=sharing" target="_blank" class="back-button">Data Rencana Usaha Kelompok</a>
       </div>
     </div>
 
     <div class="card">
-      <h2>Dashboard Data Rencana Usaha Kelompok</h2>
+      <h2>📊 Dashboard Data Rencana Usaha Kelompok</h2>
       <p>Gambaran rencana usaha kelompok perikanan yang disajikan dalam bentuk dashboard interaktif. Dashboard ini menampilkan informasi mengenai tujuan usaha, kegiatan yang direncanakan, kebutuhan modal, serta target produksi dan pemasaran.</p>
-      <div class="button-container" style="margin-bottom: 1.5rem;">
-        <a href="https://datastudio.google.com/reporting/7681c43c-9daa-4b29-87cd-7c8376035bcf" class="back-button" target="_blank">Buka Dashboard Lengkap</a>
+    
+      <div class="embed-container" style="height: 500px;">
+        <iframe 
+          src="https://datastudio.google.com/embed/reporting/b6a42e9a-b4c0-47fd-8907-c86a958d8c4e/page/page_12345" 
+          allowfullscreen 
+          loading="lazy">
+        </iframe>
       </div>
-      <div style="margin-top: 1.5rem; text-align: center;">
-        <p style="color: #999; margin-bottom: 1rem; font-size: 0.95rem;">Dashboard akan tampil di bawah ini:</p>
-        <div class="dashboard-container">
-          <iframe src="https://datastudio.google.com/embed/reporting/7681c43c-9daa-4b29-87cd-7c8376035bcf/page/page_12345" frameborder="0" allowfullscreen></iframe>
-        </div>
+
+      <div style="text-align: center; margin-top: 1rem;">
+        <a href="https://datastudio.google.com/reporting/b6a42e9a-b4c0-47fd-8907-c86a958d8c4e" target="_blank" class="back-button">Buka Dashboard Lengkap</a>
+      </div>
+    </div>
+  </div>
+           
+  <!-- BAGIAN KONTEN KEDUA: EVALUASI LAYANAN -->
+  <div class="content-container" style="margin-top: 0;">
+    <h2 class="section-title">EVALUASI LAYANAN</h2>
+    
+    <div class="card">
+      <h2>Survei Kepuasan Pengguna</h2>
+      <p>Evaluasi layanan adalah proses penilaian sistematis terhadap kinerja, kualitas, efektivitas, dan efisiensi layanan yang diberikan oleh suatu lembaga atau entitas kepada pengguna layanannya.</p>
+ 
+      <div style="text-align: center;">
+        <a href="https://forms.gle/WYyqdZ3ibCpNVcMa9" target="_blank" class="back-button">Input Inventaris Barang</a>
+        <a href="https://docs.google.com/spreadsheets/d/1-JFwfKKxUOXZR0LcDAJtbryO3mHcPI0RK-TgvI_3Oug/edit?usp=sharing" target="_blank" class="back-button">Lihat Data Inventaris</a>
       </div>
     </div>
 
-    <<div class="card">
-  <div style="text-align: center;">
-    <p>File Excel untuk evaluasi rencana usaha kegiatan anggota Pokdakan telah tersedia. Anda dapat mengunduhnya melalui tombol di bawah ini untuk melengkapi dan menganalisis data hasil survei.</p>
-    <a href="Excel/rencana usaha kelompok.xlsx" class="back-button" download>Unduh Evaluasi Layanan</a>
-  </div>
-</div>
-    
-    <div style="text-align: center;">
+    <!-- Unduh Evaluasi Layanan -->
+    <div class="card">
+      <div style="text-align: center;">
+        <p>File Excel untuk evaluasi rencana usaha kegiatan anggota Pokdakan telah tersedia. Anda dapat mengunduhnya melalui tombol di bawah ini untuk melengkapi dan menganalisis data hasil survei.</p>
+        <a href="rencana usaha kelompok.xlsx" class="back-button" download>Unduh Evaluasi Layanan</a>
+      </div>
+    </div>
+
+    <!-- Tombol Kembali -->
+    <div style="text-align: center; margin-bottom: 3rem;">
       <a href="index.html" class="back-button">Kembali ke Menu Utama</a>
     </div>
   </div>
