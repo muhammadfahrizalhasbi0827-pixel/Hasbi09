@@ -58,10 +58,68 @@
       border-bottom: 2px solid #e0f7ff;
       padding-bottom: 0.5rem;
     }
+    .card h3 {
+      color: #3a6b9d;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+    }
     .card p {
       line-height: 1.6;
       margin-bottom: 1rem;
       text-align: justify;
+    }
+    .card ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    .card li {
+      margin-bottom: 0.5rem;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.2s ease;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #2caabe;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background-color: #2caabe;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      text-decoration: none;
+      text-align: center;
+    }
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
     }
     
     /* Wadah responsif untuk Google Form dan Looker Studio */
@@ -112,96 +170,81 @@
     <p>Halaman Rencana Usaha Bersama</p>
   </header>
 
-  <!-- BAGIAN KONTEN UTAMA: RENCANA USAHA BERSAMA -->
   <div class="content-container">
     <h2 class="section-title">SISTEM RENCANA USAHA BERSAMA</h2>
     
     <div class="card">
-      <h2>Formulir Rencana Usaha Bersama</h2>
+      <h2>Formulir rencana usaha bersama</h2>
       <p>Pokdakan (Kelompok Pembudidaya Ikan) adalah kelompok formal yang dibentuk oleh para pembudidaya ikan untuk saling berbagi pengetahuan, mengakses bantuan pemerintah, dan meningkatkan pengelolaannya. Beberapa Pokdakan juga mengembangkan unit simpan pinjam untuk membantu modal usaha anggota.</p>
       
-      <!-- Embed Google Form 1 (Rencana Usaha) -->
+      <!-- Embed Google Form (Rencana Usaha Bersama) -->
       <div class="embed-container">
-        <!-- 
-          Catatan: Ganti tautan src di bawah ini dengan tautan sematan Google Form utama Anda.
-          Contoh: https://docs.google.com/forms/d/e/[ID_FORMULIR]/viewform?embedded=true
-        -->
-        <iframe 
-          src="https://forms.gle/7MfcJHEPmRU5jDSy6" 
-          frameborder="0" 
-          marginheight="0" 
-          marginwidth="0">
-          Memuat…
-        </iframe>
-      </div>
-
-      <div style="text-align: center;">
-        <a href="https://forms.gle/7MfcJHEPmRU5jDSy6" target="_blank" class="back-button">Buka Form di Tab Baru</a>
-        <a href="https://docs.google.com/spreadsheets/d/1JBR5fl54tANKvVcWe85lM-vHxjE03FBqt6tsB6t0MKU/edit?usp=sharing" target="_blank" class="back-button">Nasabah Simpan Pinjam</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>📊 Sajian Data Looker Studio</h2>
-      <p>Lihat visualisasi data secara interaktif dengan grafik dan dashboard yang otomatis terupdate setiap kali ada perubahan data di spreadsheet.</p>
-    
-      <div class="embed-container" style="height: 500px;">
-        <iframe 
-          src="https://datastudio.google.com/embed/reporting/1a771b0e-680d-4776-8cfa-01765156554f/page/page_12345" 
-          allowfullscreen 
-          loading="lazy">
-        </iframe>
-      </div>
-    </div>
-  </div>
-           
-  <!-- BAGIAN KONTEN KEDUA: EVALUASI LAYANAN -->
-  <div class="content-container" style="margin-top: 0;">
-    <h2 class="section-title">EVALUASI LAYANAN</h2>
-    
-    <div class="card">
-      <h2>Survei Kepuasan Pengguna</h2>
-      <p>Evaluasi layanan adalah proses penilaian sistematis terhadap kinerja, kualitas, efektivitas, dan efisiensi layanan yang diberikan oleh suatu lembaga atau entitas kepada pengguna layanannya.</p>
-      
-      <!-- Embed Google Form 2 (Evaluasi) -->
-      <div class="embed-container">
-        <!-- 
-          Catatan: Ganti tautan src di bawah ini dengan tautan sematan Google Form evaluasi Anda.
-          Contoh: https://docs.google.com/forms/d/e/[ID_FORMULIR]/viewform?embedded=true
-        -->
         <iframe 
           src="https://forms.gle/qSk6Ak9NPb8yRXot6" 
           frameborder="0" 
           marginheight="0" 
           marginwidth="0">
-          Memuat…
+        </iframe>
+      </div>
+
+      <!-- Embed Google Sheets (Nasabah Simpan Pinjam) -->
+      <p style="color: #666; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: bold;">Tampilan Data Spreadsheet:</p>
+      <div class="embed-container" style="height: 500px;">
+        <iframe 
+          src="https://docs.google.com/spreadsheets/d/1JBR5fl54tANKvVcWe85lM-vHxjE03FBqt6tsB6t0MKU/edit?usp=sharing" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0"
+          loading="lazy">
         </iframe>
       </div>
 
       <div style="text-align: center;">
-        <a href="https://forms.gle/LMM9v2yNZG98aqsM9" target="_blank" class="back-button">Buka Evaluasi di Tab Baru</a>
-        <a href="https://docs.google.com/spreadsheets/d/1zGRXi501-5WFcmB7gXRHA1mczP-VNUQPhfcMa4LoiAU/edit?usp=sharing" target="_blank" class="back-button">Penilaian Nasabah</a>
+        <a href="https://forms.gle/qSk6Ak9NPb8yRXot6" class="back-button">rencana usaha bersama</a>
+        <a href="https://docs.google.com/spreadsheets/d/1JBR5fl54tANKvVcWe85lM-vHxjE03FBqt6tsB6t0MKU/edit?usp=sharing" class="back-button">Nasabah Simpan Pinjam</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-container" style="margin-top: 0;">
+    <div class="card">
+      <h2>📊 Sajian Data Looker Studio</h2>
+      <p>Lihat visualisasi datasecara interaktif dengan grafik dan dashboard yang otomatis terupdate setiap kali ada perubahan data di spreadsheet.</p>
+    
+      <div class="embed-container" style="height: 500px;">
+        <iframe 
+          src="https://datastudio.google.com/embed/reporting/1a771b0e-680d-4776-8cfa-01765156554f/page/page_12345" 
+          allowfullscreen loading="lazy">
+        </iframe>
+      </div>
+    </div>
+             
+    <h2 class="section-title">EVALUASI LAYANAN</h2>
+    <div class="card">
+      <h2>Survei Kepuasan Pengguna</h2>
+      <p>Evaluasi layanan adalah proses penilaian sistematis terhadap kinerja, kualitas, efektivitas, dan efisiensi layanan yang diberikan oleh suatu lembaga atau entitas kepada pengguna layanannya.</p>
+      <div style="text-align: center;">
+        <a href="https://forms.gle/LMM9v2yNZG98aqsM9" class="back-button">Evaluasi rencana usaha bersama</a>
+        <a href="https://docs.google.com/spreadsheets/d/1zGRXi501-5WFcmB7gXRHA1mczP-VNUQPhfcMa4LoiAU/edit?usp=sharing" class="back-button">Penilaian Nasabah</a>
       </div>
     </div>
 
     <div class="card">
-      <h2>📊 Dashboard Hasil Evaluasi</h2>
-      <p>File Excel untuk evaluasi Rencana Kegiatan Bersama anggota Pokdakan telah tersedia. Anda dapat mengunduhnya melalui tombol di bawah ini untuk melengkapi dan menganalisis data hasil survei.</p>
-      
-      <div class="embed-container" style="height: 450px;">
-        <iframe 
-          src="https://datastudio.google.com/embed/reporting/4672b5b0-6ba6-4518-8913-d509eec63b20/page/page_12345" 
-          allowfullscreen 
-          sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
-        </iframe>
-      </div>
-
-      <div style="text-align: center; margin-top: 1rem;">
+      <div style="text-align: center;">
+        <div class="embed-container" style="height: 450px;">
+          <iframe 
+            src="https://datastudio.google.com/embed/reporting/4672b5b0-6ba6-4518-8913-d509eec63b20/page/page_12345" 
+            frameborder="0" 
+            style="border:0" 
+            allowfullscreen 
+            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+          </iframe>
+        </div>
+        <p>File Excel untuk evaluasi Rencana Kegiatan Bersama anggota Pokdakan telah tersedia. Anda dapat mengunduhnya melalui tombol di bawah ini untuk melengkapi dan menganalisis data hasil survei.</p>
         <a href="Excel/Excel RENCANA USAHA BERSAMA.xlsx" class="back-button">Unduh Evaluasi Layanan</a>
       </div>
     </div>
 
-    <!-- Tombol Kembali -->
     <div style="text-align: center; margin-bottom: 3rem;">
       <a href="index.html" class="back-button">Kembali ke Menu Utama</a>
     </div>
